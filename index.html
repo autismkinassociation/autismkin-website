@@ -1042,8 +1042,8 @@ var Track = (function(){
     if (!/^[a-z0-9_]{1,60}$/.test(k)) return;
     if (!live()){ var s = local(); [ "all", month() ].forEach(function(id){ s[id] = s[id] || {}; s[id][k] = (s[id][k] || 0) + 1; }); try{ localStorage.setItem("ak-stats", JSON.stringify(s)); }catch(e){} return; }
     if (!db){ q.push(k); return; }
-    var inc = {}; inc[k] = firebase.firestore.FieldValue.increment(1);
-    ["all", month()].forEach(function(id){ db.collection("stats").doc(id).set(inc, {merge:true}).catch(function(){}); });
+    // one small document per counter: stats/{all|YYYY-MM}/c/{name} = {n}
+    ["all", month()].forEach(function(id){ db.collection("stats").doc(id).collection("c").doc(k).set({n:firebase.firestore.FieldValue.increment(1)}, {merge:true}).catch(function(){}); });
   }
   return {
     hit:send,
@@ -1822,9 +1822,10 @@ function previewData(){
 }
 function liveData(){
   var db = Store.db(), months = monthKeys(6);
-  return Promise.all([db.collection("stats").doc("all").get()].concat(months.map(function(m){ return db.collection("stats").doc(m).get(); })).concat([db.collection("users").get()]))
-    .then(function(res){ var stats = {all:res[0].exists ? res[0].data() : {}};
-      months.forEach(function(m, i){ stats[m] = res[i + 1].exists ? res[i + 1].data() : {}; });
+  function counters(qs){ var o = {}; qs.forEach(function(d){ o[d.id] = d.data().n || 0; }); return o; }
+  return Promise.all([db.collection("stats").doc("all").collection("c").get()].concat(months.map(function(m){ return db.collection("stats").doc(m).collection("c").get(); })).concat([db.collection("users").get()]))
+    .then(function(res){ var stats = {all:counters(res[0])};
+      months.forEach(function(m, i){ stats[m] = counters(res[i + 1]); });
       return {stats:stats, users:res[res.length - 1].docs.map(function(d){ return d.data(); })}; });
 }
 
