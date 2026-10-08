@@ -1,0 +1,1928 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1B2A4A">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://autismkin.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Autism Kin">
+<meta property="og:title" content="Autism Kin: Empowering every voice">
+<meta property="og:description" content="Free courses and resources in English, Spanish and Mandarin for families of children with autism. Empowering every voice.">
+<meta property="og:url" content="https://autismkin.com/">
+<meta property="og:image" content="https://autismkin.com/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<title>Autism Kin</title>
+<meta name="description" content="Autism Kin Association builds free courses, videos and resources in English, Spanish and Mandarin for families affected by autism in Los Angeles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Noto+Serif+SC:wght@400;600;700&display=swap">
+<style>
+/* Layout: left-aligned editorial column. Sticky header with page links and a language switch.
+   Five pages share one shell. The one bold moment is the hero: a very large Fraunces headline beside the infinity mark drawing itself once. */
+:root{
+  --ivory:#F9F7F1; --sand:#EFE9D8; --navy:#1B2A4A; --gold:#D9A441; --deep-gold:#7C5A14; --slate:#4E5A72;
+  --bg:var(--ivory); --surface:#FFFFFF; --panel:var(--sand); --fg:var(--navy); --muted:var(--slate);
+  --accent:var(--gold); --accent-text:var(--deep-gold); --rule:#DDD5C2; --mark-a:var(--navy); --mark-b:var(--gold);
+  --band-bg:var(--navy); --band-fg:#F9F7F1; --band-muted:#C9CFDB; --field-bg:#FFFFFF; --field-border:#CFC6B2;
+  --btn-bg:var(--navy); --btn-fg:#F9F7F1; --ok:#2F6B4F;
+  --display:"Cormorant Garamond", "Garamond", Georgia, serif;
+  --body:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --wrap:72rem;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#101828; --surface:#162036; --panel:#1B2740; --fg:#F2EEE3; --muted:#B6BECD; --accent:#E2B45A; --accent-text:#E9C783;
+  --rule:#2A3756; --mark-a:#F2EEE3; --mark-b:#E2B45A; --band-bg:#1E2B48; --band-fg:#F2EEE3; --band-muted:#B6BECD;
+  --field-bg:#101828; --field-border:#3A4867; --btn-bg:#E2B45A; --btn-fg:#101828; --ok:#7FC8A0; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#101828; --surface:#162036; --panel:#1B2740; --fg:#F2EEE3; --muted:#B6BECD; --accent:#E2B45A; --accent-text:#E9C783;
+  --rule:#2A3756; --mark-a:#F2EEE3; --mark-b:#E2B45A; --band-bg:#1E2B48; --band-fg:#F2EEE3; --band-muted:#B6BECD;
+  --field-bg:#101828; --field-border:#3A4867; --btn-bg:#E2B45A; --btn-fg:#101828; --ok:#7FC8A0; color-scheme:dark }
+:lang(zh){ --display:"Noto Serif SC", "Noto Serif CJK SC", serif; --body:"Noto Serif SC", "Noto Serif CJK SC", "Songti SC", serif }
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--bg); color:var(--fg); font-family:var(--body); font-size:1.0625rem; line-height:1.65; padding-inline:1.25rem; padding-block:0}
+.wrap{max-width:var(--wrap); margin-inline:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent); outline-offset:3px; border-radius:4px}
+h1,h2,h3{font-family:var(--display); font-weight:600; line-height:1.1; margin:0; text-wrap:balance}
+p{margin:0}
+.muted{color:var(--muted)}
+.measure{max-width:38rem}
+
+/* header */
+.site-head{position:sticky; top:env(safe-area-inset-top, 0px); z-index:10; background:var(--bg); border-bottom:1px solid var(--rule); margin-inline:-1.25rem; padding-inline:1.25rem}
+.head-row{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-block:.9rem}
+.brand{display:flex; align-items:center; gap:.65rem; text-decoration:none; flex:none}
+.brand svg{width:2.6rem; height:auto}
+.brand-name{font-family:"Fraunces", Georgia, serif; line-height:1; display:flex; flex-direction:column; gap:.1rem}
+.brand-name b{font-weight:600; font-size:1.2rem; letter-spacing:-0.02em}
+.brand-name span{font-weight:300; font-size:.98rem; color:var(--accent-text)}
+.nav{display:flex; align-items:center; gap:1.4rem; font-size:.97rem}
+.nav a{text-decoration:none; color:var(--muted); padding-block:.3rem; border-bottom:2px solid transparent}
+.nav a:hover{color:var(--fg)}
+.nav a[aria-current="page"]{color:var(--fg); border-bottom-color:var(--accent)}
+.nav .acct-link{color:var(--fg); font-weight:700; border:1.5px solid var(--rule); border-radius:999px; padding:.35rem .9rem}
+.nav .acct-link[aria-current="page"]{border-color:var(--fg)}
+.head-tools{display:flex; align-items:center; gap:.75rem}
+.lang{display:flex; border:1px solid var(--rule); border-radius:999px; padding:2px}
+.lang button{white-space:nowrap; font:inherit; font-size:.85rem; border:0; background:transparent; color:var(--muted); padding:.3rem .65rem; border-radius:999px; cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--fg); color:var(--bg)}
+.menu-btn{display:none; font:inherit; font-weight:700; font-size:.9rem; background:transparent; color:var(--fg); border:1px solid var(--rule); border-radius:999px; padding:.4rem .8rem; cursor:pointer}
+@media (max-width:860px){
+  .menu-btn{display:inline-block}
+  .nav{display:none; position:absolute; left:0; right:0; top:100%; background:var(--bg); border-bottom:1px solid var(--rule); flex-direction:column; align-items:flex-start; gap:.25rem; padding:.75rem 1.25rem 1rem}
+  .nav.open{display:flex}
+  .brand-name span{display:none}
+}
+
+/* buttons */
+.btn{display:inline-flex; align-items:center; justify-content:center; padding:.8rem 1.3rem; border-radius:999px; font:inherit; font-weight:700; font-size:1rem; text-decoration:none; cursor:pointer; border:2px solid var(--btn-bg); background:var(--btn-bg); color:var(--btn-fg)}
+.btn.line{background:transparent; color:var(--fg); border-color:var(--rule)}
+.btn.line:hover{border-color:var(--fg)}
+.actions{display:flex; flex-wrap:wrap; gap:.75rem}
+
+/* page shell */
+.page{padding-block:3.5rem 4.5rem; display:flex; flex-direction:column; gap:4.5rem}
+.page-head{display:flex; flex-direction:column; gap:1rem; max-width:44rem}
+.page-head h1{font-size:clamp(2.6rem, 5.6vw, 4rem)}
+.page-head p{font-size:1.2rem; color:var(--muted)}
+.section-title{font-size:clamp(1.95rem, 3.4vw, 2.6rem); margin-bottom:1rem}
+
+/* hero */
+.hero{display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); gap:3rem; align-items:center; padding-top:1rem}
+.hero-copy{display:flex; flex-direction:column; gap:1.4rem; min-width:0}
+.status{display:inline-flex; align-items:center; gap:.55rem; font-size:.95rem; color:var(--muted)}
+.status i{width:.55rem; height:.55rem; border-radius:50%; background:var(--accent)}
+.hero h1{font-size:clamp(3.4rem, 9.4vw, 7.2rem); font-weight:600; letter-spacing:-0.02em; line-height:.95}
+:lang(zh) .hero h1{letter-spacing:0; line-height:1.15}
+.hero .lede{font-size:1.22rem; color:var(--muted); max-width:33rem}
+.hero-mark svg{width:100%; height:auto; overflow:visible}
+.draw path{stroke-dasharray:1; stroke-dashoffset:0; animation:draw 1.8s cubic-bezier(.65,0,.35,1) both}
+.draw path + path{animation-delay:.55s}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion: reduce){ .draw path{animation:none} html{scroll-behavior:auto} }
+@media (max-width:860px){ .hero{grid-template-columns:1fr; gap:1.5rem} .hero-mark{order:-1; max-width:11rem} }
+
+/* programs: three columns divided by rules, not cards */
+.programs{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); border-top:2px solid var(--fg)}
+.program{padding:1.5rem 1.5rem 0 0; display:flex; flex-direction:column; gap:.6rem; min-width:0}
+.program + .program{padding-left:1.5rem; border-left:1px solid var(--rule)}
+.program h3{font-size:1.65rem}
+.tag{font-size:.9rem; font-weight:700; color:var(--accent-text)}
+.program p{color:var(--muted)}
+@media (max-width:860px){ .programs{grid-template-columns:1fr} .program, .program + .program{padding:1.25rem 0; border-left:0; border-bottom:1px solid var(--rule)} }
+
+/* pillars */
+.pillars{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:2rem}
+.pillar{display:flex; flex-direction:column; gap:.4rem; min-width:0}
+.numeral{font-family:var(--display); font-weight:500; font-size:4.2rem; line-height:.9; color:var(--accent-text)}
+.pillar h3{font-size:1.6rem}
+.pillar p{color:var(--muted)}
+.text-link{font-weight:700; color:var(--fg); text-underline-offset:4px; text-decoration-color:var(--accent); text-decoration-thickness:2px}
+@media (max-width:860px){ .pillars{grid-template-columns:1fr; gap:1.5rem} .numeral{font-size:3.2rem} }
+
+/* founder */
+.founder{display:grid; grid-template-columns:minmax(0,15rem) minmax(0,1fr); gap:2.5rem; align-items:center; background:var(--panel); border-radius:18px; padding:2rem}
+.founder img{width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; border-radius:12px; display:block; max-width:100%}
+.founder blockquote{margin:0 0 1.25rem; font-family:var(--display); font-weight:500; font-style:italic; font-size:clamp(1.6rem, 2.9vw, 2.15rem); line-height:1.3}
+:lang(zh) .founder blockquote{font-weight:600; font-style:normal}
+.who b{display:block}
+.who span{color:var(--muted); font-size:.95rem}
+@media (max-width:720px){ .founder{grid-template-columns:1fr; padding:1.5rem} .founder img{max-width:14rem} }
+
+/* waitlist band */
+.band{background:var(--band-bg); color:var(--band-fg); border-radius:18px; padding:2.5rem; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); gap:2.5rem; align-items:start}
+.band h2{font-size:clamp(1.95rem, 3.4vw, 2.6rem); margin-bottom:.75rem}
+.band p.muted{color:var(--band-muted)}
+.band .field label{color:var(--band-fg)}
+.band .btn{background:var(--gold); border-color:var(--gold); color:#1B2A4A}
+@media (max-width:860px){ .band{grid-template-columns:1fr; padding:1.75rem; gap:1.5rem} }
+
+/* forms */
+form{display:flex; flex-direction:column; gap:1rem}
+.field{display:flex; flex-direction:column; gap:.35rem}
+.field label{font-weight:700; font-size:.95rem}
+.field .hint{font-weight:400; color:var(--muted)}
+.band .field .hint{color:var(--band-muted)}
+input, select, textarea{font:inherit; font-size:1rem; color:var(--fg); background:var(--field-bg); border:1.5px solid var(--field-border); border-radius:10px; padding:.7rem .85rem; width:100%}
+.band input, .band select{color:#1B2A4A; background:#FFFFFF; border-color:transparent}
+textarea{min-height:9rem; resize:vertical}
+.row2{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:1rem}
+@media (max-width:560px){ .row2{grid-template-columns:1fr} }
+.error{color:#B42318; font-size:.92rem; font-weight:700}
+.band .error{color:#FFB4A8}
+.notice{border-radius:10px; padding:.8rem 1rem; font-size:.95rem; background:var(--panel); color:var(--fg)}
+.band .notice{background:rgba(255,255,255,.1); color:var(--band-fg)}
+
+/* about */
+.story{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,18rem); gap:3.5rem; align-items:start}
+.story-text{display:flex; flex-direction:column; gap:1.1rem; font-size:1.15rem; max-width:38rem}
+.story-text p:first-child{font-family:var(--display); font-weight:500; font-style:italic; font-size:1.8rem; line-height:1.35}
+.story figure{margin:0; display:flex; flex-direction:column; gap:.75rem}
+.story img{width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; border-radius:14px; max-width:100%}
+.story figcaption b{display:block}
+.story figcaption span{color:var(--muted); font-size:.95rem}
+@media (max-width:860px){ .story{grid-template-columns:1fr; gap:2rem} .story figure{max-width:16rem; order:-1} }
+.mission{border-left:3px solid var(--accent); padding-left:1.5rem; font-family:var(--display); font-weight:500; font-size:clamp(1.5rem, 2.7vw, 1.9rem); line-height:1.4; max-width:46rem}
+:lang(zh) .mission{font-weight:600}
+:lang(zh) .story-text p:first-child, :lang(zh) .site-foot .tagline{font-style:normal}
+.principles{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:2rem}
+.principles div{display:flex; flex-direction:column; gap:.4rem; min-width:0}
+.principles h3{font-size:1.5rem}
+.principles p{color:var(--muted)}
+@media (max-width:860px){ .principles{grid-template-columns:1fr; gap:1.25rem} }
+
+/* course */
+.pillar-detail{display:grid; grid-template-columns:7rem minmax(0,1fr) minmax(0,1fr); gap:2rem; padding-block:2rem; border-top:1px solid var(--rule)}
+.pillar-detail:last-child{border-bottom:1px solid var(--rule)}
+.pillar-detail .numeral{font-size:4.6rem}
+.pillar-detail h2{font-size:2rem; margin-bottom:.5rem}
+.pillar-detail ul{margin:0; padding-left:1.2rem; display:flex; flex-direction:column; gap:.45rem}
+.pillar-detail h3{font-family:var(--body); font-size:.95rem; font-weight:700; color:var(--accent-text); margin-bottom:.5rem}
+@media (max-width:860px){ .pillar-detail{grid-template-columns:1fr; gap:.75rem} .pillar-detail .numeral{font-size:3.2rem} }
+.facts{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:1.5rem}
+.facts div{display:flex; flex-direction:column; gap:.3rem; padding-top:1rem; border-top:2px solid var(--accent); min-width:0}
+.facts b{font-family:var(--display); font-size:1.4rem; font-weight:600}
+.facts span{color:var(--muted)}
+@media (max-width:860px){ .facts{grid-template-columns:1fr 1fr} }
+@media (max-width:480px){ .facts{grid-template-columns:1fr} }
+.callout{background:var(--panel); border-radius:14px; padding:1.25rem 1.5rem; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem}
+
+/* resources */
+.shelf{border-top:2px solid var(--fg)}
+.doc{display:grid; grid-template-columns:4.5rem minmax(0,1fr) auto; gap:1.5rem; align-items:center; padding-block:1.6rem; border-bottom:1px solid var(--rule)}
+.doc-icon{width:4.5rem; aspect-ratio:8.5/11; border-radius:6px; background:var(--surface); border:1px solid var(--rule); position:relative; overflow:hidden; display:flex; align-items:flex-end; justify-content:center; padding-bottom:.55rem}
+.doc-icon::before{content:""; position:absolute; left:0; right:0; top:0; height:6px; background:var(--accent)}
+.doc-icon svg{width:2.2rem}
+.doc h2{font-size:1.55rem; margin-bottom:.25rem}
+.doc .meta{font-size:.9rem; font-weight:700; color:var(--accent-text); margin-bottom:.35rem}
+.doc p{color:var(--muted)}
+.dl{display:flex; flex-direction:column; gap:.4rem; align-items:stretch; min-width:9.5rem}
+.dl span{font-size:.85rem; color:var(--muted)}
+.dl a{display:flex; justify-content:space-between; gap:.75rem; text-decoration:none; font-weight:700; font-size:.95rem; padding:.45rem .8rem; border:1.5px solid var(--rule); border-radius:999px}
+.dl a:hover{border-color:var(--fg)}
+.dl a small{font-weight:400; color:var(--muted)}
+@media (max-width:760px){ .doc{grid-template-columns:3.5rem minmax(0,1fr)} .doc-icon{width:3.5rem} .dl{grid-column:1 / -1; flex-direction:row; flex-wrap:wrap; min-width:0} .dl span{width:100%} }
+.small-note{font-size:.92rem; color:var(--muted)}
+
+/* contact */
+.contact-grid{display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:3rem; align-items:start}
+.side{display:flex; flex-direction:column; gap:2rem}
+.side h2{font-size:1.6rem; margin-bottom:.5rem}
+.email-row{display:flex; flex-wrap:wrap; align-items:center; gap:.6rem}
+.email{font-weight:700; font-size:1.15rem; user-select:all; overflow-wrap:anywhere}
+.copy{font:inherit; font-size:.85rem; font-weight:700; padding:.35rem .8rem; border-radius:999px; border:1.5px solid var(--fg); background:transparent; color:var(--fg); cursor:pointer}
+.socials{display:flex; gap:1rem; flex-wrap:wrap}
+@media (max-width:860px){ .contact-grid{grid-template-columns:1fr} }
+
+/* polish: skip link, scrolled header, page entrance, button feel, link underline, pillar timeline, previews, field states */
+.skip{position:absolute; left:-999px; top:.5rem; z-index:20; background:var(--fg); color:var(--bg); padding:.5rem .9rem; border-radius:8px; text-decoration:none; font-weight:700}
+.skip:focus{left:1rem}
+.site-head{transition:box-shadow .25s ease}
+.site-head.scrolled{box-shadow:0 1px 0 var(--rule), 0 10px 30px -18px rgba(27,42,74,.35)}
+.page:not([hidden]){animation:pagein .4s ease both}
+@keyframes pagein{from{opacity:0; transform:translateY(8px)}to{opacity:1; transform:none}}
+.btn{transition:transform .15s ease, background-color .2s ease, border-color .2s ease, color .2s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.text-link{text-decoration:none; background:linear-gradient(var(--accent),var(--accent)) left bottom/100% 2px no-repeat; padding-bottom:2px; transition:background-size .25s ease}
+.text-link:hover{background-size:0 2px; background-position:right bottom}
+.lang button{transition:background-color .2s ease, color .2s ease}
+.pillars{border-top:1px solid var(--rule); padding-top:1.75rem}
+.pillar{position:relative}
+.pillar::before{content:""; position:absolute; top:calc(-1.75rem - 6px); left:0; width:11px; height:11px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px var(--bg)}
+.doc-icon{padding:0; display:block; box-shadow:0 1px 2px rgba(27,42,74,.08), 0 8px 18px -12px rgba(27,42,74,.45); transition:transform .25s ease}
+.doc-icon::before{display:none}
+.doc-icon img{width:100%; height:100%; object-fit:cover; display:block}
+.doc:hover .doc-icon{transform:rotate(-2deg) translateY(-2px)}
+.dl a{transition:border-color .2s ease}
+.dl a.busy{opacity:.65; pointer-events:none}
+.dl a.done{border-color:var(--ok)}
+.dl a.done small{color:var(--ok); font-weight:700}
+input[aria-invalid="true"], textarea[aria-invalid="true"]{border-color:#B42318; box-shadow:0 0 0 3px rgba(180,35,24,.15)}
+input:focus, select:focus, textarea:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(217,164,65,.25)}
+.notice:not([hidden]){display:flex; gap:.6rem; align-items:flex-start}
+.notice::before{content:""; flex:none; width:.55rem; height:.55rem; margin-top:.5rem; border-radius:50%; background:var(--accent)}
+@media (prefers-reduced-motion: reduce){ .page:not([hidden]){animation:none} .btn, .text-link, .doc-icon{transition:none} .btn:hover, .doc:hover .doc-icon{transform:none} }
+
+/* accessibility and mobile */
+@media (max-width:860px){
+  .pillars{border-top:0; padding-top:0; border-left:1px solid var(--rule); padding-left:1.4rem; margin-left:6px}
+  .pillar::before{top:1.1rem; left:calc(-1.4rem - 6px)}
+}
+.lang button{min-height:2.5rem; min-width:2.75rem; padding:.3rem .7rem}
+.menu-btn{min-height:2.75rem}
+.dl a{min-height:2.75rem; align-items:center}
+.foot-links a{padding-block:.35rem}
+[tabindex="-1"]:focus{outline:none}
+@media (max-width:860px){
+  .nav a{display:block; width:100%; padding:.8rem 0; font-size:1.1rem; border-bottom:1px solid var(--rule)}
+  .nav a:last-child{border-bottom:0}
+  .nav a[aria-current="page"]{border-bottom-color:var(--rule); color:var(--fg); font-weight:700}
+}
+@media (max-width:560px){
+  body{padding-inline:1rem}
+  .site-head{margin-inline:-1rem; padding-inline:1rem}
+  .head-row{gap:.5rem}
+  .brand svg{width:2.2rem}
+  .lang button{min-width:2.5rem; padding:.3rem .5rem; font-size:.8rem}
+  .page{padding-block:2rem 3rem; gap:3rem}
+  .hero .actions .btn{flex:1 1 100%}
+  .band{padding:1.4rem; border-radius:14px}
+  .band .btn, .callout .btn, form .btn{width:100%}
+  .founder{padding:1.25rem; gap:1.25rem}
+  .callout{padding:1.1rem 1.25rem}
+  .doc{gap:1rem; padding-block:1.25rem}
+  .dl a{flex:1 1 30%; justify-content:center; flex-direction:column; gap:0; text-align:center; padding:.45rem .5rem}
+  .page-head p{font-size:1.1rem}
+}
+
+/* learning area */
+.preview-note{background:var(--panel); border-left:3px solid var(--accent); border-radius:8px; padding:.7rem 1rem; font-size:.92rem; margin-bottom:2rem}
+.auth{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,26rem); gap:3rem; align-items:start}
+.auth-intro h1{font-size:clamp(2.4rem, 5vw, 3.6rem); margin-bottom:1rem}
+.lede-l{font-size:1.2rem; color:var(--muted); max-width:30rem}
+.benefits{list-style:none; padding:0; margin:1.75rem 0 0; display:flex; flex-direction:column; gap:.8rem}
+.benefits li{display:grid; grid-template-columns:1.4rem minmax(0,1fr); gap:.6rem}
+.benefits li::before{content:"✓"; color:var(--accent-text); font-weight:700}
+.auth-card{background:var(--surface); border:1px solid var(--rule); border-radius:16px; padding:1.75rem; box-shadow:0 18px 40px -28px rgba(27,42,74,.45)}
+.auth-card h2{font-size:1.7rem}
+.tabs{display:grid; grid-template-columns:1fr 1fr; background:var(--panel); border-radius:999px; padding:4px; margin-bottom:.5rem}
+.tabs button{font:inherit; font-weight:700; font-size:.95rem; border:0; background:transparent; color:var(--muted); padding:.6rem; border-radius:999px; cursor:pointer; min-height:2.75rem}
+.tabs button[aria-pressed="true"]{background:var(--surface); color:var(--fg); box-shadow:0 1px 3px rgba(27,42,74,.15)}
+.pass{display:flex; gap:.5rem}
+.pass input{flex:1; min-width:0}
+.reveal, .linkish{font:inherit; font-size:.92rem; font-weight:700; background:transparent; border:0; color:var(--fg); cursor:pointer; padding:.5rem; min-height:2.75rem; text-decoration:underline; text-underline-offset:3px; text-decoration-color:var(--accent)}
+.linkish{align-self:flex-start; padding-inline:0}
+.auth-card .btn{width:100%}
+@media (max-width:860px){ .auth{grid-template-columns:1fr; gap:1.75rem} .auth-card{padding:1.25rem} }
+
+.bar{height:8px; background:var(--panel); border-radius:999px; overflow:hidden; margin-top:.6rem}
+.bar span{display:block; height:100%; background:var(--accent); border-radius:999px; transition:width .5s ease}
+.dash-head{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:1.5rem; margin-bottom:2.5rem}
+.dash-head > div{flex:1 1 22rem; min-width:0}
+.dash-head h1{font-size:clamp(2.2rem, 4.6vw, 3.3rem); margin-bottom:.4rem}
+.pill{display:inline-flex; align-items:center; gap:.4rem; font-weight:700; font-size:.95rem; padding:.55rem 1rem; border-radius:999px; background:var(--panel)}
+.pill.ok{color:var(--ok)}
+.pgrid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:1.25rem}
+.pcard{border:1px solid var(--rule); border-radius:16px; padding:1.4rem; background:var(--surface); display:flex; flex-direction:column; gap:.4rem; min-width:0}
+.phead{display:flex; gap:.9rem; align-items:center}
+.phead .numeral{font-size:2.8rem; min-width:2.6rem}
+.phead h2{font-size:1.45rem}
+.phead p{font-size:.92rem}
+.lessons{list-style:none; padding:0; margin:.9rem 0 0; display:flex; flex-direction:column}
+.lrow{display:grid; grid-template-columns:1.9rem minmax(0,1fr) auto; gap:.7rem; align-items:center; padding:.7rem 0; border-top:1px solid var(--rule); text-decoration:none; min-height:2.75rem}
+.lrow:hover .lt{text-decoration:underline; text-decoration-color:var(--accent); text-underline-offset:3px}
+.check{width:1.7rem; height:1.7rem; border-radius:50%; border:1.5px solid var(--rule); display:inline-flex; align-items:center; justify-content:center; font-size:.8rem; font-weight:700; color:var(--muted)}
+.is-done .check{background:var(--accent); border-color:var(--accent); color:#1B2A4A}
+.lt{font-weight:600; line-height:1.3}
+.lm{font-size:.85rem; color:var(--muted); white-space:nowrap}
+.is-done .lm{color:var(--ok); font-weight:700}
+.quizcard{margin-top:1.25rem; display:flex; flex-wrap:wrap; align-items:center; gap:1.1rem; border-radius:16px; padding:1.4rem; background:var(--panel)}
+.quizcard > div{flex:1 1 16rem; min-width:0}
+.quizcard h2{font-size:1.5rem}
+.seal, .lock{width:3rem; height:3rem; border-radius:50%; flex:none; display:inline-flex; align-items:center; justify-content:center; font-family:var(--display); font-weight:700; font-size:1.4rem; background:var(--accent); color:#1B2A4A}
+.quizcard.locked .lock{background:transparent; border:2px dashed var(--muted)}
+.quizcard.locked{background:transparent; border:1px dashed var(--rule)}
+.acct{margin-top:2.5rem; padding-top:1.25rem; border-top:1px solid var(--rule); display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:space-between; font-size:.95rem; color:var(--muted); overflow-wrap:anywhere}
+@media (max-width:980px){ .pgrid{grid-template-columns:1fr} }
+
+.lesson{max-width:42rem; display:flex; flex-direction:column; gap:1.1rem; font-size:1.12rem}
+.lesson h1{font-size:clamp(2.2rem, 4.8vw, 3.2rem); margin-bottom:.3rem}
+.crumb{font-size:.95rem}
+.meta-l{font-size:.95rem; font-weight:700; color:var(--accent-text)}
+.numeral-s{font-family:var(--display); font-size:1.2rem}
+.take, .tryit{border-radius:14px; padding:1.2rem 1.4rem; margin-top:.5rem}
+.take{background:var(--panel)}
+.take ul{margin:.5rem 0 0; padding-left:1.2rem; display:flex; flex-direction:column; gap:.35rem}
+.tryit{border:1.5px solid var(--accent)}
+.take h2, .tryit h2{font-size:1.35rem}
+.tryit p{margin-top:.35rem}
+.related{font-size:1rem}
+.lesson-actions{display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; margin-top:.75rem; padding-top:1.25rem; border-top:1px solid var(--rule)}
+.quiz fieldset.q{border:1px solid var(--rule); border-radius:14px; padding:1.1rem 1.25rem 1.25rem; margin:0; display:flex; flex-direction:column; gap:.55rem; background:var(--surface)}
+.q legend{float:left; width:100%; font-family:var(--display); font-weight:600; font-size:1.3rem; line-height:1.3; padding:0; margin-bottom:.35rem; display:flex; gap:.6rem}
+.q legend + *{clear:both}
+.qn{flex:none; width:1.8rem; height:1.8rem; border-radius:50%; background:var(--fg); color:var(--bg); font-family:var(--body); font-size:.9rem; display:inline-flex; align-items:center; justify-content:center; margin-top:.15rem}
+.opt{display:grid; grid-template-columns:1.3rem minmax(0,1fr); gap:.7rem; align-items:start; padding:.75rem .9rem; border:1.5px solid var(--rule); border-radius:10px; cursor:pointer; font-size:1.02rem; min-height:2.75rem}
+.opt input{margin-top:.3rem; width:1.1rem; height:1.1rem; accent-color:var(--fg); padding:0}
+.opt:hover, .opt.sel{border-color:var(--fg)}
+.opt.right{border-color:var(--ok); background:rgba(47,107,79,.08)}
+.opt.wrong{border-color:#B42318; background:rgba(180,35,24,.06)}
+.qfb{font-size:.98rem}
+.qfb.ok{color:var(--ok)}
+.qresult{border-radius:14px; padding:1.4rem; background:var(--panel); display:flex; flex-direction:column; gap:.6rem}
+.qresult.pass{background:var(--band-bg); color:var(--band-fg)}
+.qresult.pass .btn{background:var(--gold); border-color:var(--gold); color:#1B2A4A}
+.qresult h2{font-size:1.8rem}
+@media (max-width:560px){ .lesson{font-size:1.05rem} .lesson-actions .btn{width:100%} .quiz .btn{width:100%} }
+
+/* faq */
+.faq-list{max-width:48rem; border-top:2px solid var(--fg); margin-top:2rem}
+.faq-list details{border-bottom:1px solid var(--rule)}
+.faq-list summary{cursor:pointer; list-style:none; display:grid; grid-template-columns:minmax(0,1fr) 1.5rem; gap:1rem; align-items:center; padding:1.15rem 0; font-family:var(--display); font-weight:600; font-size:1.4rem; line-height:1.3; min-height:2.75rem}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+"; font-family:var(--body); font-weight:400; font-size:1.6rem; color:var(--accent-text); text-align:center; transition:transform .2s ease}
+.faq-list details[open] summary::after{transform:rotate(45deg)}
+.faq-list details p{padding:0 2.5rem 1.3rem 0; color:var(--muted); max-width:42rem}
+.faq-more{margin-top:2rem}
+@media (prefers-reduced-motion: reduce){ .faq-list summary::after{transition:none} }
+/* certificate */
+.cert{margin-top:1.25rem; border:1.5px solid var(--accent); border-radius:16px; padding:1.25rem 1.4rem; display:flex; flex-direction:column; gap:.8rem; background:var(--surface)}
+.cert h3{font-size:1.45rem}
+.cert-row{display:flex; flex-wrap:wrap; gap:.75rem; align-items:flex-end}
+.cert-row .field{flex:1 1 16rem; min-width:0}
+@media (max-width:560px){ .cert-row .btn{width:100%} }
+
+/* admin */
+.admin-head{display:flex; flex-wrap:wrap; gap:1rem 2rem; justify-content:space-between; align-items:flex-end; margin-bottom:1.5rem}
+.admin-actions{display:flex; flex-wrap:wrap; gap:.6rem}
+.kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(10.5rem,1fr)); gap:1rem; margin:1.5rem 0 2.5rem}
+.kpi{background:var(--surface); border:1px solid var(--rule); border-top:3px solid var(--accent); border-radius:12px; padding:1rem 1.15rem; display:flex; flex-direction:column; gap:.2rem}
+.kpi .kv{font-family:var(--display); font-weight:700; font-size:2.4rem; line-height:1}
+.kpi .kl{color:var(--muted); font-size:.95rem}
+.asec{margin-bottom:2.5rem; min-width:0}
+.asec h2{font-size:1.6rem; margin-bottom:.4rem}
+.asec h2.mt{margin-top:1.8rem}
+.funnel{list-style:none; padding:0; margin:1rem 0 0; display:flex; flex-direction:column; gap:.45rem}
+.frow{display:grid; grid-template-columns:minmax(0,15rem) minmax(0,1fr) 5.5rem; gap:.8rem; align-items:center; font-size:.98rem}
+.frow.sub .fl{padding-left:1rem; color:var(--muted); font-size:.92rem}
+.fb{height:.75rem; background:var(--panel); border-radius:99px; overflow:hidden}
+.fb span{display:block; height:100%; background:var(--accent); border-radius:99px}
+.frow.sub .fb span{background:var(--navy)}
+.fn{text-align:right; font-variant-numeric:tabular-nums; font-weight:600}
+.fn small{color:var(--muted); font-weight:400}
+.tscroll:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+.tscroll{overflow-x:auto; margin-top:1rem; border:1px solid var(--rule); border-radius:12px; background:var(--surface)}
+.atable{border-collapse:collapse; width:100%; font-size:.95rem; font-variant-numeric:tabular-nums}
+.atable th,.atable td{padding:.6rem .8rem; border-bottom:1px solid var(--rule); text-align:right; white-space:nowrap}
+.atable th[scope=row],.atable thead th:first-child{text-align:left; white-space:normal; min-width:11rem}
+.atable thead th{font-size:.85rem; color:var(--muted); font-weight:600}
+.atable tfoot th,.atable tfoot td{border-bottom:0; font-weight:700}
+.agrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr)); gap:0 2.5rem}
+.alist{list-style:none; padding:0; margin:.6rem 0 0; display:flex; flex-direction:column; gap:.35rem}
+.sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+@media (max-width:560px){ .frow{grid-template-columns:minmax(0,1fr) 4.5rem; } .frow .fb{grid-column:1 / -1; grid-row:2} .admin-actions .btn{flex:1 1 auto} }
+
+/* privacy policy */
+.policy{max-width:44rem; display:flex; flex-direction:column; gap:1.1rem; font-size:1.06rem}
+.policy h1{font-size:clamp(2.4rem, 5vw, 3.4rem)}
+.policy .updated{font-size:.95rem; color:var(--muted)}
+.policy .lede-p{font-size:1.2rem; color:var(--muted)}
+.policy h2{font-size:1.55rem; margin-top:1rem}
+
+/* back button */
+.backbar{padding-top:1.25rem}
+.back-btn{display:inline-flex; align-items:center; gap:.35rem; font:inherit; font-size:.98rem; font-weight:700; color:var(--fg); background:transparent; border:1.5px solid var(--rule); border-radius:999px; padding:.45rem 1rem .45rem .7rem; cursor:pointer; min-height:2.75rem; transition:border-color .2s ease}
+.back-btn:hover{border-color:var(--fg)}
+body.has-back .page{padding-top:1.75rem}
+
+/* care packages */
+.care{margin-top:1.25rem; border-radius:16px; padding:1.4rem; background:var(--panel); display:flex; flex-direction:column; gap:.7rem}
+.care-head{display:flex; gap:1rem; align-items:flex-start}
+.care-icon{flex:none; width:3rem; height:3rem; border-radius:12px; background:var(--surface); border:1.5px solid var(--accent); display:inline-flex; align-items:center; justify-content:center; color:var(--accent-text)}
+.care h3{font-size:1.45rem}
+.care .tagline-s{font-size:.88rem; font-weight:700; color:var(--accent-text)}
+.care form{gap:.8rem}
+.care-panel{border-radius:16px; padding:1.75rem; background:var(--panel); display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:2rem; align-items:start}
+.care-panel ul{margin:0; padding-left:1.2rem; display:flex; flex-direction:column; gap:.4rem}
+.care-panel h2{font-size:clamp(1.7rem, 3vw, 2.2rem); margin-bottom:.6rem}
+@media (max-width:860px){ .care-panel{grid-template-columns:1fr; gap:1rem; padding:1.4rem} }
+@media (max-width:1100px) and (min-width:861px){ .programs{grid-template-columns:repeat(2, minmax(0,1fr))} .program:nth-child(3){padding-left:0; border-left:0} .program{padding-bottom:1.5rem} }
+
+/* footer */
+.site-foot{border-top:1px solid var(--rule); padding-block:2.5rem 3rem; display:grid; grid-template-columns:minmax(0,1fr) auto; gap:2rem; font-size:.92rem; color:var(--muted)}
+.site-foot .tagline{font-family:var(--display); font-weight:500; font-style:italic; font-size:1.5rem; color:var(--fg); margin-bottom:.5rem}
+.foot-links{display:flex; flex-direction:column; gap:.4rem; text-align:right}
+.foot-links a{text-decoration:none}
+.foot-links a:hover{text-decoration:underline}
+@media (max-width:720px){ .site-foot{grid-template-columns:1fr} .foot-links{text-align:left} }
+</style>
+</head>
+<body>
+
+
+<a class="skip" href="#top" data-t="skip">Skip to content</a>
+<div class="wrap" id="top">
+  <header class="site-head" id="site-head">
+    <div class="head-row wrap">
+      <a class="brand" href="#home" data-nav="home" aria-label="Autism Kin Association">
+        <svg viewBox="-6 27 108 56" aria-hidden="true" fill="none" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><path d="M48 55 C60 77 96 79 96 55 C96 31 60 33 48 55" stroke="var(--mark-b)"/><path d="M48 55 C36 33 0 31 0 55 C0 79 36 77 48 55" stroke="var(--mark-a)"/></svg>
+        <span class="brand-name"><b>Autism Kin</b><span>association</span></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="#home" data-nav="home" data-t="nav_home">Home</a>
+        <a href="#about" data-nav="about" data-t="nav_about">About</a>
+        <a href="#course" data-nav="course" data-t="nav_course">Caregiver Course</a>
+        <a href="#resources" data-nav="resources" data-t="nav_resources">Resources</a>
+        <a href="#faq" data-nav="faq" data-t="nav_faq">FAQ</a>
+        <a href="#contact" data-nav="contact" data-t="nav_contact">Contact</a>
+        <a href="#learn" data-nav="learn" id="acct-link" class="acct-link">Sign in</a>
+      </nav>
+      <div class="head-tools">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true" aria-label="English" lang="en">EN</button>
+          <button type="button" data-lang="es" aria-pressed="false" aria-label="Español" lang="es">ES</button>
+          <button type="button" data-lang="zh" aria-pressed="false" aria-label="中文" lang="zh">中文</button>
+        </div>
+        <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav" data-t="menu">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="backbar" id="backbar" hidden>
+    <button type="button" class="back-btn" id="back-btn"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg><span data-t="back">Back</span></button>
+  </div>
+
+  <!-- HOME -->
+  <main class="page" id="page-home" data-page="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="status"><i aria-hidden="true"></i><span data-t="h_status">Now forming in Los Angeles</span></span>
+        <h1 data-t="h_title" tabindex="-1">Empowering every voice.</h1>
+        <p class="lede" data-t="h_lede"></p>
+        <div class="actions">
+          <a class="btn" href="#learn" data-nav="learn" data-t="cta_course">Start the free course</a>
+          <a class="btn line" href="#resources" data-nav="resources" data-t="h_cta2">Browse free resources</a>
+        </div>
+      </div>
+      <div class="hero-mark" aria-hidden="true">
+        <svg class="draw" viewBox="-6 27 108 56" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+          <path pathLength="1" d="M48 55 C36 33 0 31 0 55 C0 79 36 77 48 55" stroke="var(--mark-a)"/>
+          <path pathLength="1" d="M48 55 C60 77 96 79 96 55 C96 31 60 33 48 55" stroke="var(--mark-b)"/>
+        </svg>
+      </div>
+    </section>
+
+    <section aria-labelledby="b-title">
+      <h2 class="section-title" id="b-title" data-t="b_title">What we're building</h2>
+      <p class="muted measure" style="margin-bottom:2rem" data-t="b_lede"></p>
+      <div class="programs">
+        <div class="program"><span class="tag" data-t="p1_tag"></span><h3 data-t="p1_t"></h3><p data-t="p1_d"></p></div>
+        <div class="program"><span class="tag" data-t="p3_tag"></span><h3 data-t="p3_t"></h3><p data-t="p3_d"></p></div>
+        <div class="program"><span class="tag" data-t="p2_tag"></span><h3 data-t="p2_t"></h3><p data-t="p2_d"></p></div>
+        <div class="program"><span class="tag" data-t="p4_tag"></span><h3 data-t="p4_t"></h3><p data-t="p4_d"></p></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="pil-title">
+      <h2 class="section-title" id="pil-title" data-t="pil_title">The course, in three pillars</h2>
+      <div class="pillars" style="margin-block:2rem 1.75rem">
+        <div class="pillar"><span class="numeral" aria-hidden="true">I</span><h3 data-t="pI_n"></h3><p data-t="pI_d"></p></div>
+        <div class="pillar"><span class="numeral" aria-hidden="true">II</span><h3 data-t="pII_n"></h3><p data-t="pII_d"></p></div>
+        <div class="pillar"><span class="numeral" aria-hidden="true">III</span><h3 data-t="pIII_n"></h3><p data-t="pIII_d"></p></div>
+      </div>
+      <a class="text-link" href="#course" data-nav="course" data-t="pil_link"></a>
+    </section>
+
+    <section aria-labelledby="f-title">
+      <h2 class="section-title" id="f-title" data-t="f_heading">A note from our founder</h2>
+      <div class="founder">
+      <img src="img/peter-rodriguez.jpg" alt="Peter Rodriguez, founder of Autism Kin" width="800" height="1000">
+      <div>
+        <blockquote data-t="f_quote"></blockquote>
+        <div class="who"><b>Peter Rodriguez, M.S., RBT</b><span data-t="f_role"></span></div>
+        <p style="margin-top:1.25rem"><a class="text-link" href="#about" data-nav="about" data-t="f_link"></a></p>
+      </div>
+    </div>
+    </section>
+
+    <section class="band" id="home-waitlist" aria-labelledby="w-title">
+      <div><h2 id="w-title" data-t="w_title"></h2><p class="muted" data-t="w_lede"></p></div>
+      <div class="actions" style="align-self:center; justify-content:flex-end">
+        <a class="btn" href="#learn" data-nav="learn" data-t="cta_account">Create a free account</a>
+        <a class="btn line" href="#learn" data-nav="learn" style="background:transparent; color:var(--band-fg); border-color:rgba(255,255,255,.45)" data-t="nav_signin">Sign in</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ABOUT -->
+  <main class="page" id="page-about" data-page="about" hidden>
+    <div class="page-head"><h1 data-t="a_title" tabindex="-1"></h1></div>
+    <section class="story">
+      <div class="story-text"><p data-t="a_p1"></p><p data-t="a_p2"></p><p data-t="a_p3"></p></div>
+      <figure><img src="img/peter-rodriguez.jpg" alt="Peter Rodriguez" width="800" height="1000"><figcaption><b>Peter Rodriguez, M.S., RBT</b><span data-t="a_role"></span></figcaption></figure>
+    </section>
+    <section aria-labelledby="m-title">
+      <h2 class="section-title" id="m-title" data-t="m_title"></h2>
+      <p class="mission" data-t="m_text"></p>
+    </section>
+    <section aria-labelledby="hw-title">
+      <h2 class="section-title" id="hw-title" data-t="hw_title" style="margin-bottom:1.75rem"></h2>
+      <div class="principles">
+        <div><h3 data-t="pr1_t"></h3><p data-t="pr1_d"></p></div>
+        <div><h3 data-t="pr2_t"></h3><p data-t="pr2_d"></p></div>
+        <div><h3 data-t="pr3_t"></h3><p data-t="pr3_d"></p></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- COURSE -->
+  <main class="page" id="page-course" data-page="course" hidden>
+    <div class="page-head"><h1 data-t="c_title" tabindex="-1"></h1><p data-t="c_lede"></p></div>
+    <section aria-label="Pillars">
+      <div class="pillar-detail"><span class="numeral" aria-hidden="true">I</span>
+        <div><h2 data-t="pI_n"></h2><p class="muted" data-t="cI_who"></p></div>
+        <div><h3 data-t="c_learn"></h3><ul><li data-t="cI_1"></li><li data-t="cI_2"></li><li data-t="cI_3"></li><li data-t="cI_4"></li></ul></div></div>
+      <div class="pillar-detail"><span class="numeral" aria-hidden="true">II</span>
+        <div><h2 data-t="pII_n"></h2><p class="muted" data-t="cII_who"></p></div>
+        <div><h3 data-t="c_learn"></h3><ul><li data-t="cII_1"></li><li data-t="cII_2"></li><li data-t="cII_3"></li><li data-t="cII_4"></li></ul></div></div>
+      <div class="pillar-detail"><span class="numeral" aria-hidden="true">III</span>
+        <div><h2 data-t="pIII_n"></h2><p class="muted" data-t="cIII_who"></p></div>
+        <div><h3 data-t="c_learn"></h3><ul><li data-t="cIII_1"></li><li data-t="cIII_2"></li><li data-t="cIII_3"></li><li data-t="cIII_4"></li></ul></div></div>
+    </section>
+    <section aria-labelledby="hc-title">
+      <h2 class="section-title" id="hc-title" data-t="hc_title" style="margin-bottom:1.5rem"></h2>
+      <div class="facts">
+        <div><b data-t="fa1_t"></b><span data-t="fa1_d"></span></div>
+        <div><b data-t="fa2_t"></b><span data-t="fa2_d"></span></div>
+        <div><b data-t="fa3_t"></b><span data-t="fa3_d"></span></div>
+        <div><b data-t="fa4_t"></b><span data-t="fa4_d"></span></div>
+      </div>
+    </section>
+    <section class="care-panel" aria-labelledby="cp-title">
+      <div><span class="tag" data-t="p4_tag"></span><h2 id="cp-title" data-t="cp_title"></h2><p class="muted" data-t="cp_lede"></p></div>
+      <div><h3 style="font-family:var(--body); font-size:.95rem; font-weight:700; color:var(--accent-text); margin-bottom:.5rem" data-t="cp_inside"></h3>
+        <ul><li data-t="cp_1"></li><li data-t="cp_2"></li><li data-t="cp_3"></li><li data-t="cp_4"></li></ul></div>
+    </section>
+    <div class="callout"><p data-t="c_status"></p><a class="btn" href="#learn" data-nav="learn" data-t="cta_account"></a></div>
+  </main>
+
+  <!-- RESOURCES -->
+  <main class="page" id="page-resources" data-page="resources" hidden>
+    <div class="page-head"><h1 data-t="r_title" tabindex="-1"></h1><p data-t="r_lede"></p></div>
+    <section class="shelf" id="shelf" aria-label="Downloads"></section>
+    <p class="notice" id="dl-status" role="status" hidden></p>
+    <section aria-labelledby="v-title" class="callout" style="display:block">
+      <h2 id="v-title" style="font-size:1.4rem; margin-bottom:.4rem" data-t="v_title"></h2>
+      <p class="muted" data-t="v_d"></p>
+    </section>
+    <p class="small-note" data-t="r_note"></p>
+  </main>
+
+  <!-- CONTACT -->
+  <main class="page" id="page-contact" data-page="contact" hidden>
+    <div class="page-head"><h1 data-t="ct_title" tabindex="-1"></h1><p data-t="ct_lede"></p></div>
+    <div class="contact-grid">
+      <form novalidate data-form="contact">
+        <div class="row2">
+          <div class="field"><label for="ct-name" data-t="f_name"></label><input id="ct-name" name="name" autocomplete="name"></div>
+          <div class="field"><label for="ct-email" data-t="f_email"></label><input id="ct-email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="field"><label for="ct-msg" data-t="f_msg"></label><textarea id="ct-msg" name="message" required></textarea></div>
+        <p class="error" role="alert" hidden></p>
+        <div><button class="btn" type="submit" data-t="f_send"></button></div>
+        <p class="notice" aria-live="polite" hidden></p>
+      </form>
+      <aside class="side">
+        <div><h2 data-t="ct_email"></h2><div class="email-row"><span class="email" id="email">info@autismkin.com</span><button class="copy" id="copy" type="button" data-t="copy"></button></div></div>
+        <div><h2 data-t="ct_follow"></h2><div class="socials"><a class="text-link" href="https://www.instagram.com/joinautismkin/" target="_blank" rel="noopener">Instagram</a><a class="text-link" href="https://www.facebook.com/joinautismkin" target="_blank" rel="noopener">Facebook</a></div><p class="muted" style="margin-top:.4rem">@joinautismkin</p></div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- MY LEARNING -->
+  <main class="page" id="page-learn" data-page="learn" hidden>
+    <div id="learn-root" aria-live="off"></div>
+  </main>
+
+  <!-- FAQ -->
+  <main class="page" id="page-faq" data-page="faq" hidden>
+    <div id="faq-root"></div>
+  </main>
+
+  <!-- ADMIN (not linked from the menu) -->
+  <main class="page" id="page-admin" data-page="admin" hidden>
+    <div id="admin-root" class="admin"></div>
+  </main>
+
+  <!-- PRIVACY -->
+  <main class="page" id="page-privacy" data-page="privacy" hidden>
+    <article class="policy" id="policy-root"></article>
+  </main>
+
+  <footer class="site-foot">
+    <div><p class="tagline" data-t="h_title"></p><p class="measure" data-t="legal"></p></div>
+    <div class="foot-links">
+      <a href="#resources" data-nav="resources" data-t="nav_resources"></a>
+      <a href="#contact" data-nav="contact" data-t="nav_contact"></a>
+      <a href="#faq" data-nav="faq" data-t="nav_faq"></a>
+      <a href="#privacy" data-nav="privacy" data-t="nav_privacy"></a>
+      <span>© 2026 Autism Kin Association</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+// Set FORM_ENDPOINT to a form service URL (for example Formspree) when the site goes live.
+var FORM_ENDPOINT = "";
+
+var DOCS = [
+  {slug:"first-steps", pages:{en:1,es:2,zh:1}},
+  {slug:"regional-center-call-script", pages:{en:1,es:1,zh:1}},
+  {slug:"family-glossary", pages:{en:2,es:2,zh:2}},
+  {slug:"questions-for-your-aba-team", pages:{en:1,es:1,zh:1}},
+  {slug:"iep-meeting-prep", pages:{en:1,es:1,zh:1}},
+  {slug:"carrying-progress-home", pages:{en:1,es:1,zh:1}},
+  {slug:"visual-schedule-kit", pages:{en:2,es:2,zh:2}}
+];
+
+var T = {
+en:{
+ nav_home:"Home", nav_about:"About", nav_course:"Caregiver Course", nav_resources:"Resources", nav_contact:"Contact", menu:"Menu",
+ h_status:"Now forming in Los Angeles", h_title:"Empowering every voice.",
+ h_lede:"Free courses, short videos and take-home resources that help parents understand their child's autism services and carry progress into everyday life, in English, Spanish and Mandarin.",
+ cta_waitlist:"Join the waitlist", h_cta2:"Browse free resources",
+ b_title:"What we're building", b_lede:"Everything is free for families during our first year.",
+ p1_tag:"Available now", p1_t:"Caregiver Course", p1_d:"Three self-paced pillars, from the first weeks after a diagnosis to building skills at home.",
+ p2_tag:"In production", p2_t:"Video guide library", p2_d:"Short animated videos on the questions families ask most, ready whenever you need a refresher.",
+ p3_tag:"Available now", p3_t:"Resource library", p3_d:"Printable guides in English, Spanish and Mandarin. Seven guides are ready to download today.",
+ pil_title:"The Caregiver Course, in three pillars",
+ pI_n:"Getting started", pI_d:"For new parents in the first months after a diagnosis.",
+ pII_n:"Partnering in services", pII_d:"For parents whose child is receiving ABA or other services.",
+ pIII_n:"Growing at home", pIII_d:"For carrying progress into everyday routines and communication.",
+ pil_link:"See what each pillar covers",
+ f_quote:"The science of behavior has already given us effective methods. What remains unsolved is distribution. I believe the next advance in autism care will come not from a new technique, but from placing what we already know in the hands of every family.", f_heading:"A note from our founder",
+ f_role:"Founder", f_link:"Read why we started",
+ w_title:"Start the free course today", w_lede:"Create a free account to work through the three pillars at your own pace, track your progress and finish with a short quiz.",
+ f_email:"Email", f_name:"Name", f_msg:"Message", f_send:"Send message", f_role_l:"I am", f_lang:"Preferred language",
+ o_new:"A parent of a newly diagnosed child", o_services:"A parent of a child in services", o_pro:"A clinician or educator", o_other:"Something else",
+ err_email:"Enter your email address so we can reach you.", err_format:"Enter an email address in the format name@example.com.", err_msg:"Write a message before sending.",
+ note_preview:"This form isn't connected yet, so nothing was sent. For now, please email info@autismkin.com.",
+ note_ok_wait:"You're on the list. We'll email you when Pillar I opens.", note_ok_msg:"Message sent. We'll reply to the email you entered.", note_fail:"The message didn't go through. Please email info@autismkin.com instead.",
+ a_title:"Why Autism Kin exists",
+ a_p1:"Behavior analysis rests on a simple premise: what a child learns in one setting should carry into the next.",
+ a_p2:"Over six years in applied behavior analysis, first as a behavior therapist and then through a Master of Science in Applied Behavior Analysis, I have watched that premise falter most often at home. Not for lack of love or effort, but for lack of access to the language, the methods and the reasoning behind them. Families are asked to sustain progress they were never fully taught to understand.",
+ a_p3:"Autism Kin exists to close that gap. Every parent should be able to understand and communicate with their kin. That is what empowering every voice means.",
+ a_role:"Founder. Pursuing BCBA certification, 2027.",
+ m_title:"Our mission",
+ m_text:"Autism Kin Association expands access to culturally responsive education and resources for families of children with autism, helping caregivers understand, take part in, and extend the benefits of behavioral and developmental services.",
+ hw_title:"How we work",
+ pr1_t:"Plain language", pr1_d:"We explain the jargon so you can take part in every meeting about your child, not just sit in on it.",
+ pr2_t:"Culturally responsive", pr2_d:"Materials in English, Spanish and Mandarin, built around the real routines, languages and values of Los Angeles families.",
+ pr3_t:"Independent", pr3_d:"We don't sell therapy services. Our guidance is neutral, so you can choose what is right for your family.",
+ c_title:"Caregiver Course", c_lede:"Three pillars, each one self-paced and free. Start wherever your family is today.", c_learn:"What you'll learn",
+ cI_who:"For parents in the first months after a diagnosis.",
+ cI_1:"What autism is, and what it isn't", cI_2:"The services available in California and how to request them", cI_3:"How to read an evaluation report", cI_4:"Organizing your family folder",
+ cII_who:"For parents whose child is receiving ABA or other services.",
+ cII_1:"How ABA sessions and treatment plans work", cII_2:"What parent training is and how to get the most from it", cII_3:"Understanding your child's goals and progress data", cII_4:"Speaking up for your family's priorities, culture and language",
+ cIII_who:"For families ready to build skills into everyday life.",
+ cIII_1:"Using the same words and prompts as your child's team", cIII_2:"Visual schedules, real choices and predictable routines", cIII_3:"Creating everyday reasons to communicate", cIII_4:"Tracking what works and sharing it with your team",
+ hc_title:"How the course works",
+ fa1_t:"Self-paced", fa1_d:"Watch, read and practice on your own schedule.",
+ fa2_t:"Free", fa2_d:"No cost for families during our first year.",
+ fa3_t:"Three languages", fa3_d:"English, Spanish and Mandarin.",
+ fa4_t:"Grounded in practice", fa4_d:"Written from years of work alongside families in ABA.",
+ c_status:"The course is free. Create an account to save your progress across all three pillars.",
+ r_title:"Free resources", r_lede:"Printable guides to keep on hand. Download them in English, Spanish or Mandarin, and share them with anyone who might need them.",
+ dl_label:"Download PDF", pages_1:"1 page", pages_n:"{n} pages",
+ d_first_steps_t:"First steps after an autism diagnosis", d_first_steps_m:"Pillar I", d_first_steps_d:"Six steps to get support moving in California, plus a checklist for your family folder.",
+ d_family_glossary_t:"Words you'll hear: a family glossary", d_family_glossary_m:"Pillars I and II", d_family_glossary_d:"Seventeen terms you'll hear from therapists, schools and health plans, explained in plain language.",
+ d_questions_for_your_aba_team_t:"Questions to ask your ABA team", d_questions_for_your_aba_team_m:"Pillar II", d_questions_for_your_aba_team_d:"Questions to bring to your next meeting, with boxes to tick off what you've covered.",
+ d_carrying_progress_home_t:"Carrying progress home: everyday strategies", d_carrying_progress_home_m:"Pillar III", d_carrying_progress_home_d:"Six everyday strategies to practice at home, each with an example.",
+ v_title:"Video guide library", v_d:"Short animated videos are in production and will be added to the course lessons as they are ready.",
+ r_note:"These guides are educational information only, not medical, legal or clinical advice. Talk with your child's care team about your family's situation.",
+ dl_fail:"The download didn't start. Try again, or email info@autismkin.com and we'll send it.",
+ ct_title:"Get in touch", ct_lede:"Questions, ideas, or want to help? Send a message, or email us directly.", ct_email:"Email us", ct_follow:"Follow along", copy:"Copy", copied:"Copied", selected:"Selected",
+ skip:"Skip to content", dl_preparing:"Preparing…", dl_saved:"Saved",
+ nav_learn:"My learning", nav_signin:"Sign in", cta_course:"Start the free course", cta_account:"Create a free account",
+ nav_privacy:"Privacy policy", nav_admin:"Admin",
+ nav_faq:"FAQ",
+ p4_tag:"In production", p4_t:"Family care packages", p4_d:"Families who finish the course will receive a free care package with printed guides, visual tools and a few things just for them.",
+ cp_title:"A care package for every family who finishes", cp_lede:"We're putting together a free care package for families who complete all three pillars. It's in production now, and families who finish the course can ask to be notified when it's ready.",
+ cp_inside:"What we're planning to include", cp_1:"Printed guides in your family's language and a folder to keep your documents", cp_2:"A first-then board, picture cards and a visual timer", cp_3:"Comfort and sensory items suited to your child's age", cp_4:"A certificate, a thank-you note and something just for you",
+ d_regional_center_call_script_t:"Calling your regional center: a script", d_regional_center_call_script_m:"Pillar I", d_regional_center_call_script_d:"What to have ready, what to say and what to ask on your first call, with space for notes.",
+ d_iep_meeting_prep_t:"Preparing for an IEP meeting", d_iep_meeting_prep_m:"Pillar II", d_iep_meeting_prep_d:"A before, during and after checklist so you can take part as an equal member of your child's school team.",
+ d_visual_schedule_kit_t:"Visual schedule starter kit", d_visual_schedule_kit_m:"Pillar III", d_visual_schedule_kit_d:"Five steps to a visual schedule, plus printable first-then board and routine strip templates.",
+ back:"Back",
+ legal:"Autism Kin Association is a California nonprofit in formation, based in Los Angeles. We have not yet received tax-exempt status."
+},
+es:{
+ nav_home:"Inicio", nav_about:"Nosotros", nav_course:"Curso para Cuidadores", nav_resources:"Recursos", nav_contact:"Contacto", menu:"Menú",
+ h_status:"En formación en Los Ángeles", h_title:"Dando voz a cada persona.",
+ h_lede:"Cursos, videos cortos y recursos para llevar a casa, gratuitos, que ayudan a los padres a entender los servicios de autismo de su hijo y a llevar el progreso a la vida diaria, en inglés, español y mandarín.",
+ cta_waitlist:"Unirse a la lista de espera", h_cta2:"Ver recursos gratuitos",
+ b_title:"Lo que estamos construyendo", b_lede:"Todo es gratuito para las familias durante nuestro primer año.",
+ p1_tag:"Disponible ahora", p1_t:"Curso para Cuidadores", p1_d:"Tres pilares a su propio ritmo, desde las primeras semanas después del diagnóstico hasta desarrollar habilidades en casa.",
+ p2_tag:"En producción", p2_t:"Biblioteca de videos", p2_d:"Videos animados cortos sobre las preguntas más frecuentes de las familias, listos cuando necesite repasar.",
+ p3_tag:"Disponible ahora", p3_t:"Biblioteca de recursos", p3_d:"Guías para imprimir en inglés, español y mandarín. Ya hay siete guías listas para descargar.",
+ pil_title:"El Curso para Cuidadores, en tres pilares",
+ pI_n:"Primeros pasos", pI_d:"Para padres en los primeros meses después de un diagnóstico.",
+ pII_n:"Colaborar en los servicios", pII_d:"Para padres cuyo hijo recibe ABA u otros servicios.",
+ pIII_n:"Crecer en casa", pIII_d:"Para llevar el progreso a las rutinas y la comunicación de cada día.",
+ pil_link:"Vea lo que cubre cada pilar",
+ f_quote:"La ciencia del comportamiento ya nos ha dado métodos eficaces. Lo que sigue sin resolverse es su distribución. Creo que el próximo avance en la atención del autismo no vendrá de una nueva técnica, sino de poner lo que ya sabemos en manos de cada familia.", f_heading:"Unas palabras de nuestro fundador",
+ f_role:"Fundador", f_link:"Lea por qué empezamos",
+ w_title:"Empiece hoy el curso gratuito", w_lede:"Cree una cuenta gratuita para avanzar en los tres pilares a su propio ritmo, seguir su progreso y terminar con una prueba corta.",
+ f_email:"Correo electrónico", f_name:"Nombre", f_msg:"Mensaje", f_send:"Enviar mensaje", f_role_l:"Soy", f_lang:"Idioma preferido",
+ o_new:"Padre o madre de un hijo recién diagnosticado", o_services:"Padre o madre de un hijo que recibe servicios", o_pro:"Profesional clínico o educador", o_other:"Otro",
+ err_email:"Escriba su correo electrónico para que podamos contactarle.", err_format:"Escriba un correo con el formato nombre@ejemplo.com.", err_msg:"Escriba un mensaje antes de enviarlo.",
+ note_preview:"Este formulario aún no está conectado, así que no se envió nada. Por ahora, escriba a info@autismkin.com.",
+ note_ok_wait:"Ya está en la lista. Le escribiremos cuando abra el Pilar I.", note_ok_msg:"Mensaje enviado. Le responderemos al correo que escribió.", note_fail:"El mensaje no se pudo enviar. Por favor escriba a info@autismkin.com.",
+ a_title:"Por qué existe Autism Kin",
+ a_p1:"El análisis de la conducta parte de una premisa sencilla: lo que un niño aprende en un entorno debe trasladarse al siguiente.",
+ a_p2:"En seis años en el análisis aplicado de la conducta, primero como terapeuta conductual y luego con una Maestría en Ciencias en Análisis Aplicado de la Conducta, he visto que esa premisa falla con más frecuencia en casa. No por falta de amor ni de esfuerzo, sino por falta de acceso al lenguaje, a los métodos y al razonamiento que los sustentan. A las familias se les pide mantener un progreso que nunca se les enseñó del todo a entender.",
+ a_p3:"Autism Kin existe para cerrar esa brecha. Todo padre debería poder entender a su hijo y comunicarse con él. Eso es lo que significa dar voz a cada persona.",
+ a_role:"Fundador. En camino a la certificación BCBA, 2027.",
+ m_title:"Nuestra misión",
+ m_text:"Autism Kin Association amplía el acceso a educación y recursos culturalmente pertinentes para las familias de niños con autismo, ayudando a los cuidadores a entender, participar y extender los beneficios de los servicios conductuales y del desarrollo.",
+ hw_title:"Cómo trabajamos",
+ pr1_t:"Lenguaje sencillo", pr1_d:"Explicamos la jerga para que usted participe en cada reunión sobre su hijo, no solo asista.",
+ pr2_t:"Culturalmente pertinentes", pr2_d:"Materiales en inglés, español y mandarín, pensados para las rutinas, los idiomas y los valores reales de las familias de Los Ángeles.",
+ pr3_t:"Independientes", pr3_d:"No vendemos servicios de terapia. Nuestra orientación es neutral, para que usted elija lo mejor para su familia.",
+ c_title:"Curso para Cuidadores", c_lede:"Tres pilares, cada uno gratuito y a su propio ritmo. Empiece donde esté su familia hoy.", c_learn:"Lo que aprenderá",
+ cI_who:"Para padres en los primeros meses después de un diagnóstico.",
+ cI_1:"Qué es el autismo y qué no es", cI_2:"Los servicios disponibles en California y cómo solicitarlos", cI_3:"Cómo leer un informe de evaluación", cI_4:"Cómo organizar su carpeta familiar",
+ cII_who:"Para padres cuyo hijo recibe ABA u otros servicios.",
+ cII_1:"Cómo funcionan las sesiones y los planes de tratamiento de ABA", cII_2:"Qué es el entrenamiento para padres y cómo aprovecharlo", cII_3:"Cómo entender las metas y los datos de progreso de su hijo", cII_4:"Cómo defender las prioridades, la cultura y el idioma de su familia",
+ cIII_who:"Para familias listas para integrar habilidades en la vida diaria.",
+ cIII_1:"Usar las mismas palabras y ayudas que el equipo de su hijo", cIII_2:"Horarios visuales, opciones reales y rutinas predecibles", cIII_3:"Crear razones diarias para comunicarse", cIII_4:"Registrar lo que funciona y compartirlo con su equipo",
+ hc_title:"Cómo funciona el curso",
+ fa1_t:"A su propio ritmo", fa1_d:"Vea, lea y practique según su horario.",
+ fa2_t:"Gratuito", fa2_d:"Sin costo para las familias durante nuestro primer año.",
+ fa3_t:"Tres idiomas", fa3_d:"Inglés, español y mandarín.",
+ fa4_t:"Basado en la práctica", fa4_d:"Escrito a partir de años de trabajo junto a familias en ABA.",
+ c_status:"El curso es gratuito. Cree una cuenta para guardar su progreso en los tres pilares.",
+ r_title:"Recursos gratuitos", r_lede:"Guías para imprimir y tener a mano. Descárguelas en inglés, español o mandarín, y compártalas con quien las necesite.",
+ dl_label:"Descargar PDF", pages_1:"1 página", pages_n:"{n} páginas",
+ d_first_steps_t:"Primeros pasos después de un diagnóstico de autismo", d_first_steps_m:"Pilar I", d_first_steps_d:"Seis pasos para poner en marcha el apoyo en California, más una lista para su carpeta familiar.",
+ d_family_glossary_t:"Palabras que escuchará: glosario para la familia", d_family_glossary_m:"Pilares I y II", d_family_glossary_d:"Diecisiete términos que escuchará de terapeutas, escuelas y planes de salud, explicados con palabras sencillas.",
+ d_questions_for_your_aba_team_t:"Preguntas para su equipo de ABA", d_questions_for_your_aba_team_m:"Pilar II", d_questions_for_your_aba_team_d:"Preguntas para llevar a su próxima reunión, con casillas para marcar lo que ya habló.",
+ d_carrying_progress_home_t:"Llevar el progreso a casa: estrategias para el día a día", d_carrying_progress_home_m:"Pilar III", d_carrying_progress_home_d:"Seis estrategias para practicar en casa, cada una con un ejemplo.",
+ v_title:"Biblioteca de videos", v_d:"Los videos animados cortos están en producción y se agregarán a las lecciones del curso a medida que estén listos.",
+ r_note:"Estas guías son información educativa; no son asesoramiento médico, legal ni clínico. Hable con el equipo de atención de su hijo sobre la situación de su familia.",
+ dl_fail:"La descarga no comenzó. Intente de nuevo o escriba a info@autismkin.com y se la enviaremos.",
+ ct_title:"Contáctenos", ct_lede:"¿Preguntas, ideas o quiere ayudar? Envíe un mensaje o escríbanos directamente.", ct_email:"Escríbanos", ct_follow:"Síganos", copy:"Copiar", copied:"Copiado", selected:"Seleccionado",
+ skip:"Ir al contenido", dl_preparing:"Preparando…", dl_saved:"Guardado",
+ nav_learn:"Mi aprendizaje", nav_signin:"Iniciar sesión", cta_course:"Empezar el curso gratuito", cta_account:"Crear una cuenta gratuita",
+ nav_privacy:"Política de privacidad", nav_admin:"Admin",
+ nav_faq:"Preguntas frecuentes",
+ p4_tag:"En producción", p4_t:"Paquetes para familias", p4_d:"Las familias que terminen el curso recibirán un paquete gratuito con guías impresas, herramientas visuales y algunos detalles para ellas.",
+ cp_title:"Un paquete para cada familia que termine el curso", cp_lede:"Estamos preparando un paquete gratuito para las familias que completen los tres pilares. Está en producción, y las familias que terminen el curso pueden pedir que les avisemos cuando esté listo.",
+ cp_inside:"Lo que planeamos incluir", cp_1:"Guías impresas en el idioma de su familia y una carpeta para guardar sus documentos", cp_2:"Un tablero de primero y luego, tarjetas con imágenes y un temporizador visual", cp_3:"Artículos sensoriales y de consuelo adecuados para la edad de su hijo", cp_4:"Un certificado, una nota de agradecimiento y algo solo para usted",
+ d_regional_center_call_script_t:"Cómo llamar a su centro regional: un guion", d_regional_center_call_script_m:"Pilar I", d_regional_center_call_script_d:"Qué tener a mano, qué decir y qué preguntar en su primera llamada, con espacio para notas.",
+ d_iep_meeting_prep_t:"Cómo prepararse para una reunión del IEP", d_iep_meeting_prep_m:"Pilar II", d_iep_meeting_prep_d:"Una lista para antes, durante y después, para participar como miembro igual del equipo escolar de su hijo.",
+ d_visual_schedule_kit_t:"Kit para empezar un horario visual", d_visual_schedule_kit_m:"Pilar III", d_visual_schedule_kit_d:"Cinco pasos para un horario visual, más plantillas para imprimir de primero y luego y de tira de rutina.",
+ back:"Atrás",
+ legal:"Autism Kin Association es una organización sin fines de lucro de California en formación, con sede en Los Ángeles. Aún no hemos recibido la exención de impuestos."
+},
+zh:{
+ nav_home:"首页", nav_about:"关于我们", nav_course:"家长课程", nav_resources:"资源", nav_contact:"联系我们", menu:"菜单",
+ h_status:"正在洛杉矶筹建", h_title:"让每一种声音都被听见。",
+ h_lede:"我们提供免费的课程、简短视频和可带回家的资料，帮助家长了解孩子所接受的自闭症相关服务，并把进步带入日常生活。提供英文、西班牙文和中文版本。",
+ cta_waitlist:"加入候补名单", h_cta2:"浏览免费资源",
+ b_title:"我们正在打造的内容", b_lede:"在我们的第一年，所有内容对家庭完全免费。",
+ p1_tag:"现已推出", p1_t:"家长课程", p1_d:"三大支柱课程，按自己的节奏学习，从确诊后的最初几周，到在家培养技能。",
+ p2_tag:"制作中", p2_t:"视频指南库", p2_d:"简短的动画视频，解答家庭最常问的问题，随时可以回看复习。",
+ p3_tag:"现已推出", p3_t:"资源库", p3_d:"提供英文、西班牙文和中文的可打印指南。七份指南现在即可下载。",
+ pil_title:"家长课程的三大支柱",
+ pI_n:"起步", pI_d:"适合孩子刚确诊、处于最初几个月的家长。",
+ pII_n:"参与服务", pII_d:"适合孩子正在接受ABA或其他服务的家长。",
+ pIII_n:"在家成长", pIII_d:"帮助家庭把进步带入日常作息与沟通。",
+ pil_link:"查看每个支柱的内容",
+ f_quote:"行为科学早已为我们提供了有效的方法。尚未解决的，是如何让它们触达每一个人。我相信，自闭症照护的下一次进步不会来自一项新技术，而是来自把我们已经掌握的知识交到每一个家庭手中。", f_heading:"创始人寄语",
+ f_role:"创始人", f_link:"了解我们为何创办",
+ w_title:"今天就开始免费课程", w_lede:"创建免费账户，按照自己的节奏完成三大支柱课程，跟踪学习进度，最后完成一个简短测验。",
+ f_email:"电子邮箱", f_name:"姓名", f_msg:"留言", f_send:"发送留言", f_role_l:"我是", f_lang:"首选语言",
+ o_new:"孩子刚确诊的家长", o_services:"孩子正在接受服务的家长", o_pro:"临床人员或教育工作者", o_other:"其他",
+ err_email:"请输入您的电子邮箱，以便我们联系您。", err_format:"请按 name@example.com 的格式输入电子邮箱。", err_msg:"请先填写留言再发送。",
+ note_preview:"此表单尚未连接，因此没有发送任何内容。目前请发送邮件至 info@autismkin.com。",
+ note_ok_wait:"您已加入候补名单。支柱一开课时我们会通过邮件通知您。", note_ok_msg:"留言已发送。我们会回复到您填写的邮箱。", note_fail:"留言未能发送。请改为发送邮件至 info@autismkin.com。",
+ a_title:"Autism Kin 为何存在",
+ a_p1:"行为分析建立在一个简单的前提之上：孩子在一个环境中学到的东西，应当能够延续到下一个环境。",
+ a_p2:"我在应用行为分析领域工作了六年，从行为治疗师做起，后来获得应用行为分析理学硕士学位。我看到，这个前提最常在家庭中落空。原因不是缺少爱或努力，而是家长难以接触到这些方法背后的语言、技巧和道理。家庭被要求维持他们从未被完整教会去理解的进步。",
+ a_p3:"Autism Kin 的存在，就是为了弥合这道鸿沟。每位家长都应该能够理解自己的孩子，并与孩子沟通。这就是“让每一种声音都被听见”的意义。",
+ a_role:"创始人。正在考取BCBA认证（2027年）。",
+ m_title:"我们的使命",
+ m_text:"Autism Kin Association 致力于让自闭症儿童的家庭更容易获得符合其文化背景的教育与资源，帮助照顾者理解、参与并延续行为与发展服务带来的益处。",
+ hw_title:"我们的工作方式",
+ pr1_t:"通俗易懂", pr1_d:"我们解释专业术语，让您在每一次关于孩子的会议中都能真正参与，而不只是旁听。",
+ pr2_t:"尊重文化", pr2_d:"提供英文、西班牙文和中文资料，围绕洛杉矶家庭真实的作息、语言和价值观设计。",
+ pr3_t:"保持独立", pr3_d:"我们不销售治疗服务。我们的指导保持中立，让您为家庭做出最合适的选择。",
+ c_title:"家长课程", c_lede:"三大支柱，每一个都免费并可按自己的节奏学习。从您家庭目前所处的阶段开始。", c_learn:"您将学到",
+ cI_who:"适合孩子刚确诊、处于最初几个月的家长。",
+ cI_1:"什么是自闭症，什么不是", cI_2:"加州可提供的服务以及如何申请", cI_3:"如何阅读评估报告", cI_4:"如何整理家庭资料夹",
+ cII_who:"适合孩子正在接受ABA或其他服务的家长。",
+ cII_1:"ABA治疗课程和治疗计划如何运作", cII_2:"什么是家长培训，以及如何充分利用", cII_3:"理解孩子的目标和进展数据", cII_4:"表达您家庭的优先事项、文化和语言需求",
+ cIII_who:"适合准备把技能融入日常生活的家庭。",
+ cIII_1:"使用与孩子团队相同的用语和提示", cIII_2:"视觉日程表、真正的选择和可预测的作息", cIII_3:"在日常生活中创造沟通的理由", cIII_4:"记录有效的方法并与团队分享",
+ hc_title:"课程如何进行",
+ fa1_t:"按自己的节奏", fa1_d:"按照您的时间观看、阅读和练习。",
+ fa2_t:"免费", fa2_d:"在我们的第一年，对家庭完全免费。",
+ fa3_t:"三种语言", fa3_d:"英文、西班牙文和中文。",
+ fa4_t:"源自实践", fa4_d:"基于多年在ABA领域与家庭合作的经验编写。",
+ c_status:"课程完全免费。创建账户，即可保存您在三大支柱中的学习进度。",
+ r_title:"免费资源", r_lede:"可打印的指南，方便随时查阅。可下载英文、西班牙文或中文版本，并分享给有需要的人。",
+ dl_label:"下载PDF", pages_1:"1页", pages_n:"{n}页",
+ d_first_steps_t:"确诊自闭症后的第一步", d_first_steps_m:"支柱一", d_first_steps_d:"在加州启动支持服务的六个步骤，并附家庭资料夹清单。",
+ d_family_glossary_t:"您会听到的术语：家庭词汇表", d_family_glossary_m:"支柱一与支柱二", d_family_glossary_d:"用简单的语言解释您会从治疗师、学校和医疗保险那里听到的十七个术语。",
+ d_questions_for_your_aba_team_t:"可以向ABA团队提出的问题", d_questions_for_your_aba_team_m:"支柱二", d_questions_for_your_aba_team_d:"带到下一次会议的问题清单，附有方框，可勾选已讨论的内容。",
+ d_carrying_progress_home_t:"把进步带回家：日常生活策略", d_carrying_progress_home_m:"支柱三", d_carrying_progress_home_d:"六个可在家练习的日常策略，每个都附有示例。",
+ v_title:"视频指南库", v_d:"简短的动画视频正在制作中，完成后会陆续加入课程内容。",
+ r_note:"这些指南仅供教育参考，不构成医疗、法律或临床建议。请就您家庭的具体情况咨询孩子的医疗团队。",
+ dl_fail:"下载未能开始。请重试，或发送邮件至 info@autismkin.com，我们会把文件发给您。",
+ ct_title:"联系我们", ct_lede:"有问题、想法，或想参与帮助？请发送留言，或直接给我们发邮件。", ct_email:"给我们发邮件", ct_follow:"关注我们", copy:"复制", copied:"已复制", selected:"已选中",
+ skip:"跳到主要内容", dl_preparing:"准备中…", dl_saved:"已保存",
+ nav_learn:"我的学习", nav_signin:"登录", cta_course:"开始免费课程", cta_account:"创建免费账户",
+ nav_privacy:"隐私政策", nav_admin:"Admin",
+ nav_faq:"常见问题",
+ p4_tag:"筹备中", p4_t:"家庭关爱礼包", p4_d:"完成课程的家庭将免费收到一份关爱礼包，内含打印版指南、视觉工具，以及一些专门送给家庭的小礼物。",
+ cp_title:"每个完成课程的家庭，都有一份关爱礼包", cp_lede:"我们正在为完成全部三大支柱的家庭准备一份免费的关爱礼包。礼包目前正在筹备中，完成课程的家庭可以申请在礼包准备好时收到通知。",
+ cp_inside:"我们计划放入的内容", cp_1:"您家庭所用语言的打印版指南，以及一个存放文件的资料夹", cp_2:"“先……再……”板、图片卡和视觉计时器", cp_3:"适合孩子年龄的安抚和感官用品", cp_4:"结业证书、一封感谢信，以及一份专门送给您的小礼物",
+ d_regional_center_call_script_t:"致电区域中心：通话指南", d_regional_center_call_script_m:"支柱一", d_regional_center_call_script_d:"第一次通话前要准备什么、说什么、问什么，并附记录栏。",
+ d_iep_meeting_prep_t:"IEP会议准备清单", d_iep_meeting_prep_m:"支柱二", d_iep_meeting_prep_d:"会议前、会议中和会议后的清单，帮助您作为平等的一员参与孩子的学校团队。",
+ d_visual_schedule_kit_t:"视觉日程表入门工具包", d_visual_schedule_kit_m:"支柱三", d_visual_schedule_kit_d:"制作视觉日程表的五个步骤，并附可打印的“先……再……”板和日常流程条模板。",
+ back:"返回",
+ legal:"Autism Kin Association 是一家正在筹建中的加州非营利组织，总部位于洛杉矶。我们尚未获得免税资格。"
+}};
+
+var currentPage = "home", lang = "en", PAGES = ["home","about","course","resources","faq","contact","learn","privacy","admin"];
+function t(k){ return (T[lang] && T[lang][k]) || T.en[k] || ""; }
+
+var PRIVACY = {
+en:{title:"Privacy policy", updated:"Last updated October 8, 2026",
+ lede:"This policy explains what information Autism Kin Association collects through autismkin.com, how we use it, and the choices you have. We collect as little as we can.",
+ s:[
+ ["Who we are",["Autism Kin Association is a California nonprofit in formation, based in Los Angeles. You can reach us about privacy at info@autismkin.com."]],
+ ["What we collect",["When you create an account: your first name, email address, password, course language, the lessons you complete and your quiz results. Your password is stored securely by our sign-in provider; we cannot see it.",
+   "When you send a message: your name, email address and what you write.",
+   "If you request a care package: your mailing address and your child's age range, so we can send age-appropriate items. We delete your address after the package is delivered.",
+   "When you visit: like most websites, our hosting provider records basic technical information such as your IP address, browser type and the pages you request, to keep the site secure and working. We also save your language choice and sign-in session on your device so the site remembers them. We also keep simple running totals, such as how many times each page is viewed and each guide is downloaded, that do not identify you."]],
+ ["What we do not collect",["We do not ask for your child's name, diagnosis or health information. Please do not include it in messages. We do not use advertising cookies, we do not track you across other websites, and we never sell or rent your information."]],
+ ["How we use it",["To create your account and save your progress; to reply to your messages; to send emails about your account, such as password resets; and to improve the course using combined statistics that do not identify you. We will only send other emails, such as news, if you choose to receive them."]],
+ ["Who we share it with",["Only the service providers that run the site for us, such as Google (sign-in, database, email and web fonts) and our form service. They may use your information only to provide their service to us. We may also disclose information if the law requires it."]],
+ ["How long we keep it",["We keep your account information while your account is open. If you ask us to delete your account, we delete it within 30 days. We keep messages only as long as we need to respond and follow up."]],
+ ["Your choices",["You can ask to see, correct, download or delete your information at any time by emailing info@autismkin.com. We will respond within 30 days."]],
+ ["Children",["This site is for parents, caregivers and professionals. It is not directed to children under 13, and we do not knowingly collect information from them. If you believe a child has given us information, contact us and we will delete it."]],
+ ["Security",["The site uses encrypted connections, access to information is limited to the people who need it, and passwords are handled by our sign-in provider. No system is perfectly secure, so please use a password you do not use anywhere else."]],
+ ["Do Not Track",["We do not track visitors across other websites or allow others to do so on our site, so we treat every visitor the same way whether or not their browser sends a Do Not Track signal."]],
+ ["Changes to this policy",["If we change this policy, we will update the date above. If the change is significant, we will also email account holders."]]]},
+es:{title:"Política de privacidad", updated:"Última actualización: 8 de octubre de 2026",
+ lede:"Esta política explica qué información recopila Autism Kin Association a través de autismkin.com, cómo la usamos y qué opciones tiene usted. Recopilamos lo menos posible.",
+ s:[
+ ["Quiénes somos",["Autism Kin Association es una organización sin fines de lucro de California en formación, con sede en Los Ángeles. Puede escribirnos sobre privacidad a info@autismkin.com."]],
+ ["Qué recopilamos",["Cuando crea una cuenta: su nombre, correo electrónico, contraseña, idioma del curso, las lecciones que completa y los resultados de su prueba. Su contraseña la guarda de forma segura nuestro proveedor de inicio de sesión; nosotros no podemos verla.",
+   "Cuando nos envía un mensaje: su nombre, su correo y lo que escribe.",
+   "Si solicita un paquete para familias: su dirección postal y el rango de edad de su hijo, para enviar artículos adecuados para su edad. Eliminamos su dirección después de entregar el paquete.",
+   "Cuando visita el sitio: como la mayoría de los sitios web, nuestro proveedor de alojamiento registra información técnica básica, como su dirección IP, el tipo de navegador y las páginas que solicita, para mantener el sitio seguro y funcionando. También guardamos su idioma y su sesión en su dispositivo para que el sitio los recuerde. También llevamos totales sencillos, como cuántas veces se visita cada página y se descarga cada guía, que no lo identifican."]],
+ ["Qué no recopilamos",["No pedimos el nombre, el diagnóstico ni información de salud de su hijo. Por favor, no los incluya en sus mensajes. No usamos cookies publicitarias, no le rastreamos en otros sitios web y nunca vendemos ni alquilamos su información."]],
+ ["Cómo la usamos",["Para crear su cuenta y guardar su progreso; para responder a sus mensajes; para enviarle correos sobre su cuenta, como el restablecimiento de contraseña; y para mejorar el curso con estadísticas combinadas que no lo identifican. Solo le enviaremos otros correos, como noticias, si usted decide recibirlos."]],
+ ["Con quién la compartimos",["Solo con los proveedores de servicios que operan el sitio para nosotros, como Google (inicio de sesión, base de datos, correo y fuentes web) y nuestro servicio de formularios. Solo pueden usar su información para prestarnos su servicio. También podemos divulgar información si la ley lo exige."]],
+ ["Cuánto tiempo la guardamos",["Guardamos la información de su cuenta mientras esté abierta. Si nos pide eliminar su cuenta, la eliminamos en un plazo de 30 días. Guardamos los mensajes solo el tiempo necesario para responder y dar seguimiento."]],
+ ["Sus opciones",["Puede pedirnos ver, corregir, descargar o eliminar su información en cualquier momento escribiendo a info@autismkin.com. Le responderemos en un plazo de 30 días."]],
+ ["Niños",["Este sitio es para padres, cuidadores y profesionales. No está dirigido a menores de 13 años, y no recopilamos a sabiendas información de ellos. Si cree que un niño nos dio información, contáctenos y la eliminaremos."]],
+ ["Seguridad",["El sitio usa conexiones cifradas, el acceso a la información se limita a las personas que lo necesitan y las contraseñas las maneja nuestro proveedor de inicio de sesión. Ningún sistema es totalmente seguro, así que use una contraseña que no use en ningún otro lugar."]],
+ ["No rastrear (Do Not Track)",["No rastreamos a los visitantes en otros sitios web ni permitimos que otros lo hagan en nuestro sitio, por lo que tratamos igual a todos los visitantes, envíe o no su navegador una señal de No rastrear."]],
+ ["Cambios a esta política",["Si cambiamos esta política, actualizaremos la fecha de arriba. Si el cambio es importante, también enviaremos un correo a los titulares de cuentas."]]]},
+zh:{title:"隐私政策", updated:"最后更新：2026年10月8日",
+ lede:"本政策说明 Autism Kin Association 通过 autismkin.com 收集哪些信息、如何使用这些信息，以及您拥有的选择。我们只收集尽可能少的信息。",
+ s:[
+ ["关于我们",["Autism Kin Association 是一家正在筹建中的加州非营利组织，总部位于洛杉矶。如有隐私方面的问题，请发送邮件至 info@autismkin.com。"]],
+ ["我们收集的信息",["创建账户时：您的名字、电子邮箱、密码、课程语言、已完成的课程以及测验成绩。您的密码由我们的登录服务提供商安全保存，我们无法查看。",
+   "发送留言时：您的姓名、电子邮箱以及留言内容。",
+   "申请关爱礼包时：您的邮寄地址和孩子的年龄段，以便我们寄送适龄物品。礼包送达后，我们会删除您的地址。",
+   "访问网站时：与大多数网站一样，我们的托管服务商会记录基本的技术信息，例如IP地址、浏览器类型和您访问的页面，以保障网站安全和正常运行。我们还会在您的设备上保存您选择的语言和登录状态，以便网站记住这些设置。我们还会记录简单的累计数字，例如每个页面的浏览次数和每份指南的下载次数，这些数字无法识别您的身份。"]],
+ ["我们不收集的信息",["我们不会询问您孩子的姓名、诊断或健康信息，请不要在留言中填写。我们不使用广告Cookie，不会在其他网站上追踪您，也绝不出售或出租您的信息。"]],
+ ["我们如何使用信息",["用于创建您的账户并保存学习进度；回复您的留言；发送与账户有关的邮件，例如重置密码；以及利用无法识别个人身份的汇总统计来改进课程。只有在您选择接收时，我们才会发送其他邮件，例如新闻动态。"]],
+ ["我们与谁共享信息",["仅与为我们运营网站的服务提供商共享，例如 Google（登录、数据库、电子邮件和网页字体）以及我们的表单服务。他们只能为向我们提供服务而使用您的信息。如法律要求，我们也可能披露相关信息。"]],
+ ["信息保存多久",["在您的账户保持开通期间，我们会保存账户信息。如果您要求删除账户，我们会在30天内删除。留言仅在回复和跟进所需的时间内保存。"]],
+ ["您的选择",["您可以随时发送邮件至 info@autismkin.com，要求查看、更正、下载或删除您的信息。我们会在30天内回复。"]],
+ ["儿童",["本网站面向家长、照顾者和专业人士，并非针对13岁以下儿童，我们也不会在知情的情况下收集儿童的信息。如果您认为有儿童向我们提供了信息，请联系我们，我们会将其删除。"]],
+ ["信息安全",["本网站使用加密连接，信息仅限需要的人员访问，密码由我们的登录服务提供商处理。没有任何系统是绝对安全的，因此请使用一个不在其他地方使用的密码。"]],
+ ["“请勿追踪”信号",["我们不会在其他网站上追踪访客，也不允许他人在我们的网站上这样做。因此，无论您的浏览器是否发送“请勿追踪”信号，我们都以相同方式对待所有访客。"]],
+ ["政策变更",["如果我们修改本政策，会更新上方的日期。如有重大变更，我们还会通过电子邮件通知账户持有人。"]]]}
+};
+
+function renderPolicy(){
+  var c = PRIVACY[lang] || PRIVACY.en, root = document.getElementById("policy-root");
+  var h = '<h1 tabindex="-1"></h1><p class="updated"></p><p class="lede-p"></p>';
+  c.s.forEach(function(){ h += '<section><h2></h2></section>'; });
+  root.innerHTML = h;
+  root.querySelector("h1").textContent = c.title; root.querySelector(".updated").textContent = c.updated; root.querySelector(".lede-p").textContent = c.lede;
+  root.querySelectorAll("section").forEach(function(sec, i){ sec.querySelector("h2").textContent = c.s[i][0];
+    c.s[i][1].forEach(function(para){ var pEl = document.createElement("p"); pEl.textContent = para; sec.appendChild(pEl); }); });
+}
+function renderShelf(){
+  var names = {en:"English", es:"Español", zh:"中文"};
+  var shelf = document.getElementById("shelf"); shelf.innerHTML = "";
+  DOCS.forEach(function(d){
+    var key = "d_" + d.slug.replace(/-/g,"_");
+    var row = document.createElement("article"); row.className = "doc";
+    var icon = '<div class="doc-icon" aria-hidden="true"><img src="img/thumbs/autismkin-' + d.slug + '-' + lang + '.jpg" alt="" loading="lazy" width="340" height="440"></div>';
+    var links = ["en","es","zh"].map(function(l){
+      var n = d.pages[l], p = n === 1 ? t("pages_1") : t("pages_n").replace("{n}", n);
+      return '<a href="pdfs/autismkin-' + d.slug + '-' + l + '.pdf" download data-file="autismkin-' + d.slug + '-' + l + '.pdf" lang="' + l + '"><span>' + names[l] + '</span><small>' + p + '</small></a>';
+    }).join("");
+    row.innerHTML = icon + '<div><p class="meta"></p><h2></h2><p class="desc"></p></div><div class="dl"><span>' + t("dl_label") + '</span>' + links + '</div>';
+    row.querySelector(".meta").textContent = t(key + "_m");
+    row.querySelector("h2").textContent = t(key + "_t");
+    row.querySelector(".desc").textContent = t(key + "_d");
+    shelf.appendChild(row);
+  });
+}
+
+function applyLang(l){
+  lang = T[l] ? l : "en";
+  document.documentElement.lang = lang === "zh" ? "zh-Hans" : lang;
+  document.querySelectorAll("[data-t]").forEach(function(el){ el.textContent = t(el.getAttribute("data-t")); });
+  document.querySelectorAll(".lang button").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.lang === lang)); });
+  renderShelf();
+  renderPolicy();
+  if (window.renderFaq) renderFaq();
+  document.querySelectorAll("form .error, form .notice").forEach(function(n){ n.hidden = true; });
+  try{ localStorage.setItem("ak-lang", lang); }catch(e){}
+  if (window.updateAccountLink) updateAccountLink();
+  if (currentPage === "learn" && window.renderLearn) renderLearn();
+  document.title = currentPage === "home" ? "Autism Kin" : t("nav_" + currentPage) + " | Autism Kin";
+}
+
+var firstRoute = true, hasNavigated = false;
+function updateBack(){
+  var h = (location.hash || "#home").slice(1), hide = currentPage === "home" || h === "quiz" || h.indexOf("lesson-") === 0;
+  document.getElementById("backbar").hidden = hide; document.body.classList.toggle("has-back", !hide);
+}
+function showPage(id, anchor){
+  if (PAGES.indexOf(id) < 0) id = "home";
+  var prevPage = firstRoute ? "" : currentPage;
+  currentPage = id;
+  setTimeout(updateBack, 0);
+  document.title = id === "home" ? "Autism Kin" : t("nav_" + id) + " | Autism Kin";
+  if (id !== "admin" && id !== prevPage) Track.hit("pv_" + id);
+  document.querySelectorAll("[data-page]").forEach(function(p){ p.hidden = p.dataset.page !== id; });
+  document.querySelectorAll(".nav a").forEach(function(a){ if (a.dataset.nav === id) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+  document.getElementById("nav").classList.remove("open");
+  document.getElementById("menu-btn").setAttribute("aria-expanded","false");
+  if (anchor){ var el = document.getElementById(anchor); if (el){ el.scrollIntoView(); var f = el.querySelector("input"); if (f && !firstRoute) f.focus({preventScroll:true}); firstRoute = false; return; } }
+  window.scrollTo(0, 0);
+  if (!firstRoute && id !== "learn"){ var h = document.querySelector('[data-page="' + id + '"] h1'); if (h) h.focus({preventScroll:true}); }
+  firstRoute = false;
+}
+function route(){
+  var h = (location.hash || "#home").slice(1);
+  if (h === "home-waitlist") showPage("home", "home-waitlist");
+  else if (h === "learn" || h === "quiz" || h.indexOf("lesson-") === 0){ showPage("learn"); if (window.renderLearn) renderLearn(h, true); }
+  else if (h === "admin"){ showPage("admin"); if (window.renderAdmin) renderAdmin(); }
+  else showPage(h);
+}
+window.addEventListener("hashchange", function(){ hasNavigated = true; route(); updateBack(); });
+document.addEventListener("click", function(e){
+  var a = e.target.closest("a[href^='#']"); if (!a) return;
+  var target = a.getAttribute("href").slice(1);
+  if (target === "home-waitlist"){ e.preventDefault(); showPage("home", "home-waitlist"); return; }
+  if (PAGES.indexOf(target) > -1){ e.preventDefault(); if (location.hash !== "#" + target){ history.pushState(null, "", "#" + target); hasNavigated = true; } showPage(target); if (target === "learn" && window.renderLearn) renderLearn("learn", true); }
+});
+window.addEventListener("popstate", route);
+document.getElementById("back-btn").addEventListener("click", function(){
+  if (hasNavigated && history.length > 1) history.back();
+  else { history.pushState(null, "", "#home"); showPage("home"); }
+});
+
+document.querySelectorAll(".lang button").forEach(function(b){ b.addEventListener("click", function(){ applyLang(b.dataset.lang); }); });
+var menuBtn = document.getElementById("menu-btn"), navEl = document.getElementById("nav");
+function setMenu(open){ navEl.classList.toggle("open", open); menuBtn.setAttribute("aria-expanded", String(open)); if (open){ var a = navEl.querySelector("a"); if (a) a.focus(); } }
+menuBtn.addEventListener("click", function(){ setMenu(!navEl.classList.contains("open")); });
+document.addEventListener("keydown", function(e){ if (e.key === "Escape" && navEl.classList.contains("open")){ setMenu(false); menuBtn.focus(); } });
+document.addEventListener("click", function(e){ if (navEl.classList.contains("open") && !e.target.closest("#nav, #menu-btn")) setMenu(false); });
+
+// Usage counts: anonymous totals only (visits, page views, downloads, course milestones).
+// Live: each event adds 1 to a counter in Firestore stats/all and stats/YYYY-MM. Preview: counted in this browser.
+var Track = (function(){
+  var q = [], db = null;
+  function month(){ var d = new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0"); }
+  function live(){ return !!window.FIREBASE_CONFIG; }
+  function local(){ try{ return JSON.parse(localStorage.getItem("ak-stats") || "{}"); }catch(e){ return {}; } }
+  function send(k){
+    if (!/^[a-z0-9_]{1,60}$/.test(k)) return;
+    if (!live()){ var s = local(); [ "all", month() ].forEach(function(id){ s[id] = s[id] || {}; s[id][k] = (s[id][k] || 0) + 1; }); try{ localStorage.setItem("ak-stats", JSON.stringify(s)); }catch(e){} return; }
+    if (!db){ q.push(k); return; }
+    var inc = {}; inc[k] = firebase.firestore.FieldValue.increment(1);
+    ["all", month()].forEach(function(id){ db.collection("stats").doc(id).set(inc, {merge:true}).catch(function(){}); });
+  }
+  return {
+    hit:send,
+    visit:function(){ var seen = false; try{ seen = sessionStorage.getItem("ak-visit"); sessionStorage.setItem("ak-visit", "1"); }catch(e){} if (!seen) send("visit"); },
+    ready:function(d){ db = d; var x = q; q = []; x.forEach(send); },
+    local:function(){ var s = local(); s.all = s.all || {}; return s; }
+  };
+})();
+document.addEventListener("click", function(e){
+  var a = e.target.closest("a[data-file]"); if (!a) return;
+  Track.hit("dl_" + a.dataset.file.replace(/^autismkin-/, "").replace(/\.pdf$/, "").replace(/-/g, "_"));
+}, true);
+
+// Downloads: inside the Claude preview, hand the PDF over through the downloads capability; on the live site the plain link works.
+var dlApi = null;
+if (window.claude && typeof window.claude.use === "function"){ window.claude.use("downloads").then(function(d){ dlApi = d; }, function(){}); }
+document.addEventListener("click", function(e){
+  var a = e.target.closest("a[data-file]"); if (!a || !dlApi) return;
+  e.preventDefault();
+  var small = a.querySelector("small") || document.createElement("small"), orig = small.textContent;
+  a.classList.add("busy"); small.textContent = t("dl_preparing");
+  fetch(a.getAttribute("href")).then(function(r){ if (!r.ok) throw new Error("fetch"); return r.blob(); })
+    .then(function(blob){ return dlApi.save({filename: a.dataset.file, data: blob}); })
+    .then(function(){ a.classList.remove("busy"); a.classList.add("done"); small.textContent = t("dl_saved"); setTimeout(function(){ a.classList.remove("done"); small.textContent = orig; }, 2600); })
+    .catch(function(err){ a.classList.remove("busy"); small.textContent = orig; if (err && (err.code === "declined" || err.code === "rate_limited")) return; var st = document.getElementById("dl-status"); st.textContent = t("dl_fail"); st.hidden = false; });
+});
+
+// Forms
+var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+document.querySelectorAll("form[data-form]").forEach(function(form){
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var err = form.querySelector(".error"), note = form.querySelector(".notice");
+    err.hidden = true; note.hidden = true;
+    form.querySelectorAll("[aria-invalid]").forEach(function(f){ f.removeAttribute("aria-invalid"); });
+    var email = form.querySelector("input[type=email]"), msg = form.querySelector("textarea");
+    var problem = !email.value.trim() ? "err_email" : !EMAIL_RE.test(email.value.trim()) ? "err_format" : (msg && !msg.value.trim()) ? "err_msg" : "";
+    if (problem){ err.textContent = t(problem); err.hidden = false; var bad = problem === "err_msg" ? msg : email; bad.setAttribute("aria-invalid","true"); bad.focus(); return; }
+    var kind = form.dataset.form;
+    if (!FORM_ENDPOINT){ note.textContent = t("note_preview"); note.hidden = false; return; }
+    var data = new FormData(form); data.append("form", kind); data.append("site_language", lang);
+    fetch(FORM_ENDPOINT, {method:"POST", body:data, headers:{Accept:"application/json"}})
+      .then(function(r){ if (!r.ok) throw new Error("send"); note.textContent = t(kind === "waitlist" ? "note_ok_wait" : "note_ok_msg"); note.hidden = false; form.reset(); })
+      .catch(function(){ note.textContent = t("note_fail"); note.hidden = false; });
+  });
+});
+
+document.getElementById("copy").addEventListener("click", function(){
+  var btn = this, text = document.getElementById("email").textContent;
+  function reset(){ setTimeout(function(){ btn.textContent = t("copy"); }, 1800); }
+  function fallback(){ var r = document.createRange(); r.selectNodeContents(document.getElementById("email")); var s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = t("selected"); reset(); }
+  try{ navigator.clipboard.writeText(text).then(function(){ btn.textContent = t("copied"); reset(); }, fallback); }catch(e){ fallback(); }
+});
+
+var head = document.getElementById("site-head");
+function onScroll(){ head.classList.toggle("scrolled", window.scrollY > 8); }
+window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+var saved = null; try{ saved = localStorage.getItem("ak-lang"); }catch(e){}
+var nav0 = (navigator.language || "en").slice(0,2);
+applyLang(saved || (nav0 === "es" || nav0 === "zh" ? nav0 : "en"));
+</script>
+<script>
+// Course content: 3 pillars x 3 lessons, plus a final 3-question quiz. EN / ES / ZH (Simplified).
+var COURSE = {
+ pillars: [
+  {n:1, numeral:"I", lessons:["1-1","1-2","1-3"]},
+  {n:2, numeral:"II", lessons:["2-1","2-2","2-3"]},
+  {n:3, numeral:"III", lessons:["3-1","3-2","3-3"]}
+ ],
+ lessons: {
+  "1-1": {min:4, pdf:null,
+   en:{t:"What an autism diagnosis means",
+    body:["Autism is a lifelong developmental difference in how a person communicates, relates to others, and experiences the world. It is called a spectrum because no two people with autism are alike: strengths, challenges and support needs vary widely.",
+     "A diagnosis does not change who your child is. It describes how they learn and gives you access to services that can help. Autism is not caused by parenting, and children keep learning and growing throughout their lives.",
+     "In the first weeks, it is normal to feel relief, grief, worry or all three. You do not need to have everything figured out. The goal of this course is to help you take the next step with confidence."],
+    take:["Autism is a spectrum; your child's profile is their own.","A diagnosis is a door to support, not a limit on your child.","You are your child's most important teacher, and you can learn alongside the team."],
+    try:"Write down three things your child loves or does well. Share them at your next appointment so the team builds on your child's strengths."},
+   es:{t:"Qué significa un diagnóstico de autismo",
+    body:["El autismo es una diferencia del desarrollo, para toda la vida, en la forma en que una persona se comunica, se relaciona con los demás y experimenta el mundo. Se le llama espectro porque no hay dos personas con autismo iguales: las fortalezas, los desafíos y las necesidades de apoyo varían mucho.",
+     "Un diagnóstico no cambia quién es su hijo. Describe cómo aprende y le da acceso a servicios que pueden ayudar. El autismo no es causado por la crianza, y los niños siguen aprendiendo y creciendo durante toda su vida.",
+     "En las primeras semanas es normal sentir alivio, tristeza, preocupación o las tres cosas. No necesita tenerlo todo resuelto. El objetivo de este curso es ayudarle a dar el siguiente paso con confianza."],
+    take:["El autismo es un espectro; el perfil de su hijo es único.","Un diagnóstico abre la puerta al apoyo; no es un límite para su hijo.","Usted es el maestro más importante de su hijo y puede aprender junto con el equipo."],
+    try:"Escriba tres cosas que a su hijo le encantan o que hace bien. Compártalas en su próxima cita para que el equipo aproveche las fortalezas de su hijo."},
+   zh:{t:"自闭症诊断意味着什么",
+    body:["自闭症是一种终身的发展差异，影响一个人如何沟通、如何与他人相处以及如何感受世界。它被称为“谱系”，是因为没有两个自闭症人士是完全相同的：每个人的优势、挑战和所需支持都各不相同。",
+     "诊断并不会改变孩子是谁。它描述的是孩子的学习方式，并让您能够获得有帮助的服务。自闭症不是由养育方式造成的，孩子会在一生中不断学习和成长。",
+     "在最初几周，感到释然、难过、担忧，或者三者兼有，都是正常的。您不需要一下子弄清楚所有事情。本课程的目标，是帮助您有信心地迈出下一步。"],
+    take:["自闭症是一个谱系；您孩子的特点是独一无二的。","诊断是获得支持的大门，而不是对孩子的限制。","您是孩子最重要的老师，可以和团队一起学习。"],
+    try:"写下孩子喜欢做或擅长的三件事。在下次就诊时分享，让团队以孩子的优势为基础开展工作。"}},
+  "1-2": {min:5, pdf:"first-steps",
+   en:{t:"Services in California and how to request them",
+    body:["In California, support usually comes from three places, and you can contact all three at the same time.",
+     "Your regional center coordinates state-funded developmental services. If your child is under 3, ask about Early Start. If your child is 3 or older, ask for an intake. You can call yourself; no referral is needed.",
+     "Your school district is responsible for special education from age 3. Ask for a special education evaluation in writing, and keep a dated copy. The evaluation can lead to an IEP.",
+     "Your health plan may cover Behavioral Health Treatment (BHT), which includes ABA. Many California plans are required to cover it, and Medi-Cal covers it for members under 21 when medically necessary. Ask what you need to start."],
+    take:["Regional center, school district and health plan are three separate doors.","Requests to the school should be in writing and dated.","You can call the regional center yourself."],
+    try:"This week, make one call or send one written request from this lesson. Note the date and who you spoke with."},
+   es:{t:"Servicios en California y cómo solicitarlos",
+    body:["En California, el apoyo suele venir de tres lugares, y puede contactar a los tres al mismo tiempo.",
+     "Su centro regional coordina los servicios del desarrollo financiados por el estado. Si su hijo es menor de 3 años, pregunte por Early Start. Si tiene 3 años o más, pida una cita de admisión (intake). Puede llamar usted mismo; no necesita una referencia.",
+     "Su distrito escolar es responsable de la educación especial a partir de los 3 años. Pida una evaluación de educación especial por escrito y guarde una copia con fecha. La evaluación puede llevar a un IEP.",
+     "Su plan de salud puede cubrir el Tratamiento de Salud Conductual (BHT), que incluye ABA. Muchos planes de California están obligados a cubrirlo, y Medi-Cal lo cubre para miembros menores de 21 años cuando es médicamente necesario. Pregunte qué necesita para empezar."],
+    take:["El centro regional, el distrito escolar y el plan de salud son tres puertas distintas.","Las solicitudes a la escuela deben ser por escrito y con fecha.","Puede llamar al centro regional usted mismo."],
+    try:"Esta semana, haga una llamada o envíe una solicitud por escrito de esta lección. Anote la fecha y con quién habló."},
+   zh:{t:"加州的服务以及如何申请",
+    body:["在加州，支持通常来自三个渠道，您可以同时联系这三方。",
+     "区域中心负责协调由州政府资助的发展障碍服务。如果孩子未满3岁，请询问“早期起步”（Early Start）；如果孩子已满3岁，请申请受理评估（intake）。您可以自己打电话，无需转介。",
+     "从3岁起，学区负责提供特殊教育。请以书面形式申请特殊教育评估，并保留注明日期的副本。评估结果可能会促成一份IEP。",
+     "您的医疗保险可能涵盖行为健康治疗（BHT），其中包括ABA。加州许多保险计划依法必须提供这项保障；对于21岁以下、经评估有医疗必要的成员，Medi-Cal也提供这项服务。请询问开始治疗需要哪些手续。"],
+    take:["区域中心、学区和医疗保险是三个不同的渠道。","向学校提出的申请应采用书面形式并注明日期。","您可以自己打电话联系区域中心。"],
+    try:"本周，完成本课提到的一个电话或一份书面申请。记下日期和与您交谈的人。"}},
+  "1-3": {min:4, pdf:"first-steps",
+   en:{t:"Reading the evaluation report and starting your folder",
+    body:["An evaluation report can run many pages. Most follow the same order: background and history, the assessments used, results, the diagnosis, and recommendations.",
+     "Start with the recommendations section. It is your to-do list: the services, therapies and next steps the clinician suggests. Agencies and schools will read it closely too.",
+     "Then start a family folder, on paper or on your phone. Keep the report, insurance letters, regional center letters, school documents and a simple log of every call. A good folder saves hours and helps you speak up with confidence."],
+    take:["Read the recommendations first; they are your next steps.","Ask the clinician to explain any term you don't understand.","Keep every document and call note in one family folder."],
+    try:"Highlight each recommendation in your child's report and write who can provide it: regional center, school or health plan."},
+   es:{t:"Cómo leer el informe de evaluación y empezar su carpeta",
+    body:["Un informe de evaluación puede tener muchas páginas. La mayoría sigue el mismo orden: antecedentes e historia, las pruebas utilizadas, los resultados, el diagnóstico y las recomendaciones.",
+     "Empiece por la sección de recomendaciones. Es su lista de tareas: los servicios, las terapias y los siguientes pasos que sugiere el profesional. Las agencias y las escuelas también la leerán con atención.",
+     "Luego arme una carpeta familiar, en papel o en su teléfono. Guarde el informe, las cartas del seguro, las cartas del centro regional, los documentos escolares y un registro sencillo de cada llamada. Una buena carpeta le ahorra horas y le ayuda a abogar por su hijo con confianza."],
+    take:["Lea primero las recomendaciones; son sus siguientes pasos.","Pida al profesional que le explique cualquier término que no entienda.","Guarde todos los documentos y notas de llamadas en una sola carpeta familiar."],
+    try:"Resalte cada recomendación en el informe de su hijo y escriba quién puede proporcionarla: el centro regional, la escuela o el plan de salud."},
+   zh:{t:"阅读评估报告，建立家庭资料夹",
+    body:["评估报告可能有很多页。大多数报告的顺序相同：背景和病史、使用的评估工具、结果、诊断以及建议。",
+     "先从“建议”部分读起。这就是您的待办清单：专业人员建议的服务、治疗和下一步行动。相关机构和学校也会仔细阅读这一部分。",
+     "然后建立一个家庭资料夹，纸质或手机上均可。保存评估报告、保险信件、区域中心信件、学校文件，以及每次通话的简单记录。一个好的资料夹能为您节省大量时间，也能帮助您更有信心地为孩子发声。"],
+    take:["先读建议部分；那就是您的下一步。","遇到不懂的术语，请专业人员解释。","把所有文件和通话记录集中保存在一个家庭资料夹里。"],
+    try:"在孩子的报告中标出每一条建议，并写下可以提供该服务的机构：区域中心、学校或医疗保险。"}},
+  "2-1": {min:5, pdf:"family-glossary",
+   en:{t:"How ABA works",
+    body:["Applied Behavior Analysis (ABA) teaches meaningful skills by breaking them into small steps and reinforcing progress. It usually follows a cycle.",
+     "First, a BCBA assesses your child's strengths and needs. Next, the BCBA writes a treatment plan with measurable goals. Then an RBT works with your child in sessions while recording data. The BCBA reviews that data, supervises the RBT and updates the plan.",
+     "Good ABA is individualized, focuses on skills that matter to your child and family, pays attention to your child's comfort and willingness to take part, and includes you as part of the team."],
+    take:["Assessment, plan, sessions, data, review: then the cycle repeats.","Goals should be measurable and meaningful to your family.","Your child's comfort and your input are part of good ABA."],
+    try:"Ask your BCBA to walk you through one current goal: why it was chosen and how progress is measured."},
+   es:{t:"Cómo funciona ABA",
+    body:["El Análisis Aplicado de la Conducta (ABA) enseña habilidades significativas dividiéndolas en pasos pequeños y reforzando el progreso. Por lo general sigue un ciclo.",
+     "Primero, un BCBA evalúa las fortalezas y necesidades de su hijo. Después, el BCBA escribe un plan de tratamiento con metas medibles. Luego, un RBT trabaja con su hijo en las sesiones mientras registra datos. El BCBA revisa esos datos, supervisa al RBT y actualiza el plan.",
+     "Un buen programa de ABA es individualizado, se enfoca en habilidades importantes para su hijo y su familia, presta atención a la comodidad y la disposición de su hijo para participar, y lo incluye a usted como parte del equipo."],
+    take:["Evaluación, plan, sesiones, datos, revisión: y el ciclo se repite.","Las metas deben ser medibles y significativas para su familia.","La comodidad de su hijo y su opinión son parte de un buen ABA."],
+    try:"Pida a su BCBA que le explique una meta actual: por qué se eligió y cómo se mide el progreso."},
+   zh:{t:"ABA如何运作",
+    body:["应用行为分析（ABA）把有意义的技能拆分成小步骤，并通过强化来巩固进步。它通常遵循一个循环。",
+     "首先，BCBA评估孩子的优势和需求。接着，BCBA制定包含可衡量目标的治疗计划。然后，RBT在治疗中与孩子一起练习，同时记录数据。BCBA审阅这些数据，督导RBT，并更新计划。",
+     "好的ABA是个别化的，关注对孩子和家庭真正重要的技能，留意孩子是否感到舒适、是否愿意参与，并把您视为团队的一员。"],
+    take:["评估、计划、治疗、数据、复核，然后循环往复。","目标应当可衡量，并且对您的家庭有意义。","孩子的舒适感和您的意见，都是好的ABA的一部分。"],
+    try:"请BCBA向您讲解孩子目前的一个目标：为什么选择它，以及如何衡量进展。"}},
+  "2-2": {min:4, pdf:"questions-for-your-aba-team",
+   en:{t:"Getting the most from parent training",
+    body:["Parent training, also called caregiver training, is time with your child's BCBA to learn the strategies used in therapy so you can use them at home. Most plans include it, and many health plans expect it.",
+     "The most effective sessions follow a simple pattern: the BCBA explains a strategy, shows you how it looks, watches you try it, and gives feedback. Then you practice at home and report back.",
+     "Focus on one or two strategies at a time. Bring questions, and ask for examples from your real routines: mealtime, bath time, getting out the door."],
+    take:["Learn by watching, trying and getting feedback.","Practice one or two strategies at a time.","Bring your real routines and questions to every session."],
+    try:"Before your next parent training, write down the hardest part of your child's day and ask for one strategy for that moment."},
+   es:{t:"Cómo aprovechar el entrenamiento para padres",
+    body:["El entrenamiento para padres, también llamado capacitación para cuidadores, es tiempo con el BCBA de su hijo para aprender las estrategias que se usan en terapia y poder usarlas en casa. La mayoría de los planes lo incluyen, y muchos planes de salud lo esperan.",
+     "Las sesiones más efectivas siguen un patrón sencillo: el BCBA explica una estrategia, le muestra cómo se ve, lo observa a usted intentarlo y le da sugerencias. Después usted practica en casa y comenta cómo le fue.",
+     "Concéntrese en una o dos estrategias a la vez. Lleve preguntas y pida ejemplos de sus rutinas reales: la comida, el baño, la salida de casa."],
+    take:["Aprenda observando, intentando y recibiendo sugerencias.","Practique una o dos estrategias a la vez.","Lleve sus rutinas reales y sus preguntas a cada sesión."],
+    try:"Antes de su próximo entrenamiento para padres, escriba cuál es la parte más difícil del día de su hijo y pida una estrategia para ese momento."},
+   zh:{t:"充分利用家长培训",
+    body:["家长培训（也称照顾者培训）是与孩子的BCBA一起学习治疗中所用策略的时间，让您能够在家中使用这些策略。大多数治疗计划都包含家长培训，许多医疗保险也期望家长参与。",
+     "最有效的培训遵循一个简单的模式：BCBA讲解一项策略，示范给您看，观察您尝试，并给出反馈。之后您在家练习，并在下次反馈效果。",
+     "每次专注于一到两项策略。带上您的问题，并请BCBA结合您真实的日常生活举例：吃饭、洗澡、出门。"],
+    take:["通过观察、尝试和获得反馈来学习。","每次练习一到两项策略。","每次培训都带上真实的日常情境和问题。"],
+    try:"在下次家长培训之前，写下孩子一天中最困难的时刻，并请BCBA针对那个时刻提供一项策略。"}},
+  "2-3": {min:4, pdf:null,
+   en:{t:"Understanding goals and progress data",
+    body:["Good goals are written so anyone can tell whether they were met. For example: “Will request help using words or a device in 4 out of 5 opportunities across two weeks.”",
+     "Your team records data during sessions and usually shows it as a graph. Look at the direction of the line: rising means the skill is growing, flat means it may be time to change the approach, and falling is worth discussing right away.",
+     "You can ask to see the data at any time. You can also ask for goals that reflect your family's priorities, culture and language."],
+    take:["A clear goal says what, how often and over what period.","A flat line is a signal to adjust, not a failure.","You can ask to see the data and to add family priorities."],
+    try:"At your next meeting, ask: “Which goal is going best, which is stuck, and what will we change?”"},
+   es:{t:"Cómo entender las metas y los datos de progreso",
+    body:["Las buenas metas se escriben de forma que cualquiera pueda saber si se cumplieron. Por ejemplo: «Pedirá ayuda usando palabras o un dispositivo en 4 de 5 oportunidades durante dos semanas».",
+     "Su equipo registra datos durante las sesiones y suele mostrarlos en una gráfica. Fíjese en la dirección de la línea: si sube, la habilidad está creciendo; si se mantiene plana, puede ser momento de cambiar el enfoque; si baja, conviene hablarlo de inmediato.",
+     "Puede pedir ver los datos en cualquier momento. También puede pedir metas que reflejen las prioridades, la cultura y el idioma de su familia."],
+    take:["Una meta clara dice qué, con qué frecuencia y en qué periodo.","Una línea plana es una señal para ajustar, no un fracaso.","Puede pedir ver los datos y agregar las prioridades de su familia."],
+    try:"En su próxima reunión, pregunte: «¿Qué meta va mejor, cuál está estancada y qué vamos a cambiar?»"},
+   zh:{t:"理解目标和进展数据",
+    body:["好的目标写得清清楚楚，任何人都能判断是否已经达成。例如：“在两周内，5次机会中有4次能用语言或设备请求帮助。”",
+     "团队会在治疗中记录数据，通常以图表呈现。请留意曲线的走向：上升表示技能在进步；持平可能意味着需要调整方法；下降则应立即讨论。",
+     "您可以随时要求查看数据，也可以要求设定能体现家庭优先事项、文化和语言的目标。"],
+    take:["清晰的目标说明做什么、多频繁、在多长时间内。","曲线持平是需要调整的信号，而不是失败。","您可以要求查看数据，并加入家庭的优先事项。"],
+    try:"在下次会议上问：“哪个目标进展最好？哪个停滞了？我们要做什么调整？”"}},
+  "3-1": {min:4, pdf:"carrying-progress-home",
+   en:{t:"Consistency: the same words and the same prompts",
+    body:["Children learn fastest when the people around them respond in the same way. When home and therapy use the same words, signs and prompts, a skill learned in one place carries into the other. Behavior analysts call this generalization.",
+     "Ask your child's team which phrases and prompts they use, and borrow them. If the team says “first shoes, then park,” say it the same way at home.",
+     "Pair consistency with specific praise, given right away: “You asked for help with words. Great asking!” tells your child exactly what to do again."],
+    take:["Matching the team's words helps skills carry over.","Specific, immediate praise teaches more than “good job.”","Small, daily repetition beats occasional long practice."],
+    try:"Ask your team for the three phrases they use most, and use them at home this week."},
+   es:{t:"Consistencia: las mismas palabras y las mismas ayudas",
+    body:["Los niños aprenden más rápido cuando las personas a su alrededor responden de la misma manera. Cuando la casa y la terapia usan las mismas palabras, señas y ayudas, una habilidad aprendida en un lugar se traslada al otro. Los analistas de conducta llaman a esto generalización.",
+     "Pregunte al equipo de su hijo qué frases y ayudas usan, y adóptelas. Si el equipo dice «primero zapatos, luego parque», dígalo de la misma manera en casa.",
+     "Combine la consistencia con elogios específicos e inmediatos: «Pediste ayuda con palabras. ¡Muy bien pedido!» le dice a su hijo exactamente qué repetir."],
+    take:["Usar las palabras del equipo ayuda a que las habilidades se transfieran.","Un elogio específico e inmediato enseña más que «bien hecho».","La repetición diaria y breve funciona mejor que la práctica larga y ocasional."],
+    try:"Pida a su equipo las tres frases que más usan y úselas en casa esta semana."},
+   zh:{t:"保持一致：相同的用语和提示",
+    body:["当身边的人以相同的方式回应时，孩子学得最快。当家庭和治疗使用相同的词语、手势和提示时，在一个地方学到的技能就能迁移到另一个地方。行为分析师称之为“泛化”。",
+     "询问孩子的团队使用哪些说法和提示，并在家里沿用。如果团队说“先穿鞋，再去公园”，在家也用同样的说法。",
+     "在保持一致的同时，立即给予具体的表扬：“你用说话来请求帮助了，问得真好！”这样孩子就清楚地知道下次该怎么做。"],
+    take:["沿用团队的用语，有助于技能迁移。","具体而及时的表扬，比“做得好”更有教育意义。","每天短时间的重复，比偶尔长时间的练习更有效。"],
+    try:"请团队告诉您他们最常用的三个说法，并在本周在家使用。"}},
+  "3-2": {min:4, pdf:"carrying-progress-home",
+   en:{t:"Predictable days: visual schedules and real choices",
+    body:["Many children with autism feel calmer when they know what is coming next. Visual schedules, a row of pictures or words showing the steps of a routine, make the day easier to follow.",
+     "“First, then” statements do the same thing in one sentence: “First bath, then story.” Keep them short and follow through.",
+     "Offering two clear choices gives your child a sense of control and a reason to communicate: “Apple or crackers?” while holding up both. Choices work best when you are happy with either answer."],
+    take:["Pictures or words can show what comes next.","“First, then” makes transitions easier; always follow through.","Offer two choices you are happy with either way."],
+    try:"Make a picture schedule for one routine that is hard right now, such as getting out the door in the morning."},
+   es:{t:"Días predecibles: horarios visuales y opciones reales",
+    body:["Muchos niños con autismo se sienten más tranquilos cuando saben qué viene después. Los horarios visuales, una fila de imágenes o palabras que muestran los pasos de una rutina, hacen que el día sea más fácil de seguir.",
+     "Las frases de «primero... luego...» hacen lo mismo en una sola oración: «Primero el baño, luego el cuento». Manténgalas cortas y cumpla lo que dice.",
+     "Ofrecer dos opciones claras le da a su hijo sensación de control y una razón para comunicarse: «¿Manzana o galletas?», mostrando ambas. Las opciones funcionan mejor cuando cualquiera de las dos respuestas le parece bien."],
+    take:["Las imágenes o palabras pueden mostrar lo que viene después.","«Primero... luego...» facilita las transiciones; siempre cumpla.","Ofrezca dos opciones que le parezcan bien a usted."],
+    try:"Haga un horario con imágenes para una rutina que hoy sea difícil, como salir de casa por la mañana."},
+   zh:{t:"可预测的一天：视觉日程表和真正的选择",
+    body:["许多自闭症孩子在知道接下来会发生什么时会更平静。视觉日程表（用一排图片或文字展示日常流程的各个步骤）能让一天更容易跟上。",
+     "“先……再……”的说法用一句话就能达到同样的效果：“先洗澡，再讲故事。”句子要简短，并且说到做到。",
+     "提供两个清楚的选项，能给孩子掌控感，也给孩子一个沟通的理由：同时拿出两样东西问“苹果还是饼干？”当两个答案您都能接受时，选择的效果最好。"],
+    take:["图片或文字可以展示接下来会发生什么。","“先……再……”能让过渡更顺利；一定要说到做到。","提供两个您都能接受的选项。"],
+    try:"为目前比较困难的一个日常流程制作图片日程表，例如早上出门。"}},
+  "3-3": {min:4, pdf:"carrying-progress-home",
+   en:{t:"Everyday reasons to communicate",
+    body:["Children communicate more when they have a reason to. You can create small, friendly reasons throughout the day: put a favorite toy in sight but out of reach, give a snack container that is hard to open, or pause before the best part of a song.",
+     "Then wait. A pause of a few seconds gives your child time to ask in whatever way works for them: words, signs, pointing, a picture or an AAC device. Every form of communication counts, so respond to all of them.",
+     "Keep a simple log of what worked and when, and share it at your next parent training. Your notes help the team build on progress at home."],
+    take:["Create small reasons to ask, then wait.","Words, signs, pictures and devices are all your child's voice.","A simple log turns home practice into information your team can use."],
+    try:"Try one communication opportunity at each meal for a week, and note what your child did."},
+   es:{t:"Razones diarias para comunicarse",
+    body:["Los niños se comunican más cuando tienen una razón para hacerlo. Puede crear razones pequeñas y amables a lo largo del día: ponga un juguete favorito a la vista pero fuera de su alcance, ofrezca un recipiente de botana difícil de abrir o haga una pausa antes de la mejor parte de una canción.",
+     "Después, espere. Una pausa de unos segundos le da a su hijo tiempo para pedir de la forma que le funcione: palabras, señas, señalar, una imagen o un dispositivo de CAA. Toda forma de comunicación cuenta, así que responda a todas.",
+     "Lleve un registro sencillo de lo que funcionó y cuándo, y compártalo en su próximo entrenamiento para padres. Sus notas ayudan al equipo a aprovechar el progreso en casa."],
+    take:["Cree pequeñas razones para pedir y luego espere.","Las palabras, las señas, las imágenes y los dispositivos son la voz de su hijo.","Un registro sencillo convierte la práctica en casa en información útil para el equipo."],
+    try:"Durante una semana, cree una oportunidad de comunicación en cada comida y anote lo que hizo su hijo."},
+   zh:{t:"在日常生活中创造沟通的理由",
+    body:["当孩子有理由沟通时，他们会沟通得更多。您可以在一天中创造一些小而友善的理由：把喜欢的玩具放在看得见但够不着的地方，给一个不容易打开的零食盒，或者在歌曲最精彩的部分前停顿一下。",
+     "然后等待。停顿几秒钟，给孩子时间用适合自己的方式提出请求：说话、手语、指向、图片或AAC设备。每一种沟通方式都很重要，请回应每一种。",
+     "简单记录什么方法有效、在什么时候有效，并在下次家长培训时分享。您的记录能帮助团队在家庭进步的基础上继续推进。"],
+    take:["创造提出请求的小理由，然后等待。","说话、手语、图片和设备，都是孩子的声音。","简单的记录能把在家的练习变成团队可用的信息。"],
+    try:"连续一周，在每顿饭时创造一次沟通机会，并记录孩子的反应。"}}
+ },
+ quiz: [
+  {ans:1,
+   en:{q:"Your child is 2 years old and was just diagnosed. Which program should you ask your regional center about?", o:["An IEP","Early Start","An IPP","Medi-Cal"], why:"Early Start is California's early intervention program for children under 3, coordinated through regional centers. An IEP comes from the school district from age 3."},
+   es:{q:"Su hijo tiene 2 años y acaba de recibir el diagnóstico. ¿Sobre qué programa debe preguntar en su centro regional?", o:["Un IEP","Early Start","Un IPP","Medi-Cal"], why:"Early Start es el programa de intervención temprana de California para niños menores de 3 años, coordinado por los centros regionales. El IEP lo ofrece el distrito escolar a partir de los 3 años."},
+   zh:{q:"您的孩子2岁，刚刚确诊。您应该向区域中心询问哪个项目？", o:["IEP","早期起步（Early Start）","IPP","Medi-Cal"], why:"早期起步是加州为3岁以下儿童提供的早期干预项目，由区域中心负责协调。IEP则由学区从孩子3岁起提供。"}},
+  {ans:2,
+   en:{q:"What is the most effective way to learn a new strategy in parent training?", o:["Read about it on your own first","Wait until the RBT has mastered it","Have the BCBA show you, then try it while they give feedback","Practice several new strategies at once"], why:"Watching, trying and getting feedback is how most parents learn a strategy well. Focusing on one or two at a time helps it stick."},
+   es:{q:"¿Cuál es la forma más eficaz de aprender una estrategia nueva en el entrenamiento para padres?", o:["Leer sobre ella por su cuenta primero","Esperar a que el RBT la domine","Que el BCBA le muestre cómo hacerlo y luego intentarlo mientras le da sugerencias","Practicar varias estrategias nuevas a la vez"], why:"Observar, intentar y recibir sugerencias es como la mayoría de los padres aprende bien una estrategia. Concentrarse en una o dos a la vez ayuda a que se quede."},
+   zh:{q:"在家长培训中，学习一项新策略最有效的方式是什么？", o:["先自己阅读相关资料","等RBT熟练掌握之后再学","请BCBA示范，然后在BCBA给予反馈的同时自己尝试","同时练习好几项新策略"], why:"观察、尝试并获得反馈，是大多数家长掌握策略的方式。每次专注于一两项策略，更容易巩固。"}},
+  {ans:1,
+   en:{q:"Your child points to a picture of juice instead of saying the word. What should you do?", o:["Wait until they say the word","Respond and give the juice: every form of communication counts","Ignore the request so they try harder","Take the picture away"], why:"Pointing to a picture is communication. Responding teaches your child that communicating works, which builds the foundation for more."},
+   es:{q:"Su hijo señala una imagen de jugo en lugar de decir la palabra. ¿Qué debe hacer?", o:["Esperar a que diga la palabra","Responder y darle el jugo: toda forma de comunicación cuenta","Ignorar la petición para que se esfuerce más","Quitarle la imagen"], why:"Señalar una imagen es comunicación. Responder le enseña a su hijo que comunicarse funciona, y eso construye la base para más."},
+   zh:{q:"孩子指着果汁的图片，而不是说出这个词。您应该怎么做？", o:["等孩子说出这个词再说","回应并给孩子果汁：每一种沟通方式都很重要","不理会请求，让孩子更努力","把图片拿走"], why:"指向图片就是沟通。及时回应能让孩子明白沟通是有效的，从而为更多沟通打下基础。"}}
+ ],
+ passMark: 2
+};
+
+// ===== Accounts, progress and quiz =====
+// When the site goes live, paste the Firebase web config here. While it is null the page runs in preview mode:
+// accounts and progress are saved only in this browser.
+var FIREBASE_CONFIG = null;
+
+var LT = {
+en:{
+ nav_learn:"My learning", preview:"Preview mode: accounts and progress are saved only in this browser until the site goes live.",
+ in_title:"Your learning, saved", in_lede:"Create a free account to work through the three pillars at your own pace. We'll remember where you left off.",
+ in_b1:"Nine short lessons, about five minutes each", in_b2:"Progress saved for every pillar", in_b3:"A final three-question quiz to finish the course",
+ tab_up:"Create account", tab_in:"Sign in", f_first:"First name", f_pass:"Password", f_pass_hint:"At least 8 characters", f_lang_pref:"Course language",
+ show:"Show", hide:"Hide", btn_up:"Create free account", btn_in:"Sign in", forgot:"Forgot your password?", btn_reset:"Send reset link", back_in:"Back to sign in",
+ reset_title:"Reset your password", reset_lede:"Enter the email you signed up with and we'll send a link to choose a new password.",
+ reset_sent:"If an account exists for that email, a reset link is on its way. Check your inbox.", reset_preview:"Password reset emails will work once the site is live.",
+ privacy:"We store your first name, email, course language and progress. We never sell your information, and you can ask us to delete your account at any time by emailing info@autismkin.com.",
+ e_name:"Enter your first name.", e_email:"Enter an email address in the format name@example.com.", e_pass:"Use a password with at least 8 characters.",
+ e_exists:"An account with this email already exists. Sign in instead.", e_wrong:"That email and password don't match. Try again or reset your password.",
+ e_many:"Too many attempts. Wait a few minutes and try again.", e_net:"We couldn't reach the server. Check your connection and try again.", e_generic:"Something went wrong. Try again, or email info@autismkin.com.",
+ hello:"Welcome, {name}", overall:"{d} of {t} lessons complete", continue:"Continue: {title}", start:"Start the course", all_done:"All lessons complete",
+ lessons_of:"{d} of {t} lessons", minutes:"{m} min", completed:"Completed", not_started:"Not started", open:"Open",
+ quiz_title:"Final quiz", quiz_locked:"Complete all nine lessons to unlock the final quiz.", quiz_ready:"Three questions on what you've learned.", quiz_take:"Take the quiz",
+ quiz_passed:"Passed with {s} of 3", quiz_retake:"Retake", signed_in_as:"Signed in as {email}", sign_out:"Sign out",
+ lesson_n:"Lesson {n} of 3", takeaways:"Key takeaways", try_home:"Try this at home", related:"Related guide", mark:"Mark complete and continue", mark_last:"Mark complete",
+ done_next:"Next lesson", back_dash:"Back to My learning", is_done:"You completed this lesson.", need_sign:"Sign in to view lessons and save your progress.",
+ q_intro:"Choose one answer for each question. You need {p} of 3 correct to finish the course.", q_submit:"Submit answers", q_answer_all:"Answer all three questions before submitting.",
+ q_result:"You answered {s} of 3 correctly.", q_pass:"You've completed the Autism Kin caregiver course. Well done.", q_fail:"Review the lessons and try again whenever you're ready.",
+ q_correct:"Correct.", q_wrong:"Not quite. The answer is: {a}", q_again:"Try again", q_locked_t:"The final quiz is locked",
+ pdf_label:"Download the PDF", progress_label:"Course progress"
+},
+es:{
+ nav_learn:"Mi aprendizaje", preview:"Modo de vista previa: las cuentas y el progreso se guardan solo en este navegador hasta que el sitio esté en línea.",
+ in_title:"Su aprendizaje, guardado", in_lede:"Cree una cuenta gratuita para avanzar en los tres pilares a su propio ritmo. Recordaremos dónde se quedó.",
+ in_b1:"Nueve lecciones cortas, de unos cinco minutos cada una", in_b2:"Progreso guardado en cada pilar", in_b3:"Una prueba final de tres preguntas para terminar el curso",
+ tab_up:"Crear cuenta", tab_in:"Iniciar sesión", f_first:"Nombre", f_pass:"Contraseña", f_pass_hint:"Al menos 8 caracteres", f_lang_pref:"Idioma del curso",
+ show:"Mostrar", hide:"Ocultar", btn_up:"Crear cuenta gratuita", btn_in:"Iniciar sesión", forgot:"¿Olvidó su contraseña?", btn_reset:"Enviar enlace", back_in:"Volver a iniciar sesión",
+ reset_title:"Restablecer su contraseña", reset_lede:"Escriba el correo con el que se registró y le enviaremos un enlace para elegir una contraseña nueva.",
+ reset_sent:"Si existe una cuenta con ese correo, el enlace va en camino. Revise su bandeja de entrada.", reset_preview:"Los correos para restablecer la contraseña funcionarán cuando el sitio esté en línea.",
+ privacy:"Guardamos su nombre, correo, idioma del curso y progreso. Nunca vendemos su información, y puede pedirnos que eliminemos su cuenta en cualquier momento escribiendo a info@autismkin.com.",
+ e_name:"Escriba su nombre.", e_email:"Escriba un correo con el formato nombre@ejemplo.com.", e_pass:"Use una contraseña de al menos 8 caracteres.",
+ e_exists:"Ya existe una cuenta con este correo. Inicie sesión.", e_wrong:"El correo y la contraseña no coinciden. Intente de nuevo o restablezca su contraseña.",
+ e_many:"Demasiados intentos. Espere unos minutos e intente de nuevo.", e_net:"No pudimos conectar con el servidor. Revise su conexión e intente de nuevo.", e_generic:"Algo salió mal. Intente de nuevo o escriba a info@autismkin.com.",
+ hello:"Bienvenido, {name}", overall:"{d} de {t} lecciones completadas", continue:"Continuar: {title}", start:"Empezar el curso", all_done:"Todas las lecciones completadas",
+ lessons_of:"{d} de {t} lecciones", minutes:"{m} min", completed:"Completada", not_started:"Sin empezar", open:"Abrir",
+ quiz_title:"Prueba final", quiz_locked:"Complete las nueve lecciones para desbloquear la prueba final.", quiz_ready:"Tres preguntas sobre lo que aprendió.", quiz_take:"Hacer la prueba",
+ quiz_passed:"Aprobada con {s} de 3", quiz_retake:"Repetir", signed_in_as:"Sesión iniciada como {email}", sign_out:"Cerrar sesión",
+ lesson_n:"Lección {n} de 3", takeaways:"Ideas clave", try_home:"Pruébelo en casa", related:"Guía relacionada", mark:"Marcar como completada y continuar", mark_last:"Marcar como completada",
+ done_next:"Siguiente lección", back_dash:"Volver a Mi aprendizaje", is_done:"Completó esta lección.", need_sign:"Inicie sesión para ver las lecciones y guardar su progreso.",
+ q_intro:"Elija una respuesta para cada pregunta. Necesita {p} de 3 correctas para terminar el curso.", q_submit:"Enviar respuestas", q_answer_all:"Responda las tres preguntas antes de enviar.",
+ q_result:"Respondió correctamente {s} de 3.", q_pass:"Completó el curso para cuidadores de Autism Kin. ¡Felicidades!", q_fail:"Repase las lecciones e intente de nuevo cuando quiera.",
+ q_correct:"Correcto.", q_wrong:"No exactamente. La respuesta es: {a}", q_again:"Intentar de nuevo", q_locked_t:"La prueba final está bloqueada",
+ pdf_label:"Descargar el PDF", progress_label:"Progreso del curso"
+},
+zh:{
+ nav_learn:"我的学习", preview:"预览模式：在网站正式上线前，账户和学习进度仅保存在此浏览器中。",
+ in_title:"您的学习进度，随时保存", in_lede:"创建免费账户，按照自己的节奏完成三大支柱课程。我们会记住您学到了哪里。",
+ in_b1:"九节简短课程，每节约五分钟", in_b2:"每个支柱的进度都会保存", in_b3:"最后完成一个三道题的测验，即可结业",
+ tab_up:"创建账户", tab_in:"登录", f_first:"名字", f_pass:"密码", f_pass_hint:"至少8个字符", f_lang_pref:"课程语言",
+ show:"显示", hide:"隐藏", btn_up:"创建免费账户", btn_in:"登录", forgot:"忘记密码？", btn_reset:"发送重置链接", back_in:"返回登录",
+ reset_title:"重置密码", reset_lede:"请输入您注册时使用的电子邮箱，我们会发送一个设置新密码的链接。",
+ reset_sent:"如果该邮箱已注册，重置链接正在发送中。请查收邮件。", reset_preview:"网站正式上线后，即可发送重置密码邮件。",
+ privacy:"我们保存您的名字、电子邮箱、课程语言和学习进度。我们绝不出售您的信息；您可以随时发送邮件至 info@autismkin.com，要求删除您的账户。",
+ e_name:"请输入您的名字。", e_email:"请按 name@example.com 的格式输入电子邮箱。", e_pass:"请使用至少8个字符的密码。",
+ e_exists:"该邮箱已注册账户，请直接登录。", e_wrong:"邮箱与密码不匹配。请重试或重置密码。",
+ e_many:"尝试次数过多，请等几分钟再试。", e_net:"无法连接服务器。请检查网络后重试。", e_generic:"出现问题，请重试，或发送邮件至 info@autismkin.com。",
+ hello:"欢迎，{name}", overall:"已完成 {d}/{t} 节课", continue:"继续学习：{title}", start:"开始课程", all_done:"所有课程已完成",
+ lessons_of:"{d}/{t} 节课", minutes:"{m} 分钟", completed:"已完成", not_started:"未开始", open:"打开",
+ quiz_title:"结业测验", quiz_locked:"完成全部九节课后即可解锁结业测验。", quiz_ready:"三道题，检验您学到的内容。", quiz_take:"开始测验",
+ quiz_passed:"已通过，答对 {s}/3", quiz_retake:"重新测验", signed_in_as:"当前登录：{email}", sign_out:"退出登录",
+ lesson_n:"第 {n} 课，共 3 课", takeaways:"要点", try_home:"在家试一试", related:"相关指南", mark:"标记为完成并继续", mark_last:"标记为完成",
+ done_next:"下一课", back_dash:"返回我的学习", is_done:"您已完成本课。", need_sign:"请登录以查看课程并保存学习进度。",
+ q_intro:"每道题选择一个答案。答对 {p}/3 即可完成课程。", q_submit:"提交答案", q_answer_all:"请回答全部三道题后再提交。",
+ q_result:"您答对了 {s}/3 道题。", q_pass:"恭喜您完成 Autism Kin 家长课程！", q_fail:"请复习课程内容，准备好后再试一次。",
+ q_correct:"回答正确。", q_wrong:"不太对。正确答案是：{a}", q_again:"再试一次", q_locked_t:"结业测验尚未解锁",
+ pdf_label:"下载PDF", progress_label:"课程进度"
+}};
+function lt(k, vars){ var s = (LT[lang] && LT[lang][k]) || LT.en[k] || ""; if (vars) for (var v in vars) s = s.split("{" + v + "}").join(vars[v]); return s; }
+function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+var ALL_LESSONS = COURSE.pillars.reduce(function(a, p){ return a.concat(p.lessons); }, []);
+function L(id){ var x = COURSE.lessons[id]; return x[lang] || x.en; }
+function pillarName(n){ return t(["pI_n","pII_n","pIII_n"][n-1]); }
+
+// ---------- storage adapters ----------
+var Store = (function(){
+  var listeners = [], user = null, profile = null, mode = FIREBASE_CONFIG ? "firebase" : "preview";
+  function emit(){ listeners.forEach(function(f){ f(user, profile); }); }
+  function blank(name, lng){ return {name:name || "", lang:lng || "en", done:{}, quiz:null}; }
+
+  // Preview: browser storage only
+  var mem = {}, memSession = null;
+  function lsGet(k){ try{ var v = localStorage.getItem(k); return v ? JSON.parse(v) : null; }catch(e){ return mem[k] || null; } }
+  function lsSet(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){ mem[k] = v; } }
+  function hash(str){
+    try{ return crypto.subtle.digest("SHA-256", new TextEncoder().encode(str)).then(function(b){ return Array.from(new Uint8Array(b)).map(function(x){ return x.toString(16).padStart(2,"0"); }).join(""); }); }
+    catch(e){ return Promise.resolve(btoa(unescape(encodeURIComponent(str)))); }
+  }
+  function err(code){ var e = new Error(code); e.code = code; return e; }
+  var preview = {
+    init:function(){ var s = lsGet("ak-session"); var accts = lsGet("ak-accounts") || {};
+      if (s && accts[s]){ user = {email:s}; profile = accts[s].profile; } emit(); },
+    signUp:function(name, email, pass, lng){ var accts = lsGet("ak-accounts") || {}; email = email.toLowerCase();
+      if (accts[email]) return Promise.reject(err("exists"));
+      return hash(email + ":" + pass).then(function(h){ accts[email] = {h:h, profile:blank(name, lng)}; lsSet("ak-accounts", accts); lsSet("ak-session", email); Track.hit("signup");
+        user = {email:email}; profile = accts[email].profile; emit(); }); },
+    signIn:function(email, pass){ var accts = lsGet("ak-accounts") || {}; email = email.toLowerCase();
+      return hash(email + ":" + pass).then(function(h){ if (!accts[email] || accts[email].h !== h) throw err("wrong");
+        lsSet("ak-session", email); user = {email:email}; profile = accts[email].profile; emit(); }); },
+    reset:function(){ return Promise.resolve("preview"); },
+    signOut:function(){ try{ localStorage.removeItem("ak-session"); }catch(e){} delete mem["ak-session"]; user = null; profile = null; emit(); return Promise.resolve(); },
+    save:function(patch, quiet){ var accts = lsGet("ak-accounts") || {}; if (!user || !accts[user.email]) return Promise.resolve();
+      Object.assign(profile, patch); accts[user.email].profile = profile; lsSet("ak-accounts", accts); if (!quiet) emit(); return Promise.resolve(); }
+  };
+
+  // Live: Firebase Authentication + Cloud Firestore (users/{uid})
+  var fb = null, signingUp = false;
+  function loadScript(src){ return new Promise(function(res, rej){ var s = document.createElement("script"); s.src = src; s.onload = res; s.onerror = rej; document.head.appendChild(s); }); }
+  function mapErr(e){ var c = (e && e.code) || "";
+    if (c.indexOf("email-already-in-use") > -1) return err("exists");
+    if (/invalid-credential|wrong-password|user-not-found|invalid-login/.test(c)) return err("wrong");
+    if (c.indexOf("too-many-requests") > -1) return err("many");
+    if (c.indexOf("network") > -1) return err("net");
+    if (c.indexOf("invalid-email") > -1) return err("email");
+    if (c.indexOf("weak-password") > -1) return err("pass");
+    return err("generic"); }
+  var firebaseAdapter = {
+    init:function(){ var v = "10.14.1", base = "https://cdn.jsdelivr.net/npm/firebase@" + v + "/";
+      loadScript(base + "firebase-app-compat.js").then(function(){ return Promise.all([loadScript(base + "firebase-auth-compat.js"), loadScript(base + "firebase-firestore-compat.js")]); })
+      .then(function(){ firebase.initializeApp(FIREBASE_CONFIG); fb = {auth:firebase.auth(), db:firebase.firestore()}; Track.ready(fb.db);
+        fb.auth.onAuthStateChanged(function(u){
+          if (signingUp) return;
+          if (!u){ user = null; profile = null; emit(); return; }
+          user = {email:u.email, uid:u.uid, verified:u.emailVerified};
+          fb.db.collection("users").doc(u.uid).get().then(function(d){ profile = d.exists ? Object.assign(blank(), d.data()) : blank(); emit(); }, function(){ profile = blank(); emit(); });
+        }); })
+      .catch(function(){ emit(); }); },
+    signUp:function(name, email, pass, lng){ signingUp = true; return fb.auth.createUserWithEmailAndPassword(email, pass).then(function(c){
+        profile = blank(name, lng); user = {email:c.user.email, uid:c.user.uid, verified:c.user.emailVerified};
+        return fb.db.collection("users").doc(c.user.uid).set(Object.assign({createdAt:firebase.firestore.FieldValue.serverTimestamp()}, profile)); }).then(function(){ signingUp = false; Track.hit("signup"); emit(); }).catch(function(e){ signingUp = false; throw mapErr(e); }); },
+    signIn:function(email, pass){ return fb.auth.signInWithEmailAndPassword(email, pass).catch(function(e){ throw mapErr(e); }); },
+    reset:function(email){ return fb.auth.sendPasswordResetEmail(email).then(function(){ return "sent"; }, function(e){ var m = mapErr(e); if (m.code === "wrong") return "sent"; throw m; }); },
+    signOut:function(){ return fb.auth.signOut(); },
+    save:function(patch, quiet){ if (!user) return Promise.resolve(); Object.assign(profile, patch); if (!quiet) emit();
+      return fb.db.collection("users").doc(user.uid).set(patch, {merge:true}); },
+    verify:function(){ return fb.auth.currentUser.sendEmailVerification(); },
+    refresh:function(){ var u = fb.auth.currentUser; if (!u) return Promise.resolve(false);
+      return u.reload().then(function(){ return u.getIdToken(true); }).then(function(){ var ok = fb.auth.currentUser.emailVerified; if (user) user.verified = ok; return ok; }); }
+  };
+  var impl = mode === "firebase" ? firebaseAdapter : preview;
+  return {mode:mode, db:function(){ return fb && fb.db; }, verify:function(){ return impl.verify ? impl.verify() : Promise.resolve(); }, refresh:function(){ return impl.refresh ? impl.refresh() : Promise.resolve(true); },
+          on:function(f){ listeners.push(f); }, init:impl.init, signUp:impl.signUp, signIn:impl.signIn, reset:impl.reset, signOut:impl.signOut, save:impl.save,
+          user:function(){ return user; }, profile:function(){ return profile; }};
+})();
+
+// ---------- views ----------
+var learnRoot = document.getElementById("learn-root"), authTab = "up", learnHash = "learn", ready = false;
+function doneCount(p){ return ALL_LESSONS.filter(function(id){ return p && p.done && p.done[id]; }).length; }
+function bar(d, total, label){ var pct = Math.round(d / total * 100);
+  return '<div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="' + total + '" aria-valuenow="' + d + '" aria-label="' + esc(label) + '"><span style="width:' + pct + '%"></span></div>'; }
+function banner(){ return Store.mode === "preview" ? '<p class="preview-note">' + esc(lt("preview")) + '</p>' : ""; }
+
+function viewAuth(msg){
+  var reset = authTab === "reset";
+  var tabs = reset ? "" : '<div class="tabs" role="group" aria-label="' + esc(lt("tab_up") + " / " + lt("tab_in")) + '"><button type="button" id="tab-up" aria-pressed="' + (authTab === "up") + '" data-tab="up">' + esc(lt("tab_up")) + '</button><button type="button" id="tab-in" aria-pressed="' + (authTab === "in") + '" data-tab="in">' + esc(lt("tab_in")) + '</button></div>';
+  var fields;
+  if (reset){
+    fields = '<h2>' + esc(lt("reset_title")) + '</h2><p class="muted">' + esc(lt("reset_lede")) + '</p>' +
+      '<div class="field"><label for="au-email">' + esc(t("f_email")) + '</label><input id="au-email" type="email" autocomplete="email" required></div>' +
+      '<p class="error" role="alert" hidden></p><button class="btn" type="submit">' + esc(lt("btn_reset")) + '</button><p class="notice" aria-live="polite" hidden></p>' +
+      '<button type="button" class="linkish" data-tab="in">' + esc(lt("back_in")) + '</button>';
+  } else {
+    var up = authTab === "up";
+    fields = (up ? '<div class="field"><label for="au-name">' + esc(lt("f_first")) + '</label><input id="au-name" autocomplete="given-name" required></div>' : "") +
+      '<div class="field"><label for="au-email">' + esc(t("f_email")) + '</label><input id="au-email" type="email" autocomplete="email" required></div>' +
+      '<div class="field"><label for="au-pass">' + esc(lt("f_pass")) + (up ? ' <span class="hint">' + esc(lt("f_pass_hint")) + '</span>' : "") + '</label>' +
+      '<div class="pass"><input id="au-pass" type="password" autocomplete="' + (up ? "new-password" : "current-password") + '" minlength="8" required><button type="button" class="reveal" aria-controls="au-pass" aria-pressed="false">' + esc(lt("show")) + '</button></div></div>' +
+      (up ? '<div class="field"><label for="au-lang">' + esc(lt("f_lang_pref")) + '</label><select id="au-lang"><option value="en">English</option><option value="es">Español</option><option value="zh">中文</option></select></div>' : "") +
+      '<p class="error" role="alert" hidden></p><button class="btn" type="submit">' + esc(up ? lt("btn_up") : lt("btn_in")) + '</button>' +
+      (up ? '<p class="small-note">' + esc(lt("privacy")) + ' <a class="text-link" href="#privacy" data-nav="privacy">' + esc(t("nav_privacy")) + '</a></p>' : '<button type="button" class="linkish" data-tab="reset">' + esc(lt("forgot")) + '</button>');
+  }
+  learnRoot.innerHTML = banner() + '<div class="auth">' +
+    '<div class="auth-intro"><h1 tabindex="-1">' + esc(lt("in_title")) + '</h1><p class="lede-l">' + esc(msg || lt("in_lede")) + '</p>' +
+    '<ul class="benefits"><li>' + esc(lt("in_b1")) + '</li><li>' + esc(lt("in_b2")) + '</li><li>' + esc(lt("in_b3")) + '</li></ul></div>' +
+    '<form class="auth-card" novalidate id="auth-form" aria-label="' + esc(reset ? lt("reset_title") : (authTab === "up" ? lt("tab_up") : lt("tab_in"))) + '">' + tabs + fields + '</form></div>';
+  var sel = document.getElementById("au-lang"); if (sel) sel.value = lang;
+}
+
+function viewDash(){
+  var p = Store.profile(), d = doneCount(p), total = ALL_LESSONS.length;
+  var next = ALL_LESSONS.filter(function(id){ return !p.done[id]; })[0];
+  var cont = next ? '<a class="btn" href="#lesson-' + next + '">' + esc(d ? lt("continue", {title:L(next).t}) : lt("start")) + '</a>' : '<span class="pill ok">' + esc(lt("all_done")) + '</span>';
+  var pillars = COURSE.pillars.map(function(pl){
+    var pd = pl.lessons.filter(function(id){ return p.done[id]; }).length;
+    var rows = pl.lessons.map(function(id, i){ var ok = !!p.done[id], les = COURSE.lessons[id];
+      return '<li><a href="#lesson-' + id + '" class="lrow' + (ok ? " is-done" : "") + '"><span class="check" aria-hidden="true">' + (ok ? "✓" : (i + 1)) + '</span><span class="lt">' + esc(L(id).t) + '</span><span class="lm">' + esc(ok ? lt("completed") : lt("minutes", {m:les.min})) + '</span></a></li>'; }).join("");
+    return '<section class="pcard"><div class="phead"><span class="numeral" aria-hidden="true">' + pl.numeral + '</span><div><h2>' + esc(pillarName(pl.n)) + '</h2><p class="muted">' + esc(lt("lessons_of", {d:pd, t:pl.lessons.length})) + '</p></div></div>' +
+      bar(pd, pl.lessons.length, pillarName(pl.n)) + '<ol class="lessons">' + rows + '</ol></section>';
+  }).join("");
+  var q = p.quiz, unlocked = d === total, qhtml;
+  if (!unlocked) qhtml = '<div class="quizcard locked"><span class="lock" aria-hidden="true"></span><div><h2>' + esc(lt("quiz_title")) + '</h2><p class="muted">' + esc(lt("quiz_locked")) + '</p></div></div>';
+  else if (q && q.passed) qhtml = '<div class="quizcard passed"><span class="seal" aria-hidden="true">✓</span><div><h2>' + esc(lt("quiz_title")) + '</h2><p>' + esc(lt("quiz_passed", {s:q.score})) + '</p></div><a class="btn line" href="#quiz">' + esc(lt("quiz_retake")) + '</a></div>' + certBlock() + careBlock();
+  else qhtml = '<div class="quizcard"><span class="seal" aria-hidden="true">?</span><div><h2>' + esc(lt("quiz_title")) + '</h2><p class="muted">' + esc(lt("quiz_ready")) + '</p></div><a class="btn" href="#quiz">' + esc(lt("quiz_take")) + '</a></div>';
+  learnRoot.innerHTML = banner() + '<div class="dash-head"><div><h1 tabindex="-1">' + esc(lt("hello", {name:p.name || ""})) + '</h1><p class="muted">' + esc(lt("overall", {d:d, t:total})) + '</p>' + bar(d, total, lt("progress_label")) + '</div>' + cont + '</div>' +
+    '<div class="pgrid">' + pillars + '</div>' + qhtml +
+    '<div class="acct"><span>' + esc(lt("signed_in_as", {email:Store.user().email})) + '</span><button type="button" class="linkish" id="sign-out">' + esc(lt("sign_out")) + '</button></div>';
+}
+
+function viewLesson(id){
+  var les = COURSE.lessons[id]; if (!les){ location.hash = "#learn"; return; }
+  var c = L(id), p = Store.profile(), pl = COURSE.pillars[+id[0] - 1], idx = pl.lessons.indexOf(id);
+  var gi = ALL_LESSONS.indexOf(id), nextId = ALL_LESSONS[gi + 1], done = !!p.done[id];
+  var pdf = les.pdf ? '<p class="related"><b>' + esc(lt("related")) + ':</b> <a href="pdfs/autismkin-' + les.pdf + '-' + lang + '.pdf" download data-file="autismkin-' + les.pdf + '-' + lang + '.pdf" class="text-link">' + esc(t("d_" + les.pdf.replace(/-/g,"_") + "_t")) + '</a> <span class="muted">(PDF)</span></p>' : "";
+  var actions = done
+    ? '<p class="pill ok">' + esc(lt("is_done")) + '</p>' + (nextId ? '<a class="btn" href="#lesson-' + nextId + '">' + esc(lt("done_next")) + '</a>' : '<a class="btn" href="#quiz">' + esc(lt("quiz_take")) + '</a>')
+    : '<button class="btn" type="button" id="mark-done" data-id="' + id + '">' + esc(nextId ? lt("mark") : lt("mark_last")) + '</button>';
+  learnRoot.innerHTML = banner() + '<article class="lesson">' +
+    '<p class="crumb"><a href="#learn" class="text-link">' + esc(lt("back_dash")) + '</a></p>' +
+    '<p class="meta-l"><span class="numeral-s">' + pl.numeral + '</span> ' + esc(pillarName(pl.n)) + ' &nbsp;|&nbsp; ' + esc(lt("lesson_n", {n:idx + 1})) + ' &nbsp;|&nbsp; ' + esc(lt("minutes", {m:les.min})) + '</p>' +
+    '<h1 tabindex="-1">' + esc(c.t) + '</h1>' + c.body.map(function(b){ return '<p>' + esc(b) + '</p>'; }).join("") +
+    '<aside class="take"><h2>' + esc(lt("takeaways")) + '</h2><ul>' + c.take.map(function(x){ return '<li>' + esc(x) + '</li>'; }).join("") + '</ul></aside>' +
+    '<aside class="tryit"><h2>' + esc(lt("try_home")) + '</h2><p>' + esc(c.try) + '</p></aside>' + pdf +
+    '<div class="lesson-actions">' + actions + '</div></article>';
+}
+
+var quizAnswers = {};
+function viewQuiz(result){
+  var p = Store.profile(), total = ALL_LESSONS.length;
+  if (doneCount(p) < total){ learnRoot.innerHTML = banner() + '<div class="lesson"><p class="crumb"><a href="#learn" class="text-link">' + esc(lt("back_dash")) + '</a></p><h1 tabindex="-1">' + esc(lt("q_locked_t")) + '</h1><p>' + esc(lt("quiz_locked")) + '</p></div>'; return; }
+  var qs = COURSE.quiz.map(function(q, i){ var c = q[lang] || q.en;
+    var opts = c.o.map(function(o, j){ var checked = quizAnswers[i] === j ? " checked" : "", cls = "";
+      if (result){ if (j === q.ans) cls = " right"; else if (quizAnswers[i] === j) cls = " wrong"; }
+      return '<label class="opt' + cls + '"><input type="radio" name="q' + i + '" value="' + j + '"' + checked + (result ? " disabled" : "") + '><span>' + esc(o) + '</span></label>'; }).join("");
+    var fb = result ? '<p class="qfb ' + (quizAnswers[i] === q.ans ? "ok" : "no") + '">' + esc(quizAnswers[i] === q.ans ? lt("q_correct") : lt("q_wrong", {a:c.o[q.ans]})) + ' ' + esc(c.why) + '</p>' : "";
+    return '<fieldset class="q"><legend><span class="qn">' + (i + 1) + '</span>' + esc(c.q) + '</legend>' + opts + fb + '</fieldset>'; }).join("");
+  var res = "";
+  if (result){ var pass = result.score >= COURSE.passMark;
+    res = '<div class="qresult ' + (pass ? "pass" : "") + '" role="status"><h2>' + esc(lt("q_result", {s:result.score})) + '</h2><p>' + esc(pass ? lt("q_pass") : lt("q_fail")) + '</p>' +
+      '<div class="actions">' + (pass ? '<a class="btn" href="#learn">' + esc(lt("back_dash")) + '</a>' : '<button class="btn" type="button" id="q-again">' + esc(lt("q_again")) + '</button><a class="btn line" href="#learn">' + esc(lt("back_dash")) + '</a>') + '</div></div>'; }
+  learnRoot.innerHTML = banner() + '<form class="lesson quiz" id="quiz-form" novalidate><p class="crumb"><a href="#learn" class="text-link">' + esc(lt("back_dash")) + '</a></p>' +
+    '<h1 tabindex="-1">' + esc(lt("quiz_title")) + '</h1><p class="muted">' + esc(lt("q_intro", {p:COURSE.passMark})) + '</p>' + (result ? res + (result.score >= COURSE.passMark ? certBlock() + careBlock() : "") : "") + qs +
+    (result ? "" : '<p class="error" role="alert" hidden></p><button class="btn" type="submit">' + esc(lt("q_submit")) + '</button>') + '</form>';
+  if (result){ var r = learnRoot.querySelector(".qresult h2"); if (r){ r.setAttribute("tabindex","-1"); r.focus(); } }
+}
+
+function renderLearn(h, focus){
+  learnHash = h || learnHash;
+  if (!ready){ learnRoot.innerHTML = '<p class="muted" style="padding-block:2rem">…</p>'; return; }
+  var u = Store.user();
+  if (!u || !Store.profile()){ viewAuth(learnHash !== "learn" ? lt("need_sign") : ""); }
+  else if (learnHash.indexOf("lesson-") === 0) viewLesson(learnHash.slice(7));
+  else if (learnHash === "quiz") viewQuiz(null);
+  else viewDash();
+  if (focus){ var h1 = learnRoot.querySelector("h1"); if (h1) h1.focus({preventScroll:true}); }
+}
+
+// ---------- events ----------
+function showErr(form, key, field){ var e = form.querySelector(".error"); e.textContent = key; e.hidden = false; if (field){ field.setAttribute("aria-invalid","true"); field.focus(); } }
+learnRoot.addEventListener("click", function(e){
+  var tab = e.target.closest("[data-tab]"); if (tab){ authTab = tab.dataset.tab; viewAuth(); var f = learnRoot.querySelector("input"); if (f) f.focus(); return; }
+  var rv = e.target.closest(".reveal"); if (rv){ var inp = document.getElementById("au-pass"), show = inp.type === "password"; inp.type = show ? "text" : "password"; rv.textContent = show ? lt("hide") : lt("show"); rv.setAttribute("aria-pressed", String(show)); return; }
+  if (e.target.id === "sign-out"){ Store.signOut().then(function(){ authTab = "in"; location.hash = "#learn"; renderLearn("learn", true); }); return; }
+  if (e.target.id === "mark-done"){ var id = e.target.dataset.id, done = Object.assign({}, Store.profile().done); var first = !done[id]; done[id] = Date.now();
+    e.target.disabled = true; if (first) Track.hit("lesson_done"); Store.save({done:done}).then(function(){ var nx = ALL_LESSONS[ALL_LESSONS.indexOf(id) + 1]; location.hash = nx ? "#lesson-" + nx : "#learn"; }, function(){ e.target.disabled = false; }); return; }
+  if (e.target.id === "care-notify"){ var btnN = e.target; btnN.disabled = true; Store.save({careInterest:true}, true).then(function(){ var sec = btnN.closest(".care"); sec.outerHTML = careBlock(); var st = learnRoot.querySelector(".care [role=status]"); if (st){ st.setAttribute("tabindex","-1"); st.focus(); } }); return; }
+  if (e.target.id === "cert-make"){ var nm = (document.getElementById("cert-name").value || "").trim() || Store.profile().name || ""; makeCertificate(nm, document.getElementById("cert-status"), e.target); return; }
+  if (e.target.id === "q-again"){ quizAnswers = {}; viewQuiz(null); learnRoot.querySelector("h1").focus(); }
+});
+learnRoot.addEventListener("submit", function(e){
+  e.preventDefault(); var form = e.target;
+  form.querySelectorAll("[aria-invalid]").forEach(function(f){ f.removeAttribute("aria-invalid"); });
+  var err = form.querySelector(".error"); if (err) err.hidden = true;
+  if (form.id === "care-form"){
+    var f = function(id){ return document.getElementById(id); }, street = f("cr-street"), city = f("cr-city"), stt = f("cr-state"), zip = f("cr-zip");
+    if (!street.value.trim() || !city.value.trim() || !stt.value.trim()) return showErr(form, cT("e_addr"), !street.value.trim() ? street : (!city.value.trim() ? city : stt));
+    if (!/^\d{5}(-\d{4})?$/.test(zip.value.trim())) return showErr(form, cT("e_zip"), zip);
+    if (!/^(ca|calif\.?|california)$/i.test(stt.value.trim())) return showErr(form, cT("e_ca"), stt);
+    var b = form.querySelector("button[type=submit]"); b.disabled = true;
+    Store.save({care:{status:"requested", at:Date.now(), street:street.value.trim(), city:city.value.trim(), state:"CA", zip:zip.value.trim(), age:f("cr-age").value, lang:f("cr-lang").value}}, true)
+      .then(function(){ var sec = form.closest(".care"); sec.outerHTML = careBlock(); }, function(){ b.disabled = false; showErr(form, lt("e_generic")); });
+    return;
+  }
+  if (form.id === "quiz-form"){
+    quizAnswers = {}; COURSE.quiz.forEach(function(q, i){ var c = form.querySelector('input[name="q' + i + '"]:checked'); if (c) quizAnswers[i] = +c.value; });
+    if (Object.keys(quizAnswers).length < COURSE.quiz.length) return showErr(form, lt("q_answer_all"));
+    var score = COURSE.quiz.filter(function(q, i){ return quizAnswers[i] === q.ans; }).length, pass = score >= COURSE.passMark;
+    var prev = Store.profile().quiz; Track.hit("quiz_attempt"); if (pass && !(prev && prev.passed)) Track.hit("quiz_pass");
+    var save = (pass || !(prev && prev.passed)) ? Store.save({quiz:{score:score, passed:pass, at:Date.now()}}) : Promise.resolve();
+    save.then(function(){ viewQuiz({score:score}); }); return;
+  }
+  var email = document.getElementById("au-email"), pass = document.getElementById("au-pass"), name = document.getElementById("au-name");
+  var btn = form.querySelector("button[type=submit]");
+  if (name && !name.value.trim()) return showErr(form, lt("e_name"), name);
+  if (!EMAIL_RE.test(email.value.trim())) return showErr(form, lt("e_email"), email);
+  if (authTab === "reset"){ btn.disabled = true;
+    Store.reset(email.value.trim()).then(function(r){ var n = form.querySelector(".notice"); n.textContent = r === "preview" ? lt("reset_preview") : lt("reset_sent"); n.hidden = false; btn.disabled = false; },
+      function(x){ btn.disabled = false; showErr(form, lt("e_" + (x.code || "generic"))); }); return; }
+  if (pass.value.length < 8) return showErr(form, lt("e_pass"), pass);
+  btn.disabled = true;
+  var p = authTab === "up" ? Store.signUp(name.value.trim(), email.value.trim(), pass.value, document.getElementById("au-lang").value) : Store.signIn(email.value.trim(), pass.value);
+  p.then(function(){ btn.disabled = false; if (authTab === "up"){ var pl = Store.profile().lang; if (pl && pl !== lang) applyLang(pl); } renderLearn(learnHash, true); },
+    function(x){ btn.disabled = false; var key = "e_" + ((x && x.code) || "generic"); showErr(form, LT.en[key] ? lt(key) : lt("e_generic")); });
+});
+learnRoot.addEventListener("change", function(e){ var o = e.target.closest(".opt"); if (!o) return; o.parentNode.querySelectorAll(".opt").forEach(function(x){ x.classList.toggle("sel", x.contains(e.target)); }); });
+
+Store.on(function(){ ready = true; updateAccountLink(); if (currentPage === "learn") renderLearn(learnHash); if (currentPage === "admin" && window.renderAdmin) renderAdmin(); });
+function updateAccountLink(){ var a = document.getElementById("acct-link"); if (!a) return; a.textContent = Store.user() ? lt("nav_learn") : t("nav_signin"); }
+Store.init();
+Track.visit();
+// Preview only: a footer link to the admin dashboard (the live site has no visible link; go to autismkin.com/#admin).
+if (Store.mode === "preview"){ var fpl = document.querySelector('footer a[data-nav="privacy"]'); if (fpl){ var al = document.createElement("a"); al.href = "#admin"; al.textContent = "Admin (preview)"; al.addEventListener("click", function(e){ e.preventDefault(); history.pushState(null, "", "#admin"); hasNavigated = true; showPage("admin"); renderAdmin(); }); fpl.parentNode.appendChild(al); } }
+
+var FAQ = {
+en:{title:"Frequently asked questions", lede:"Short answers to the questions parents ask us most.", more:"Still have a question?", more_link:"Send us a message", items:[
+ ["Is Autism Kin really free?","Yes. During our first year, everything is free for families: the caregiver course, the resource library and, as they are released, the videos. There is no cost to create an account."],
+ ["Who is the course for?","Parents and caregivers of children with autism, whether your child was just diagnosed or has been in services for years. Grandparents, other relatives and professionals are welcome too."],
+ ["Does my child need to be in ABA?","No. Pillar I is for families before services start. Pillars II and III are most useful alongside ABA, but much of what you will learn also applies to speech therapy, occupational therapy and school services."],
+ ["Do you provide therapy?","No. Autism Kin is an education nonprofit. We don't provide or sell therapy, and we don't refer families to particular providers. Our goal is to help you understand and take part in the services you choose."],
+ ["Does the course replace parent training from my child's BCBA?","No. It is designed to help you get more out of parent training: you will know the vocabulary, the reasoning behind the methods and the questions to ask."],
+ ["Which languages are available?","English, Spanish and Mandarin (Simplified Chinese). You can switch languages at any time with the buttons at the top of the page."],
+ ["How long does the course take?","Nine lessons of about five minutes each, plus a three-question final quiz. Most parents finish in under an hour, but you can go at your own pace. Your progress is saved."],
+ ["Do I get a certificate?","Yes. When you pass the final quiz with at least two of three correct, you can download a certificate of completion with your name. It recognizes an educational course and is not a professional credential."],
+ ["Is my information private?","We collect only your first name, email, course language and progress. We never sell your information, and you can ask us to delete your account at any time. Our privacy policy has the details."],
+ ["Will I receive a care package?","Care packages for families who finish the course are in production. When you pass the final quiz, choose \u201cNotify me\u201d on your dashboard and we will let you know when you can request one."],
+ ["Can I share the resources?","Yes. All of our PDF guides are free to print and share with family, teachers and other parents."],
+ ["Is Autism Kin a 501(c)(3)?","Autism Kin Association is a California nonprofit in formation. We have not yet received tax-exempt status, so donations are not currently tax-deductible."],
+ ["How can I help?","We are looking for parents, clinicians, translators and designers who want to help shape our resources. Send us a message on the contact page."]]},
+es:{title:"Preguntas frecuentes", lede:"Respuestas breves a las preguntas que más nos hacen los padres.", more:"¿Tiene otra pregunta?", more_link:"Envíenos un mensaje", items:[
+ ["¿Autism Kin es realmente gratuito?","Sí. Durante nuestro primer año, todo es gratuito para las familias: el curso para cuidadores, la biblioteca de recursos y, a medida que se publiquen, los videos. Crear una cuenta no tiene costo."],
+ ["¿Para quién es el curso?","Para padres y cuidadores de niños con autismo, ya sea que su hijo acabe de recibir el diagnóstico o lleve años en servicios. Abuelos, otros familiares y profesionales también son bienvenidos."],
+ ["¿Mi hijo necesita estar en ABA?","No. El Pilar I es para familias antes de que empiecen los servicios. Los Pilares II y III son más útiles junto con ABA, pero mucho de lo que aprenderá también se aplica a la terapia del habla, la terapia ocupacional y los servicios escolares."],
+ ["¿Ustedes ofrecen terapia?","No. Autism Kin es una organización educativa sin fines de lucro. No ofrecemos ni vendemos terapia, y no referimos a las familias a proveedores específicos. Nuestro objetivo es ayudarle a entender y participar en los servicios que usted elija."],
+ ["¿El curso reemplaza el entrenamiento para padres del BCBA de mi hijo?","No. Está diseñado para ayudarle a aprovechar más el entrenamiento para padres: conocerá el vocabulario, el razonamiento detrás de los métodos y las preguntas que conviene hacer."],
+ ["¿En qué idiomas está disponible?","Inglés, español y mandarín (chino simplificado). Puede cambiar de idioma en cualquier momento con los botones en la parte superior de la página."],
+ ["¿Cuánto dura el curso?","Nueve lecciones de unos cinco minutos cada una, más una prueba final de tres preguntas. La mayoría de los padres termina en menos de una hora, pero puede avanzar a su propio ritmo. Su progreso se guarda."],
+ ["¿Recibo un certificado?","Sí. Cuando apruebe la prueba final con al menos dos de tres respuestas correctas, podrá descargar un certificado de finalización con su nombre. Reconoce un curso educativo y no es una credencial profesional."],
+ ["¿Mi información es privada?","Solo recopilamos su nombre, correo, idioma del curso y progreso. Nunca vendemos su información, y puede pedirnos que eliminemos su cuenta en cualquier momento. Nuestra política de privacidad tiene los detalles."],
+ ["¿Recibiré un paquete para familias?","Los paquetes para las familias que terminen el curso están en producción. Cuando apruebe la prueba final, elija \u00abAvisarme\u00bb en su panel y le avisaremos cuando pueda solicitar uno."],
+ ["¿Puedo compartir los recursos?","Sí. Todas nuestras guías en PDF se pueden imprimir y compartir gratis con la familia, los maestros y otros padres."],
+ ["¿Autism Kin es una 501(c)(3)?","Autism Kin Association es una organización sin fines de lucro de California en formación. Aún no hemos recibido la exención de impuestos, por lo que las donaciones todavía no son deducibles."],
+ ["¿Cómo puedo ayudar?","Buscamos padres, profesionales clínicos, traductores y diseñadores que quieran ayudar a crear nuestros recursos. Envíenos un mensaje desde la página de contacto."]]},
+zh:{title:"常见问题", lede:"简要解答家长最常问的问题。", more:"还有其他问题？", more_link:"给我们留言", items:[
+ ["Autism Kin 真的免费吗？","是的。在我们的第一年，所有内容对家庭完全免费：家长课程、资源库，以及陆续推出的视频。创建账户也不收取任何费用。"],
+ ["课程适合哪些人？","适合自闭症孩子的家长和照顾者，无论孩子是刚刚确诊，还是已经接受服务多年。也欢迎祖父母、其他亲属和专业人士参加。"],
+ ["孩子必须在接受ABA吗？","不必。支柱一适合尚未开始服务的家庭。支柱二和支柱三在配合ABA时最有用，但您学到的很多内容同样适用于言语治疗、职业治疗和学校服务。"],
+ ["你们提供治疗服务吗？","不提供。Autism Kin 是一家教育类非营利组织。我们不提供也不销售治疗服务，也不会把家庭转介给特定的服务机构。我们的目标是帮助您理解并参与您所选择的服务。"],
+ ["课程能代替孩子的BCBA提供的家长培训吗？","不能。本课程旨在帮助您从家长培训中获得更多收获：您会了解相关术语、方法背后的道理，以及应该提出的问题。"],
+ ["提供哪些语言？","英文、西班牙文和中文（简体）。您可以随时使用页面顶部的按钮切换语言。"],
+ ["课程需要多长时间？","共九节课，每节约五分钟，最后还有一个三道题的结业测验。大多数家长不到一小时就能完成，但您可以按自己的节奏学习，进度会自动保存。"],
+ ["完成后有证书吗？","有。结业测验答对至少两道题即可通过，并可下载印有您姓名的结业证书。该证书表彰您完成了一门教育课程，并非专业资格证书。"],
+ ["我的信息安全吗？","我们只收集您的名字、电子邮箱、课程语言和学习进度。我们绝不出售您的信息，您也可以随时要求删除账户。详情请参阅我们的隐私政策。"],
+ ["我会收到关爱礼包吗？","为完成课程的家庭准备的关爱礼包正在筹备中。通过结业测验后，请在“我的学习”页面点击“通知我”，礼包可以申请时我们会通知您。"],
+ ["我可以分享这些资源吗？","可以。我们所有的PDF指南都可以免费打印，并分享给家人、老师和其他家长。"],
+ ["Autism Kin 是501(c)(3)组织吗？","Autism Kin Association 是一家正在筹建中的加州非营利组织。我们尚未获得免税资格，因此目前的捐款还不能抵税。"],
+ ["我可以怎样帮忙？","我们正在寻找愿意参与制作资源的家长、临床人员、翻译和设计师。欢迎通过“联系我们”页面给我们留言。"]]}
+};
+
+var CERT = {
+en:{btn:"Download your certificate", name_l:"Name on certificate", make:"Create certificate PDF", making:"Creating…", saved:"Certificate saved", fail:"The certificate couldn't be created. Try again, or email info@autismkin.com.",
+ title:"Certificate of Completion", certifies:"This certifies that", completed:"has completed the", course:"Autism Kin Caregiver Course",
+ pillars:"Pillar I: Getting started   |   Pillar II: Partnering in services   |   Pillar III: Growing at home", on:"Completed {date}", role:"Founder, Autism Kin Association",
+ note:"An educational course for parents and caregivers. Not a professional credential.", file:"Autism Kin Certificate"},
+es:{btn:"Descargar su certificado", name_l:"Nombre en el certificado", make:"Crear certificado en PDF", making:"Creando…", saved:"Certificado guardado", fail:"No se pudo crear el certificado. Intente de nuevo o escriba a info@autismkin.com.",
+ title:"Certificado de Finalización", certifies:"Se certifica que", completed:"completó el", course:"Curso para Cuidadores de Autism Kin",
+ pillars:"Pilar I: Primeros pasos   |   Pilar II: Colaborar en los servicios   |   Pilar III: Crecer en casa", on:"Completado el {date}", role:"Fundador, Autism Kin Association",
+ note:"Un curso educativo para padres y cuidadores. No es una credencial profesional.", file:"Certificado Autism Kin"},
+zh:{btn:"下载结业证书", name_l:"证书上的姓名", make:"生成PDF证书", making:"正在生成…", saved:"证书已保存", fail:"证书生成失败。请重试，或发送邮件至 info@autismkin.com。",
+ title:"结业证书", certifies:"兹证明", completed:"已完成", course:"Autism Kin 家长课程",
+ pillars:"支柱一：起步   |   支柱二：参与服务   |   支柱三：在家成长", on:"完成日期：{date}", role:"Autism Kin Association 创始人",
+ note:"本课程为面向家长和照顾者的教育课程，并非专业资格证书。", file:"Autism Kin 结业证书"}
+};
+
+function renderFaq(){
+  var c = FAQ[lang] || FAQ.en, root = document.getElementById("faq-root");
+  root.innerHTML = '<div class="page-head"><h1 tabindex="-1"></h1><p></p></div><div class="faq-list"></div><p class="faq-more"><span></span> <a class="text-link" href="#contact" data-nav="contact"></a></p>';
+  root.querySelector("h1").textContent = c.title; root.querySelector(".page-head p").textContent = c.lede;
+  root.querySelector(".faq-more span").textContent = c.more; root.querySelector(".faq-more a").textContent = c.more_link;
+  var list = root.querySelector(".faq-list");
+  c.items.forEach(function(it){ var d = document.createElement("details"), s = document.createElement("summary"), p = document.createElement("p");
+    s.textContent = it[0]; p.textContent = it[1]; d.appendChild(s); d.appendChild(p); list.appendChild(d); });
+}
+
+// ----- certificate -----
+function ct(k, v){ var s = (CERT[lang] && CERT[lang][k]) || CERT.en[k]; if (v) for (var x in v) s = s.split("{" + x + "}").join(v[x]); return s; }
+function loadJsPDF(){ if (window.jspdf) return Promise.resolve(window.jspdf);
+  return new Promise(function(res, rej){ var s = document.createElement("script"); s.src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"; s.onload = function(){ res(window.jspdf); }; s.onerror = rej; document.head.appendChild(s); }); }
+function drawCertificate(name, dateStr){
+  var W = 2200, H = 1700, cv = document.createElement("canvas"); cv.width = W; cv.height = H; var g = cv.getContext("2d");
+  var zh = lang === "zh", disp = zh ? '"Noto Serif SC", serif' : '"Cormorant Garamond", Georgia, serif', body = zh ? '"Noto Serif SC", serif' : '"Source Serif 4", Georgia, serif';
+  var NAVY = "#1B2A4A", GOLD = "#D9A441", DEEP = "#7C5A14", MUTED = "#4E5A72";
+  g.fillStyle = "#F9F7F1"; g.fillRect(0, 0, W, H);
+  g.strokeStyle = NAVY; g.lineWidth = 14; g.strokeRect(60, 60, W - 120, H - 120);
+  g.strokeStyle = GOLD; g.lineWidth = 4; g.strokeRect(96, 96, W - 192, H - 192);
+  // mark
+  g.save(); g.translate(W / 2 - 108, 170); g.scale(2.1, 2.1); g.translate(6, -27); g.lineWidth = 10; g.lineCap = "round"; g.lineJoin = "round";
+  g.strokeStyle = GOLD; g.stroke(new Path2D("M48 55 C60 77 96 79 96 55 C96 31 60 33 48 55"));
+  g.strokeStyle = NAVY; g.stroke(new Path2D("M48 55 C36 33 0 31 0 55 C0 79 36 77 48 55")); g.restore();
+  function text(s, y, font, color, maxW){ g.font = font; g.fillStyle = color; g.textAlign = "center"; g.textBaseline = "alphabetic";
+    var size = parseFloat(font.match(/(\d+)px/)[1]), f = font; while (g.measureText(s).width > (maxW || W - 400) && size > 20){ size -= 4; f = font.replace(/\d+px/, size + "px"); g.font = f; } g.fillText(s, W / 2, y); }
+  text("Autism Kin Association", 400, '600 46px "Cormorant Garamond", Georgia, serif', DEEP);
+  text(ct("title"), 540, "600 " + (zh ? 104 : 120) + "px " + disp, NAVY);
+  text(ct("certifies"), 660, "400 40px " + body, MUTED);
+  text(name, 820, (zh ? "600 " : "italic 600 ") + "130px " + disp, NAVY, W - 520);
+  g.strokeStyle = GOLD; g.lineWidth = 3; g.beginPath(); g.moveTo(560, 868); g.lineTo(W - 560, 868); g.stroke();
+  text(ct("completed"), 960, "400 40px " + body, MUTED);
+  text(ct("course"), 1060, "600 " + (zh ? 72 : 80) + "px " + disp, NAVY);
+  text(ct("pillars"), 1150, "400 32px " + body, DEEP, W - 360);
+  text(ct("on", {date:dateStr}), 1250, "400 36px " + body, NAVY);
+  // signature block
+  g.strokeStyle = NAVY; g.lineWidth = 2; g.beginPath(); g.moveTo(W / 2 - 330, 1410); g.lineTo(W / 2 + 330, 1410); g.stroke();
+  text("Peter Rodriguez, M.S., RBT", 1462, "600 40px " + body, NAVY);
+  text(ct("role"), 1510, "400 32px " + body, MUTED);
+  text(ct("note"), 1585, "400 26px " + body, MUTED);
+  return cv;
+}
+function makeCertificate(name, statusEl, btn){
+  var p = Store.profile(), at = (p.quiz && p.quiz.at) || Date.now();
+  var dateStr; try{ dateStr = new Intl.DateTimeFormat(lang === "zh" ? "zh-CN" : lang, {year:"numeric", month:"long", day:"numeric"}).format(new Date(at)); }catch(e){ dateStr = new Date(at).toDateString(); }
+  btn.disabled = true; btn.textContent = ct("making"); statusEl.hidden = true;
+  var fontsReady = document.fonts ? Promise.all([document.fonts.load('600 80px "Cormorant Garamond"'), document.fonts.load('italic 600 80px "Cormorant Garamond"'), document.fonts.load('400 40px "Source Serif 4"'), lang === "zh" ? document.fonts.load('600 80px "Noto Serif SC"', name + "结业证书") : null]).catch(function(){}) : Promise.resolve();
+  var fname = ct("file") + ".pdf";
+  fontsReady.then(function(){ var cv = drawCertificate(name, dateStr);
+    return loadJsPDF().then(function(js){ var doc = new js.jsPDF({orientation:"landscape", unit:"in", format:"letter"}); doc.addImage(cv.toDataURL("image/jpeg", 0.92), "JPEG", 0, 0, 11, 8.5); return doc.output("blob"); }); })
+  .then(function(blob){
+    if (dlApi) return dlApi.save({filename:fname, data:blob});
+    var url = URL.createObjectURL(blob), a = document.createElement("a"); a.href = url; a.download = fname; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+  })
+  .then(function(){ statusEl.textContent = ct("saved"); statusEl.hidden = false; Track.hit("cert"); Store.save({certName:name}, true); },
+        function(err){ if (err && (err.code === "declined" || err.code === "rate_limited")) return; statusEl.textContent = ct("fail"); statusEl.hidden = false; })
+  .then(function(){ btn.disabled = false; btn.textContent = ct("make"); });
+}
+function certBlock(){
+  var p = Store.profile();
+  return '<div class="cert"><h3>' + esc(ct("btn")) + '</h3><div class="cert-row"><div class="field"><label for="cert-name">' + esc(ct("name_l")) + '</label><input id="cert-name" autocomplete="name" value="' + esc(p.certName || p.name || "") + '"></div>' +
+    '<button class="btn" type="button" id="cert-make">' + esc(ct("make")) + '</button></div><p class="notice" id="cert-status" aria-live="polite" hidden></p></div>';
+}
+
+
+// ----- care packages -----
+// Set CARE_OPEN to true when packages are ready to ship; until then, finishers can ask to be notified.
+var CARE_OPEN = false;
+var CARE_T = {
+en:{title:"Family care package", tag:"In production", soon:"We're putting together a free care package for families who finish the course: printed guides, visual tools and a few things just for you.",
+ notify:"Notify me when it's ready", noted:"You're on the list. We'll email you when you can request your care package.",
+ open:"You've finished the course, so a free care package is waiting for you. Tell us where to send it.",
+ street:"Street address", city:"City", state:"State", zip:"ZIP code", age:"Your child's age", a1:"Under 3", a2:"3 to 5", a3:"6 to 12", a4:"13 or older", plang:"Language for printed guides",
+ req:"Request my care package", e_addr:"Fill in your full mailing address.", e_zip:"Enter a 5-digit ZIP code.", e_ca:"For now, care packages ship only to California addresses.",
+ st_requested:"Requested. We'll email you when it ships.", st_packed:"Packed and ready to ship.", st_shipped:"Shipped. Tracking: {t}", st_delivered:"Delivered. We hope you enjoy it.",
+ note:"One package per household, while supplies last. We delete your address after delivery."},
+es:{title:"Paquete para familias", tag:"En producción", soon:"Estamos preparando un paquete gratuito para las familias que terminen el curso: guías impresas, herramientas visuales y algunos detalles para usted.",
+ notify:"Avisarme cuando esté listo", noted:"Ya está en la lista. Le escribiremos cuando pueda solicitar su paquete.",
+ open:"Terminó el curso, así que tiene un paquete gratuito esperándole. Díganos a dónde enviarlo.",
+ street:"Dirección", city:"Ciudad", state:"Estado", zip:"Código postal", age:"Edad de su hijo", a1:"Menor de 3", a2:"De 3 a 5", a3:"De 6 a 12", a4:"13 o más", plang:"Idioma de las guías impresas",
+ req:"Solicitar mi paquete", e_addr:"Escriba su dirección postal completa.", e_zip:"Escriba un código postal de 5 dígitos.", e_ca:"Por ahora, los paquetes solo se envían a direcciones de California.",
+ st_requested:"Solicitado. Le escribiremos cuando se envíe.", st_packed:"Empacado y listo para enviar.", st_shipped:"Enviado. Rastreo: {t}", st_delivered:"Entregado. Esperamos que lo disfrute.",
+ note:"Un paquete por hogar, hasta agotar existencias. Eliminamos su dirección después de la entrega."},
+zh:{title:"家庭关爱礼包", tag:"筹备中", soon:"我们正在为完成课程的家庭准备一份免费的关爱礼包：打印版指南、视觉工具，以及一些专门送给您的小礼物。",
+ notify:"准备好时通知我", noted:"您已在通知名单上。可以申请礼包时，我们会通过邮件通知您。",
+ open:"您已完成课程，一份免费的关爱礼包正在等您。请告诉我们寄送地址。",
+ street:"街道地址", city:"城市", state:"州", zip:"邮政编码", age:"孩子的年龄", a1:"3岁以下", a2:"3至5岁", a3:"6至12岁", a4:"13岁及以上", plang:"打印指南的语言",
+ req:"申请我的关爱礼包", e_addr:"请填写完整的邮寄地址。", e_zip:"请输入5位数的邮政编码。", e_ca:"目前，关爱礼包仅寄送至加州地址。",
+ st_requested:"已申请。寄出时我们会通过邮件通知您。", st_packed:"已打包，准备寄出。", st_shipped:"已寄出。快递单号：{t}", st_delivered:"已送达。希望您喜欢。",
+ note:"每户限领一份，送完即止。礼包送达后，我们会删除您的地址。"}};
+function cT(k, v){ var s = (CARE_T[lang] && CARE_T[lang][k]) || CARE_T.en[k]; if (v) for (var x in v) s = s.split("{" + x + "}").join(v[x]); return s; }
+var CARE_ICON = '<span class="care-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"><path d="M3.5 8.5h17v12h-17z"/><path d="M2.5 5.5h19v3h-19zM12 5.5v15"/><path d="M12 5.5c-1.5-2.8-5-3-5-.8 0 1.2 2 .8 5 .8zm0 0c1.5-2.8 5-3 5-.8 0 1.2-2 .8-5 .8z"/></svg></span>';
+function careBlock(){
+  var p = Store.profile(), c = p.care || null, body;
+  if (c && c.status){ body = '<p class="pill ok" role="status">' + esc(cT("st_" + c.status, {t:c.tracking || ""})) + '</p>'; }
+  else if (!CARE_OPEN){
+    body = '<p>' + esc(cT("soon")) + '</p>' + (p.careInterest ? '<p class="pill ok" role="status">' + esc(cT("noted")) + '</p>' : '<div><button class="btn line" type="button" id="care-notify">' + esc(cT("notify")) + '</button></div>');
+  } else {
+    body = '<p>' + esc(cT("open")) + '</p><form id="care-form" novalidate>' +
+      '<div class="field"><label for="cr-street">' + esc(cT("street")) + '</label><input id="cr-street" autocomplete="street-address" required></div>' +
+      '<div class="row2"><div class="field"><label for="cr-city">' + esc(cT("city")) + '</label><input id="cr-city" autocomplete="address-level2" required></div>' +
+      '<div class="row2"><div class="field"><label for="cr-state">' + esc(cT("state")) + '</label><input id="cr-state" autocomplete="address-level1" value="CA" required></div>' +
+      '<div class="field"><label for="cr-zip">' + esc(cT("zip")) + '</label><input id="cr-zip" autocomplete="postal-code" inputmode="numeric" maxlength="10" required></div></div></div>' +
+      '<div class="row2"><div class="field"><label for="cr-age">' + esc(cT("age")) + '</label><select id="cr-age"><option value="0-2">' + esc(cT("a1")) + '</option><option value="3-5">' + esc(cT("a2")) + '</option><option value="6-12">' + esc(cT("a3")) + '</option><option value="13+">' + esc(cT("a4")) + '</option></select></div>' +
+      '<div class="field"><label for="cr-lang">' + esc(cT("plang")) + '</label><select id="cr-lang"><option value="en">English</option><option value="es">Español</option><option value="zh">中文</option></select></div></div>' +
+      '<p class="error" role="alert" hidden></p><div><button class="btn" type="submit">' + esc(cT("req")) + '</button></div><p class="small-note">' + esc(cT("note")) + '</p></form>';
+  }
+  return '<section class="care" aria-labelledby="care-title"><div class="care-head">' + CARE_ICON + '<div><span class="tagline-s">' + esc(c && c.status ? "" : (CARE_OPEN ? "" : cT("tag"))) + '</span><h3 id="care-title">' + esc(cT("title")) + '</h3></div></div>' + body + '</section>';
+}
+
+renderFaq();
+// ===== Admin dashboard (#admin) =====
+// Shows combined numbers only: no names, emails or addresses.
+// Live: only signed-in accounts listed in ADMIN_EMAILS (with a verified email) can read the data; the Firestore rules enforce this.
+var ADMIN_EMAILS = ["peter.rodriguez@autismkin.com"];
+var adminRoot = document.getElementById("admin-root"), adminSample = false, adminData = null;
+
+function monthKeys(n){ var out = [], d = new Date(); d.setDate(1);
+  for (var i = 0; i < n; i++){ out.push(d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0")); d.setMonth(d.getMonth() - 1); }
+  return out; }
+function monthLabel(k){ var p = k.split("-"); try{ return new Intl.DateTimeFormat("en", {month:"short", year:"numeric"}).format(new Date(+p[0], +p[1] - 1, 1)); }catch(e){ return k; } }
+function num(n){ return (n || 0).toLocaleString("en-US"); }
+
+function sampleData(){
+  var months = monthKeys(6), stats = {all:{}}, users = [], seed = 7;
+  function r(n){ seed = (seed * 9301 + 49297) % 233280; return Math.floor(seed / 233280 * n); }
+  months.forEach(function(m, i){ var s = {}, f = 1 + (5 - i) * 0.35;
+    s.visit = Math.round((420 + r(160)) * f); s.signup = Math.round((22 + r(10)) * f); s.lesson_done = Math.round((110 + r(40)) * f);
+    s.quiz_attempt = Math.round((14 + r(6)) * f); s.quiz_pass = Math.round((11 + r(5)) * f); s.cert = Math.round((8 + r(4)) * f);
+    ["home","about","course","resources","faq","contact","learn"].forEach(function(p){ s["pv_" + p] = Math.round((p === "home" ? 380 : 60 + r(140)) * f); });
+    DOCS.forEach(function(d){ ["en","es","zh"].forEach(function(l){ s["dl_" + d.slug.replace(/-/g,"_") + "_" + l] = Math.round((l === "en" ? 18 : l === "es" ? 11 : 5) * f * (0.6 + r(80) / 100)); }); });
+    stats[m] = s; Object.keys(s).forEach(function(k){ stats.all[k] = (stats.all[k] || 0) + s[k]; }); });
+  for (var i = 0; i < stats.all.signup; i++){ var reach = r(100), done = {};
+    var n = reach < 18 ? 0 : reach < 40 ? 1 + r(3) : reach < 62 ? 3 + r(4) : 9;
+    ALL_LESSONS.slice(0, n).forEach(function(id){ done[id] = 1; });
+    var passed = n === 9 && r(100) < 85;
+    users.push({lang:["en","en","en","es","es","zh"][r(6)], done:done, quiz:passed ? {passed:true} : null, certName:passed && r(100) < 75 ? "x" : null, careInterest:passed && r(100) < 60}); }
+  return {stats:stats, users:users};
+}
+
+function previewData(){
+  var stats = Track.local(), accts = {}; try{ accts = JSON.parse(localStorage.getItem("ak-accounts") || "{}"); }catch(e){}
+  return Promise.resolve({stats:stats, users:Object.keys(accts).map(function(k){ return accts[k].profile; })});
+}
+function liveData(){
+  var db = Store.db(), months = monthKeys(6);
+  return Promise.all([db.collection("stats").doc("all").get()].concat(months.map(function(m){ return db.collection("stats").doc(m).get(); })).concat([db.collection("users").get()]))
+    .then(function(res){ var stats = {all:res[0].exists ? res[0].data() : {}};
+      months.forEach(function(m, i){ stats[m] = res[i + 1].exists ? res[i + 1].data() : {}; });
+      return {stats:stats, users:res[res.length - 1].docs.map(function(d){ return d.data(); })}; });
+}
+
+function renderAdmin(){
+  if (!adminRoot) return;
+  var u = Store.user(), live = Store.mode === "firebase";
+  if (live && !ready){ adminRoot.innerHTML = '<h1 tabindex="-1">Admin</h1><p class="muted">Loading…</p>'; return; }
+  if (live && !u){ adminRoot.innerHTML = '<h1 tabindex="-1">Admin</h1><p class="lede-l">Please sign in with the Autism Kin admin account to see the dashboard.</p><a class="btn" href="#learn">Sign in</a>'; return; }
+  if (live && ADMIN_EMAILS.indexOf((u.email || "").toLowerCase()) < 0){ adminRoot.innerHTML = '<h1 tabindex="-1">Admin</h1><p class="lede-l">This page is for Autism Kin staff.</p>'; return; }
+  if (live && !u.verified){ adminRoot.innerHTML = '<h1 tabindex="-1">Admin</h1><p class="lede-l">For security, confirm your email address first. We will send a link to ' + esc(u.email) + '.</p>' +
+      '<div class="admin-actions"><button class="btn" type="button" id="ad-verify">Send confirmation email</button><button class="btn line" type="button" id="ad-recheck">I have confirmed it</button></div><p class="notice" role="status" id="ad-note" hidden></p>'; return; }
+  adminRoot.innerHTML = '<h1 tabindex="-1">Admin</h1><p class="muted">Loading…</p>';
+  var get = adminSample ? Promise.resolve(sampleData()) : (live ? liveData() : previewData());
+  get.then(function(d){ adminData = d; drawAdmin(d, live); }, function(e){
+    adminRoot.innerHTML = '<h1 tabindex="-1">Admin</h1><p class="error" role="alert">Could not load the numbers' + (e && e.code === "permission-denied" ? ': this account does not have admin access.' : '. Check your connection and try again.') + '</p>'; });
+}
+
+function drawAdmin(d, live){
+  var A = d.stats.all || {}, users = d.users || [], months = monthKeys(6);
+  var started = users.filter(function(p){ return p && p.done && Object.keys(p.done).length; }).length;
+  var finished = users.filter(function(p){ return p && p.done && ALL_LESSONS.every(function(id){ return p.done[id]; }); }).length;
+  var passed = users.filter(function(p){ return p && p.quiz && p.quiz.passed; }).length;
+  var certs = users.filter(function(p){ return p && p.certName; }).length;
+  var careI = users.filter(function(p){ return p && p.careInterest; }).length;
+  var careR = users.filter(function(p){ return p && p.care && p.care.status; }).length;
+  var dlTotal = Object.keys(A).filter(function(k){ return k.indexOf("dl_") === 0; }).reduce(function(s, k){ return s + A[k]; }, 0);
+
+  var note = adminSample ? '<p class="preview-note">Example numbers, made up to show how the dashboard will look. Nothing here is real.</p>'
+    : (!live ? '<p class="preview-note">Preview mode: these numbers only include activity in this browser. Once the site is live, they will include every visitor.</p>' : "");
+  var kpis = [["Site visits", A.visit], ["Guide downloads", dlTotal], ["Accounts", users.length], ["Completed the course", passed]].map(function(k){
+    return '<div class="kpi"><span class="kv">' + num(k[1]) + '</span><span class="kl">' + k[0] + '</span></div>'; }).join("");
+
+  // course funnel
+  var steps = [["Created an account", users.length], ["Started a lesson", started]];
+  ALL_LESSONS.forEach(function(id, i){ steps.push([(i + 1) + ". " + COURSE.lessons[id].en.t, users.filter(function(p){ return p && p.done && p.done[id]; }).length, true]); });
+  steps.push(["Finished all 9 lessons", finished], ["Passed the final quiz", passed], ["Downloaded a certificate", certs]);
+  var max = Math.max(1, users.length);
+  var funnel = steps.map(function(s){ var pct = Math.round(s[1] / max * 100);
+    return '<li class="frow' + (s[2] ? " sub" : "") + '"><span class="fl">' + esc(s[0]) + '</span><span class="fb" aria-hidden="true"><span style="width:' + pct + '%"></span></span><span class="fn">' + num(s[1]) + (s[2] ? "" : ' <small>' + pct + '%</small>') + '</span></li>'; }).join("");
+
+  // downloads table
+  var dlRows = DOCS.map(function(doc){ var k = "dl_" + doc.slug.replace(/-/g, "_") + "_", en = A[k + "en"] || 0, es = A[k + "es"] || 0, zh = A[k + "zh"] || 0;
+    return {name:T.en["d_" + doc.slug.replace(/-/g, "_") + "_t"], en:en, es:es, zh:zh, tot:en + es + zh}; }).sort(function(a, b){ return b.tot - a.tot; });
+  var dlt = {en:0, es:0, zh:0}; dlRows.forEach(function(r){ dlt.en += r.en; dlt.es += r.es; dlt.zh += r.zh; });
+  var dlTable = '<div class="tscroll" tabindex="0" role="region" aria-label="Guide downloads by language"><table class="atable"><caption class="sr-only">Guide downloads by language</caption><thead><tr><th scope="col">Guide</th><th scope="col">English</th><th scope="col">Español</th><th scope="col">中文</th><th scope="col">Total</th></tr></thead><tbody>' +
+    dlRows.map(function(r){ return '<tr><th scope="row">' + esc(r.name) + '</th><td>' + num(r.en) + '</td><td>' + num(r.es) + '</td><td>' + num(r.zh) + '</td><td><b>' + num(r.tot) + '</b></td></tr>'; }).join("") +
+    '</tbody><tfoot><tr><th scope="row">All guides</th><td>' + num(dlt.en) + '</td><td>' + num(dlt.es) + '</td><td>' + num(dlt.zh) + '</td><td><b>' + num(dlTotal) + '</b></td></tr></tfoot></table></div>';
+
+  // monthly
+  var mrows = [["Site visits","visit"],["New accounts","signup"],["Lessons completed","lesson_done"],["Quiz attempts","quiz_attempt"],["Completed the course","quiz_pass"],["Certificates","cert"],["Guide downloads","dl"]];
+  function mval(m, key){ var s = d.stats[m] || {}; if (key !== "dl") return s[key] || 0; return Object.keys(s).filter(function(k){ return k.indexOf("dl_") === 0; }).reduce(function(a, k){ return a + s[k]; }, 0); }
+  var mon = months.slice().reverse();
+  var monthly = '<div class="tscroll" tabindex="0" role="region" aria-label="Activity by month"><table class="atable"><caption class="sr-only">Activity by month</caption><thead><tr><th scope="col"><span class="sr-only">Measure</span></th>' + mon.map(function(m){ return '<th scope="col">' + monthLabel(m) + '</th>'; }).join("") + '</tr></thead><tbody>' +
+    mrows.map(function(r){ return '<tr><th scope="row">' + r[0] + '</th>' + mon.map(function(m){ return '<td>' + num(mval(m, r[1])) + '</td>'; }).join("") + '</tr>'; }).join("") + '</tbody></table></div>';
+
+  // pages + languages
+  var pages = ["home","about","course","resources","faq","contact","learn","privacy"].map(function(p){ return [T.en["nav_" + p] || p, A["pv_" + p] || 0]; }).sort(function(a, b){ return b[1] - a[1]; });
+  var pmax = Math.max(1, pages[0][1]);
+  var pageList = pages.map(function(p){ return '<li class="frow"><span class="fl">' + esc(p[0]) + '</span><span class="fb" aria-hidden="true"><span style="width:' + Math.round(p[1] / pmax * 100) + '%"></span></span><span class="fn">' + num(p[1]) + '</span></li>'; }).join("");
+  var langs = {en:0, es:0, zh:0}; users.forEach(function(p){ if (p && langs[p.lang] !== undefined) langs[p.lang]++; });
+  var langList = [["English","en"],["Español","es"],["中文","zh"]].map(function(l){ var v = langs[l[1]]; return '<li class="frow"><span class="fl">' + l[0] + '</span><span class="fb" aria-hidden="true"><span style="width:' + Math.round(v / max * 100) + '%"></span></span><span class="fn">' + num(v) + ' <small>' + Math.round(v / max * 100) + '%</small></span></li>'; }).join("");
+
+  adminRoot.innerHTML = '<div class="admin-head"><div><h1 tabindex="-1">Admin</h1><p class="muted">Combined numbers only. No names, emails or addresses are shown.</p></div>' +
+    '<div class="admin-actions">' + (adminSample ? '<button class="btn line" type="button" id="ad-real">Show real numbers</button>' : '<button class="btn line" type="button" id="ad-sample">Show example numbers</button>') +
+    '<button class="btn line" type="button" id="ad-refresh">Refresh</button><button class="btn" type="button" id="ad-csv">Download report (CSV)</button></div></div>' + note +
+    '<div class="kpis">' + kpis + '</div>' +
+    '<section class="asec"><h2>Caregiver Course</h2><p class="muted">How far families get, out of everyone who created an account.</p><ol class="funnel">' + funnel + '</ol></section>' +
+    '<section class="asec"><h2>Guide downloads</h2>' + dlTable + '</section>' +
+    '<section class="asec"><h2>By month</h2>' + monthly + '</section>' +
+    '<div class="agrid"><section class="asec"><h2>Page views</h2><ol class="funnel">' + pageList + '</ol></section>' +
+    '<section class="asec"><h2>Course language</h2><ol class="funnel">' + langList + '</ol><h2 class="mt">Family care packages</h2><ul class="alist"><li><b>' + num(careI) + '</b> asked to be notified</li><li><b>' + num(careR) + '</b> requested a package</li></ul></section></div>' +
+    '<p class="small-note">Visits are counted once per browser session. Downloads are counted when a guide link is clicked. Totals include all time; monthly figures cover the last six months.</p>';
+}
+
+function adminCSV(){
+  var d = adminData; if (!d) return;
+  var A = d.stats.all || {}, rows = [["Autism Kin report", new Date().toISOString().slice(0, 10)], [], ["All-time totals", "Count"]];
+  rows.push(["Site visits", A.visit || 0], ["Accounts", d.users.length], ["Lessons completed", A.lesson_done || 0], ["Completed the course", d.users.filter(function(p){ return p && p.quiz && p.quiz.passed; }).length], ["Certificates", A.cert || 0]);
+  rows.push([], ["Guide", "English", "Spanish", "Chinese", "Total"]);
+  DOCS.forEach(function(doc){ var k = "dl_" + doc.slug.replace(/-/g, "_") + "_", en = A[k + "en"] || 0, es = A[k + "es"] || 0, zh = A[k + "zh"] || 0; rows.push([T.en["d_" + doc.slug.replace(/-/g, "_") + "_t"], en, es, zh, en + es + zh]); });
+  var months = monthKeys(6).reverse(); rows.push([], ["Month"].concat(months));
+  [["Site visits","visit"],["New accounts","signup"],["Lessons completed","lesson_done"],["Completed the course","quiz_pass"],["Certificates","cert"]].forEach(function(r){ rows.push([r[0]].concat(months.map(function(m){ return (d.stats[m] || {})[r[1]] || 0; }))); });
+  var csv = rows.map(function(r){ return r.map(function(c){ c = String(c); return /[",\n]/.test(c) ? '"' + c.replace(/"/g, '""') + '"' : c; }).join(","); }).join("\n");
+  var blob = new Blob(["﻿" + csv], {type:"text/csv"}), fname = "autismkin-report-" + new Date().toISOString().slice(0, 10) + ".csv";
+  if (dlApi){ dlApi.save({filename:fname, data:blob}).catch(function(){}); return; }
+  var url = URL.createObjectURL(blob), a = document.createElement("a"); a.href = url; a.download = fname; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+}
+
+if (adminRoot) adminRoot.addEventListener("click", function(e){
+  var id = e.target.id;
+  if (id === "ad-sample" || id === "ad-real"){ adminSample = id === "ad-sample"; renderAdmin(); var b = document.getElementById(adminSample ? "ad-real" : "ad-sample"); if (b) b.focus(); }
+  else if (id === "ad-refresh"){ renderAdmin(); }
+  else if (id === "ad-csv"){ adminCSV(); }
+  else if (id === "ad-verify"){ e.target.disabled = true; Store.verify().then(function(){ var n = document.getElementById("ad-note"); n.textContent = "Sent. Open the link in the email, then come back and choose “I have confirmed it”."; n.hidden = false; }, function(){ e.target.disabled = false; }); }
+  else if (id === "ad-recheck"){ Store.refresh().then(function(ok){ if (ok) renderAdmin(); else { var n = document.getElementById("ad-note"); n.textContent = "Not confirmed yet. Check your inbox (and spam folder) for the link."; n.hidden = false; } }); }
+});
+
+route();
+</script>
+
+</body>
+</html>

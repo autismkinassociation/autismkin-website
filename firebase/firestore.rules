@@ -1,0 +1,43 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Staff who can open autismkin.com/#admin. The email must be confirmed.
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email in ['peter.rodriguez@autismkin.com'];
+    }
+
+    // Each parent can read and write only their own profile and progress.
+    // Admins can read profiles to build the combined numbers on the dashboard.
+    match /users/{userId} {
+      allow read: if (request.auth != null && request.auth.uid == userId) || isAdmin();
+      allow create, update: if request.auth != null && request.auth.uid == userId;
+      allow delete: if false;
+    }
+
+    // Anonymous usage counters (stats/all and stats/YYYY-MM).
+    // Anyone may add exactly 1 to exactly one counter; only admins may read them.
+    match /stats/{period} {
+      function oneUp() {
+        let before = resource == null ? {} : resource.data;
+        let changed = request.resource.data.diff(before).affectedKeys();
+        let k = changed.size() == 1 ? changed.toList()[0] : '';
+        return changed.size() == 1
+          && k.matches('^[a-z0-9_]{1,60}$')
+          && request.resource.data[k] is int
+          && request.resource.data[k] == (k in before ? before[k] : 0) + 1
+          && request.resource.data.size() <= 200;
+      }
+      allow read: if isAdmin();
+      allow create, update: if (period == 'all' || period.matches('^20[0-9]{2}-[01][0-9]$')) && oneUp();
+      allow delete: if false;
+    }
+
+    // Everything else is closed.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
