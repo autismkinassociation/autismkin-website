@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Email signature · Jacqueline Perez</title>
+<style>
+body{margin:0;background:#F9F7F1;color:#1B2A4A;font:15px/1.55 Georgia,serif;padding:32px 16px}
+main{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+h1{font-size:24px;margin:0} ol{margin:0;padding-left:20px} li{margin-bottom:4px}
+.box{background:#fff;border:1px solid #DDD5C2;border-radius:8px;padding:24px;overflow-x:auto}
+button{font:600 15px Arial,sans-serif;background:#1B2A4A;color:#fff;border:0;border-radius:6px;padding:12px 18px;cursor:pointer;align-self:flex-start}
+button:focus-visible{outline:3px solid #D9A441;outline-offset:2px}
+.ok{font:14px Arial,sans-serif;color:#2E6B3A} small{color:#6B7488}
+</style></head><body><main>
+<h1>Email signature for Jacqueline Perez</h1>
+<ol>
+<li>Click <b>Copy signature</b> below.</li>
+<li>In Gmail, open <b>Settings</b> (gear icon) &rarr; <b>See all settings</b> &rarr; <b>General</b> &rarr; <b>Signature</b>.</li>
+<li>Click <b>Create new</b>, name it "Autism Kin", and paste into the box.</li>
+<li>Under <b>Signature defaults</b>, choose it for new emails and replies, then click <b>Save Changes</b> at the bottom.</li>
+</ol>
+<button id="copy" type="button">Copy signature</button><span class="ok" id="msg" hidden>Copied. Now paste it into Gmail.</span>
+<div class="box" id="sig"><table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif">
+<tr><td style="padding:0 0 2px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:bold;color:#1B2A4A">Jacqueline Perez</td></tr>
+<tr><td style="padding:0 0 2px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#4E5A72">Director &amp; Secretary</td></tr>
+<tr><td style="padding:0 0 8px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold;color:#7C5A14">Autism Kin Association</td></tr>
+<tr><td style="padding:0 0 10px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#1B2A4A"><a href="https://autismkin.com" style="color:#1B2A4A;text-decoration:none">autismkin.com</a>&nbsp;&nbsp;<span style="color:#D9A441">|</span>&nbsp;&nbsp;<a href="https://www.instagram.com/joinautismkin" style="color:#1B2A4A;text-decoration:none">Instagram @joinautismkin</a></td></tr>
+<tr><td style="padding:0 0 12px 0"><table cellpadding="0" cellspacing="0" border="0" width="300" style="border-collapse:collapse"><tr><td height="2" style="height:2px;line-height:2px;font-size:0;background:#D9A441">&nbsp;</td></tr></table></td></tr>
+<tr><td style="padding:0 0 8px 0"><a href="https://autismkin.com"><img src="https://autismkin.com/img/email/signature-logo.png" alt="Autism Kin Association" width="180" height="41" style="display:block;border:0;width:180px;height:41px"></a></td></tr>
+<tr><td style="padding:0 0 12px 0;font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#8A8F9C">A California nonprofit in formation &middot; Los Angeles</td></tr>
+<tr><td><a href="https://autismkin.com"><img src="https://autismkin.com/img/email/signature-banner.png" alt="Free for families: Caregiver Course and family guides in English, Espa&ntilde;ol and Chinese. autismkin.com" width="480" height="128" style="display:block;border:0;width:480px;height:128px;border-radius:4px"></a></td></tr>
+</table></div>
+<small>If the copy button doesn't work, drag to select everything inside the white box, copy it, and paste it into Gmail.</small>
+</main>
+<script>
+document.getElementById('copy').addEventListener('click',function(){
+  var el=document.getElementById('sig'),r=document.createRange();r.selectNodeContents(el);
+  var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+  var ok=false;try{ok=document.execCommand('copy')}catch(e){}
+  if(ok){s.removeAllRanges();document.getElementById('msg').hidden=false}
+});
+</script>
+</body></html>

@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /email/
 Sitemap: https://autismkin.com/sitemap.xml
