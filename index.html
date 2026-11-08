@@ -70,6 +70,13 @@ p{margin:0}
 .nav a[aria-current="page"]{color:var(--fg); border-bottom-color:var(--accent)}
 .nav .acct-link{color:var(--fg); font-weight:700; border:1.5px solid var(--rule); border-radius:999px; padding:.35rem .9rem}
 .nav .acct-link[aria-current="page"]{border-color:var(--fg)}
+.nav .admin-link{color:var(--accent-text); font-weight:700}
+.ak-modal{position:fixed; inset:0; z-index:100; display:flex; align-items:center; justify-content:center; padding:1rem; background:rgba(16,24,40,.55)}
+.ak-modal .box{background:var(--surface); color:var(--fg); border-radius:16px; padding:1.75rem; width:min(420px,100%); box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.ak-modal h2{margin:0 0 .35rem; font-size:1.5rem}
+.ak-modal p{margin:0 0 1.25rem; color:var(--muted)}
+.ak-modal .row{display:flex; flex-wrap:wrap; gap:.6rem}
+.ak-modal .row .btn{flex:1 1 10rem; text-align:center}
 .head-tools{display:flex; align-items:center; gap:.75rem}
 .lang{display:flex; border:1px solid var(--rule); border-radius:999px; padding:2px}
 .lang button{white-space:nowrap; font:inherit; font-size:.85rem; border:0; background:transparent; color:var(--muted); padding:.3rem .65rem; border-radius:999px; cursor:pointer}
@@ -465,6 +472,7 @@ body.has-back .page{padding-top:1.75rem}
         <a href="#faq" data-nav="faq" data-t="nav_faq">FAQ</a>
         <a href="#contact" data-nav="contact" data-t="nav_contact">Contact</a>
         <a href="#learn" data-nav="learn" id="acct-link" class="acct-link">Sign in</a>
+        <a href="#admin" data-nav="admin" id="admin-link" class="admin-link" style="display:none">Admin</a>
       </nav>
       <div class="head-tools">
         <div class="lang" role="group" aria-label="Language">
@@ -1603,13 +1611,32 @@ learnRoot.addEventListener("submit", function(e){
   if (pass.value.length < 8) return showErr(form, lt("e_pass"), pass);
   btn.disabled = true;
   var p = authTab === "up" ? Store.signUp(name.value.trim(), email.value.trim(), pass.value, document.getElementById("au-lang").value) : Store.signIn(email.value.trim(), pass.value);
-  p.then(function(){ btn.disabled = false; if (authTab === "up"){ var pl = Store.profile().lang; if (pl && pl !== lang) applyLang(pl); } renderLearn(learnHash, true); },
+  p.then(function(){ btn.disabled = false; if (authTab === "up"){ var pl = Store.profile().lang; if (pl && pl !== lang) applyLang(pl); } renderLearn(learnHash, true); if (authTab !== "up"){ pendingAdminChoice = true; maybeOfferAdmin(); } },
     function(x){ btn.disabled = false; var key = "e_" + ((x && x.code) || "generic"); showErr(form, LT.en[key] ? lt(key) : lt("e_generic")); });
 });
 learnRoot.addEventListener("change", function(e){ var o = e.target.closest(".opt"); if (!o) return; o.parentNode.querySelectorAll(".opt").forEach(function(x){ x.classList.toggle("sel", x.contains(e.target)); }); });
 
-Store.on(function(){ ready = true; updateAccountLink(); if (currentPage === "learn") renderLearn(learnHash); if (currentPage === "admin" && window.renderAdmin) renderAdmin(); });
-function updateAccountLink(){ var a = document.getElementById("acct-link"); if (!a) return; a.textContent = Store.user() ? lt("nav_learn") : t("nav_signin"); }
+Store.on(function(){ ready = true; updateAccountLink(); maybeOfferAdmin(); if (currentPage === "learn") renderLearn(learnHash); if (currentPage === "admin" && window.renderAdmin) renderAdmin(); });
+function updateAccountLink(){ var a = document.getElementById("acct-link"); if (!a) return; a.textContent = Store.user() ? lt("nav_learn") : t("nav_signin");
+  var ad = document.getElementById("admin-link"); if (ad) ad.style.display = isAdminUser() ? "" : "none"; }
+// Staff shortcut: admin accounts get an "Admin" menu link and, right after signing in, a choice of where to go.
+// This only changes navigation. Access to the numbers is still enforced by the Firestore security rules.
+var pendingAdminChoice = false;
+function maybeOfferAdmin(){ if (!pendingAdminChoice || !Store.user() || !Store.profile()) return; pendingAdminChoice = false; offerAdminChoice(); }
+function isAdminUser(){ var u = Store.user(); return !!(u && typeof ADMIN_EMAILS !== "undefined" && ADMIN_EMAILS.indexOf((u.email || "").toLowerCase()) > -1); }
+function offerAdminChoice(){
+  if (!isAdminUser() || document.querySelector(".ak-modal")) return;
+  var p = Store.profile() || {}, first = (p.name || "").split(" ")[0];
+  var m = document.createElement("div"); m.className = "ak-modal";
+  m.innerHTML = '<div class="box" role="dialog" aria-modal="true" aria-labelledby="ak-m-title"><h2 id="ak-m-title" tabindex="-1">Welcome' + (first ? ", " + esc(first) : "") + '</h2>' +
+    '<p>Where would you like to go?</p><div class="row"><a class="btn" href="#admin" data-ak="admin">Admin dashboard</a>' +
+    '<a class="btn line" href="#learn" data-ak="learn">My learning</a></div></div>';
+  function close(){ m.remove(); document.removeEventListener("keydown", onKey); }
+  function onKey(e){ if (e.key === "Escape") close(); }
+  m.addEventListener("click", function(e){ var b = e.target.closest("[data-ak]"); if (b){ e.preventDefault(); close(); if (b.dataset.ak === "admin"){ history.pushState(null, "", "#admin"); hasNavigated = true; showPage("admin"); renderAdmin(); updateBack(); } return; } if (e.target === m) close(); });
+  document.addEventListener("keydown", onKey);
+  document.body.appendChild(m); m.querySelector("h2").focus();
+}
 Store.init();
 Track.visit();
 // Preview only: a footer link to the admin dashboard (the live site has no visible link; go to autismkin.com/#admin).
