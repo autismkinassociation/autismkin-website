@@ -451,7 +451,18 @@ body.has-back .page{padding-top:1.75rem}
 .foot-links a{text-decoration:none}
 .foot-links a:hover{text-decoration:underline}
 @media (max-width:720px){ .site-foot{grid-template-columns:1fr} .foot-links{text-align:left} }
+.news-signup{border-top:1px solid var(--rule); padding-block:2.5rem; display:flex; justify-content:center}
+.news-signup .ml-embedded{width:min(480px,100%)}
 </style>
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2796114');
+</script>
+<!-- End MailerLite Universal -->
 </head>
 <body>
 
@@ -655,6 +666,11 @@ body.has-back .page{padding-top:1.75rem}
   <main class="page" id="page-privacy" data-page="privacy" hidden>
     <article class="policy" id="policy-root"></article>
   </main>
+
+  <!-- Newsletter sign-up (MailerLite form "Website sign-up") -->
+  <section class="news-signup" aria-label="Newsletter sign-up">
+    <div class="ml-embedded" data-form="YJy3r2"></div>
+  </section>
 
   <footer class="site-foot">
     <div><p class="tagline" data-t="h_title"></p><p class="measure" data-t="legal"></p></div>
